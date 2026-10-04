@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 5736.793690235787,
+  "cash_usdc": 3736.793690235787,
   "active_positions": {
     "5114463": {
       "market_id": "5114463",
@@ -129,6 +129,28 @@
         "score": 9
       },
       "opened_at": "2026-10-04T22:50:18.313000+00:00"
+    },
+    "562802": {
+      "market_id": "562802",
+      "question": "Will the Democratic Party control the House after the 2026 Midterm elections?",
+      "event_title": "Which party will win the House in 2026?",
+      "slug": "will-the-democratic-party-control-the-house-after-the-2026-midterm-elections",
+      "url": "https://polymarket.com/market/will-the-democratic-party-control-the-house-after-the-2026-midterm-elections",
+      "outcome": "No",
+      "entry_price": 0.075,
+      "current_price": 0.075,
+      "shares": 26666.666666666668,
+      "invested_usd": 2000.0,
+      "current_value": 2000.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Análisis Gemini",
+        "headline": "El mercado presenta una ineficiencia extrema. Una probabilidad del 92.5% para el Partido Demócrata en la Cámara de Representantes para 2026 es estadísticamente improbable dado el c",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 9
+      },
+      "opened_at": "2026-10-04T23:00:31.307178+00:00"
     }
   },
   "closed_trades": [
