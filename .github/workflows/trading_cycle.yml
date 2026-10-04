@@ -1,4 +1,4 @@
-name: Automated AI Trading Cycle (24/7 Cloud)
+name: 🧠 Cerebro IA (Google Gemini) - Polymarket + Alpaca 24/7
 
 on:
   schedule:
@@ -53,7 +53,7 @@ jobs:
           STOP_LOSS_PCT=$STOP_LOSS_PCT
           EOF
 
-      - name: Ejecutar Ciclo de Inteligencia con Google Gemini
+      - name: 🚀 Ejecutar Cerebro IA (Gemini) en Polymarket y Alpaca
         run: |
           python run_ai_cycle.py
 
