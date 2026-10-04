@@ -10,8 +10,8 @@ from dotenv import load_dotenv
 # Carga variables de entorno desde el archivo .env en la misma carpeta
 load_dotenv()
 
-# Credenciales de Alpaca
-ALPACA_API_KEY: str = os.getenv("ALPACA_API_KEY", "").strip()
+# Credenciales de Alpaca (soporta tanto ALPACA_API_KEY como ALPACA_APT_KEY)
+ALPACA_API_KEY: str = (os.getenv("ALPACA_API_KEY") or os.getenv("ALPACA_APT_KEY") or "").strip()
 ALPACA_SECRET_KEY: str = os.getenv("ALPACA_SECRET_KEY", "").strip()
 ALPACA_PAPER: bool = os.getenv("ALPACA_PAPER", "true").lower() in ("true", "1", "yes")
 

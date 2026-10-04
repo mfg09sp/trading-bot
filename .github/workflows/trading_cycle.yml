@@ -6,6 +6,9 @@ on:
     - cron: '*/15 * * * *'
   workflow_dispatch: # Permite ejecutarlo manualmente con 1 clic desde GitHub
 
+permissions:
+  contents: write
+
 jobs:
   trade-cycle:
     runs-on: ubuntu-latest
@@ -31,7 +34,8 @@ jobs:
 
       - name: Generar archivo de configuración (.env)
         env:
-          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY || secrets.ALPACA_APT_KEY }}
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_APT_KEY: ${{ secrets.ALPACA_APT_KEY }}
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
           ALPACA_PAPER: "true"
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -41,8 +45,9 @@ jobs:
           TAKE_PROFIT_PCT: "0.025"
           STOP_LOSS_PCT: "0.010"
         run: |
+          KEY="${ALPACA_API_KEY:-$ALPACA_APT_KEY}"
           cat <<EOF > .env
-          ALPACA_API_KEY=$ALPACA_API_KEY
+          ALPACA_API_KEY=$KEY
           ALPACA_SECRET_KEY=$ALPACA_SECRET_KEY
           ALPACA_PAPER=$ALPACA_PAPER
           GEMINI_API_KEY=$GEMINI_API_KEY
@@ -62,4 +67,4 @@ jobs:
           git config user.name "AI-Trading-Bot[bot]"
           git config user.email "bot@trading.ai"
           git add polymarket_ledger.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update polymarket ledger [skip ci]" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update polymarket ledger [skip ci]" && git push || true)
