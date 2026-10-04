@@ -1,0 +1,270 @@
+"""
+Módulo de Inteligencia Artificial para Análisis y Toma de Decisiones.
+Integra los modelos de Google Gemini (Gemini 3.8 Flash, 3.5 Flash, 3.1 Flash Lite)
+y OpenAI para evaluar noticias, tuits, probabilidades de Polymarket y activos de Alpaca en tiempo real.
+"""
+
+import os
+import json
+import logging
+import urllib.request
+import urllib.error
+from typing import Dict, Any, Optional, List
+
+logger = logging.getLogger("AIAnalyst")
+
+
+class AIAnalyst:
+    def __init__(
+        self,
+        gemini_api_key: Optional[str] = None,
+        openai_api_key: Optional[str] = None,
+        preferred_model: str = "gemini-3.5-flash"
+    ):
+        self.gemini_api_key = (gemini_api_key or os.getenv("GEMINI_API_KEY", "")).strip()
+        self.openai_api_key = (openai_api_key or os.getenv("OPENAI_API_KEY", "")).strip()
+        self.preferred_model = preferred_model
+
+        # Modelos de Gemini ordenados por estabilidad y velocidad de respuesta
+        self.gemini_models = [
+            preferred_model,
+            "gemini-3.5-flash",
+            "gemini-3.1-flash-lite",
+            "gemini-3.8-flash",
+            "gemini-flash-latest"
+        ]
+        # Eliminar duplicados manteniendo orden
+        self.gemini_models = list(dict.fromkeys(self.gemini_models))
+
+        self.openai_client = None
+        if self.openai_api_key:
+            try:
+                from openai import OpenAI
+                self.openai_client = OpenAI(api_key=self.openai_api_key)
+            except Exception as e:
+                logger.error(f"Error inicializando cliente OpenAI: {e}")
+
+        logger.info(f"AIAnalyst listo. Gemini Key: {'Configurada' if self.gemini_api_key else 'No'}, OpenAI: {'Configurada' if self.openai_client else 'No'}")
+
+    def is_available(self) -> bool:
+        """Devuelve True si al menos una API Key de IA está configurada."""
+        return bool(self.gemini_api_key or self.openai_client)
+
+    def _call_gemini_rest(self, prompt: str, system_instruction: str = "") -> Dict[str, Any]:
+        """Realiza una consulta a la API de Google Gemini en modo JSON estructurado."""
+        if not self.gemini_api_key:
+            raise ValueError("No hay GEMINI_API_KEY configurada")
+
+        last_error = None
+        for model in self.gemini_models:
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={self.gemini_api_key}"
+            
+            payload: Dict[str, Any] = {
+                "contents": [
+                    {
+                        "parts": [
+                            {"text": prompt}
+                        ]
+                    }
+                ],
+                "generationConfig": {
+                    "response_mime_type": "application/json",
+                    "temperature": 0.2
+                }
+            }
+
+            if system_instruction:
+                payload["systemInstruction"] = {
+                    "parts": [{"text": system_instruction}]
+                }
+
+            req = urllib.request.Request(
+                url,
+                data=json.dumps(payload).encode("utf-8"),
+                headers={"Content-Type": "application/json"}
+            )
+
+            try:
+                with urllib.request.urlopen(req, timeout=25) as resp:
+                    if resp.status == 200:
+                        data = json.loads(resp.read().decode("utf-8"))
+                        candidates = data.get("candidates", [])
+                        if not candidates:
+                            continue
+                        
+                        parts = candidates[0].get("content", {}).get("parts", [])
+                        if not parts:
+                            continue
+                        
+                        raw_text = parts[0].get("text", "").strip()
+                        parsed = json.loads(raw_text)
+                        parsed["model_used"] = model
+                        parsed["provider"] = "google_gemini"
+                        return parsed
+            except urllib.error.HTTPError as he:
+                error_body = he.read().decode("utf-8") if he.fp else str(he)
+                logger.warning(f"Error HTTP {he.code} con modelo {model}: {error_body[:120]}")
+                last_error = f"HTTP {he.code}: {error_body[:120]}"
+            except Exception as e:
+                logger.warning(f"Fallo consultando modelo Gemini {model}: {e}")
+                last_error = str(e)
+
+        raise RuntimeError(f"Todos los modelos de Gemini fallaron. Último error: {last_error}")
+
+    def _call_openai_fallback(self, prompt: str, system_instruction: str = "") -> Dict[str, Any]:
+        """Fallback a OpenAI en caso de ser necesario."""
+        if not self.openai_client:
+            raise ValueError("No hay cliente OpenAI configurado")
+
+        models = ["gpt-4o", "gpt-4o-mini"]
+        for m in models:
+            try:
+                res = self.openai_client.chat.completions.create(
+                    model=m,
+                    messages=[
+                        {"role": "system", "content": system_instruction or "Responde siempre en formato JSON."},
+                        {"role": "user", "content": prompt}
+                    ],
+                    response_format={"type": "json_object"},
+                    temperature=0.2
+                )
+                parsed = json.loads(res.choices[0].message.content)
+                parsed["model_used"] = m
+                parsed["provider"] = "openai"
+                return parsed
+            except Exception as e:
+                logger.warning(f"Fallo en fallback OpenAI {m}: {e}")
+        raise RuntimeError("Fallback OpenAI no disponible")
+
+    def analyze_market_opportunity(
+        self,
+        market_question: str,
+        current_prices: Dict[str, float],
+        context_news: str,
+        contract_rules: str = ""
+    ) -> Dict[str, Any]:
+        """
+        Envía los datos de Polymarket a la IA para obtener un veredicto cuantitativo:
+        BUY_YES, BUY_NO o PASS, convicción (1-10) y probabilidad real estimada.
+        """
+        if not self.is_available():
+            return {
+                "decision": "PASS",
+                "conviction": 0,
+                "rationale": "No hay API Key configurada para el analista de IA."
+            }
+
+        sys_inst = (
+            "Eres un analista cuantitativo de mercados predictivos (Polymarket) de fondos de cobertura. "
+            "Tu objetivo es explotar ineficiencias de precios, sesgos de opinión pública y asimetrías de información. "
+            "Responde SIEMPRE con un JSON válido estricto sin texto adicional fuera del JSON."
+        )
+
+        prompt = f"""
+--- MERCADO PREDICTIVO (POLYMARKET) ---
+Pregunta: {market_question}
+Probabilidades actuales (Precio del contrato de 0.00 a 1.00 USD): {json.dumps(current_prices)}
+Reglas y criterios de resolución: {contract_rules or "Resolución estándar oficial"}
+
+--- CONTEXTO INFORMATIVO (NOTICIAS, TUITS, DECLARACIONES, CALENDARIO) ---
+{context_news}
+
+--- INSTRUCCIONES DE DECISIÓN MATEMÁTICA ---
+1. Compara la probabilidad que paga el mercado con la probabilidad real estimada según los datos y noticias.
+2. Si el mercado subestima un desenlace evidente con alta convicción y ratio riesgo/beneficio favorable, emite BUY_YES o BUY_NO.
+3. Si el mercado está en precio justo o hay demasiada incertidumbre/ruido, emite PASS.
+4. Responde únicamente con esta estructura JSON:
+{{
+    "decision": "BUY_YES" | "BUY_NO" | "PASS",
+    "conviction": <número entero 1 al 10>,
+    "estimated_real_prob": <probabilidad real calculada entre 0.01 y 0.99>,
+    "edge_pct": <porcentaje de ventaja estimada, ej. 15.5>,
+    "rationale": "<análisis conciso y contundente en español explicando la tesis>"
+}}
+"""
+
+        # Intento 1: Google Gemini (clave proporcionada por el usuario, sin coste y con enorme contexto)
+        if self.gemini_api_key:
+            try:
+                return self._call_gemini_rest(prompt, system_instruction=sys_inst)
+            except Exception as e:
+                logger.error(f"Error consultando Gemini para Polymarket: {e}")
+
+        # Intento 2: Fallback OpenAI
+        if self.openai_client:
+            try:
+                return self._call_openai_fallback(prompt, system_instruction=sys_inst)
+            except Exception as e:
+                logger.error(f"Error en fallback OpenAI para Polymarket: {e}")
+
+        return {
+            "decision": "PASS",
+            "conviction": 0,
+            "rationale": "Error de conexión con los proveedores de IA."
+        }
+
+    def analyze_crypto_stock(
+        self,
+        symbol: str,
+        current_price: float,
+        technical_data: Dict[str, Any],
+        context_news: str
+    ) -> Dict[str, Any]:
+        """
+        Analiza un activo de Alpaca (Cripto como BTC, ETH, SOL o Acción de Wall Street)
+        combinando datos técnicos y noticias macroeconómicas.
+        """
+        if not self.is_available():
+            return {
+                "decision": "HOLD",
+                "conviction": 0,
+                "rationale": "No hay API Key configurada para el analista de IA."
+            }
+
+        sys_inst = (
+            "Eres un gestor senior de cartera de trading algorítmico y cuantitativo. "
+            "Evalúas setups de alta probabilidad para criptomonedas y acciones. "
+            "Responde SIEMPRE con un JSON válido estricto sin rodeos."
+        )
+
+        prompt = f"""
+--- ACTIVO A ANALIZAR ---
+Símbolo: {symbol}
+Precio Actual: {current_price} USD
+Métricas Técnicas / Niveles: {json.dumps(technical_data)}
+
+--- CONTEXTO MACROECONÓMICO Y NOTICIAS ---
+{context_news}
+
+--- INSTRUCCIONES ---
+1. Determina si el activo presenta una oportunidad clara de compra con ratio riesgo/beneficio favorable.
+2. Si detectas sobrecompra, resistencia extrema o riesgo de corrección, emite HOLD o PASS.
+3. Responde únicamente con esta estructura JSON:
+{{
+    "decision": "BUY" | "HOLD" | "SELL",
+    "conviction": <número entero 1 al 10>,
+    "target_take_profit_pct": <número ej. 3.0>,
+    "target_stop_loss_pct": <número ej. 1.5>,
+    "rationale": "<explicación estratégica en español de la entrada o abstención>"
+}}
+"""
+
+        # Intento 1: Google Gemini
+        if self.gemini_api_key:
+            try:
+                return self._call_gemini_rest(prompt, system_instruction=sys_inst)
+            except Exception as e:
+                logger.error(f"Error consultando Gemini para {symbol}: {e}")
+
+        # Intento 2: Fallback OpenAI
+        if self.openai_client:
+            try:
+                return self._call_openai_fallback(prompt, system_instruction=sys_inst)
+            except Exception as e:
+                logger.error(f"Error en fallback OpenAI para {symbol}: {e}")
+
+        return {
+            "decision": "HOLD",
+            "conviction": 0,
+            "rationale": "Fallo al consultar el motor de IA."
+        }

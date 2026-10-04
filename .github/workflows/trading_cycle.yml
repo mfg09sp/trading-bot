@@ -1,0 +1,65 @@
+name: Automated AI Trading Cycle (24/7 Cloud)
+
+on:
+  schedule:
+    # Ejecuta cada 30 minutos en los servidores de GitHub en la nube
+    - cron: '*/30 * * * *'
+  workflow_dispatch: # Permite ejecutarlo manualmente con 1 clic desde GitHub
+
+jobs:
+  trade-cycle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install python-dotenv requests openai
+
+      - name: Generar archivo de configuración (.env)
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          ALPACA_PAPER: "true"
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          RISK_PER_TRADE_USD: "2500.0"
+          TAKE_PROFIT_PCT: "0.025"
+          STOP_LOSS_PCT: "0.010"
+        run: |
+          cat <<EOF > .env
+          ALPACA_API_KEY=$ALPACA_API_KEY
+          ALPACA_SECRET_KEY=$ALPACA_SECRET_KEY
+          ALPACA_PAPER=$ALPACA_PAPER
+          GEMINI_API_KEY=$GEMINI_API_KEY
+          TELEGRAM_BOT_TOKEN=$TELEGRAM_BOT_TOKEN
+          TELEGRAM_CHAT_ID=$TELEGRAM_CHAT_ID
+          RISK_PER_TRADE_USD=$RISK_PER_TRADE_USD
+          TAKE_PROFIT_PCT=$TAKE_PROFIT_PCT
+          STOP_LOSS_PCT=$STOP_LOSS_PCT
+          EOF
+
+      - name: Ejecutar Ciclo de Inteligencia con Google Gemini
+        run: |
+          python run_ai_cycle.py
+
+      - name: Guardar estado de apuestas (polymarket_ledger.json)
+        run: |
+          git config user.name "AI-Trading-Bot[bot]"
+          git config user.email "bot@trading.ai"
+          git add polymarket_ledger.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update polymarket ledger [skip ci]" && git push)
