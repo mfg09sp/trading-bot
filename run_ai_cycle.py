@@ -4,6 +4,7 @@ Utiliza Google Gemini (con la API Key del usuario) para analizar de forma exhaus
 noticias, tuits, probabilidades de Polymarket y setups técnicos en Alpaca.
 """
 
+from __future__ import annotations
 import sys
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")

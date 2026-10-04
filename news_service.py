@@ -4,6 +4,7 @@ Rastrea titulares en tiempo real sobre Elon Musk (X/Twitter), Donald Trump (Trut
 la Reserva Federal (Jerome Powell) y Criptomonedas para usarlos como catalizadores en Polymarket.
 """
 
+from __future__ import annotations
 import logging
 import re
 import xml.etree.ElementTree as ET
