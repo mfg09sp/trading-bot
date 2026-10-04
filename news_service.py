@@ -8,7 +8,7 @@ import logging
 import re
 import xml.etree.ElementTree as ET
 import requests
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from datetime import datetime
 
 logger = logging.getLogger("NewsService")
