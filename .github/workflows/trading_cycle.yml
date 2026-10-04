@@ -13,6 +13,17 @@ jobs:
   trade-cycle:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+      ALPACA_APT_KEY: ${{ secrets.ALPACA_APT_KEY }}
+      ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+      ALPACA_PAPER: "true"
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      RISK_PER_TRADE_USD: "2500.0"
+      TAKE_PROFIT_PCT: "0.025"
+      STOP_LOSS_PCT: "0.010"
 
     steps:
       - name: Descargar repositorio
@@ -33,30 +44,8 @@ jobs:
           pip install python-dotenv requests openai
 
       - name: Generar archivo de configuración (.env)
-        env:
-          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
-          ALPACA_APT_KEY: ${{ secrets.ALPACA_APT_KEY }}
-          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
-          ALPACA_PAPER: "true"
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          RISK_PER_TRADE_USD: "2500.0"
-          TAKE_PROFIT_PCT: "0.025"
-          STOP_LOSS_PCT: "0.010"
         run: |
-          KEY="${ALPACA_API_KEY:-$ALPACA_APT_KEY}"
-          cat <<EOF > .env
-          ALPACA_API_KEY=$KEY
-          ALPACA_SECRET_KEY=$ALPACA_SECRET_KEY
-          ALPACA_PAPER=$ALPACA_PAPER
-          GEMINI_API_KEY=$GEMINI_API_KEY
-          TELEGRAM_BOT_TOKEN=$TELEGRAM_BOT_TOKEN
-          TELEGRAM_CHAT_ID=$TELEGRAM_CHAT_ID
-          RISK_PER_TRADE_USD=$RISK_PER_TRADE_USD
-          TAKE_PROFIT_PCT=$TAKE_PROFIT_PCT
-          STOP_LOSS_PCT=$STOP_LOSS_PCT
-          EOF
+          python setup_env.py
 
       - name: 🚀 Ejecutar Cerebro IA (Gemini) en Polymarket y Alpaca
         run: |
