@@ -2,8 +2,8 @@ name: Automated AI Trading Cycle (24/7 Cloud)
 
 on:
   schedule:
-    # Ejecuta cada 30 minutos en los servidores de GitHub en la nube
-    - cron: '*/30 * * * *'
+    # Ejecuta cada 15 minutos en los servidores de GitHub en la nube
+    - cron: '*/15 * * * *'
   workflow_dispatch: # Permite ejecutarlo manualmente con 1 clic desde GitHub
 
 jobs:

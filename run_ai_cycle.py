@@ -49,22 +49,28 @@ def run_cycle():
     news_service = NewsService()
     alpaca = AlpacaService()
 
+    # 1.5. Evaluar salidas de posiciones abiertas en Polymarket (Take Profit / Stop Loss)
+    logger.info("Evaluando Take Profit y Stop Loss de posiciones de Polymarket...")
+    closed_trades = poly_paper.update_and_evaluate_positions(poly_service)
+    for trade in closed_trades:
+        notifier.notify_polymarket_close(trade, poly_paper.get_summary())
+
     # 2. Recopilar contexto informativo masivo (Noticias, RSS, Tuits, Macro)
-    logger.info("1/4. Recopilando noticias de Trump, Elon Musk, Fed y Cripto...")
+    logger.info("1/4. Recopilando noticias de Trump, Elon Musk, Fed, Cripto e IA...")
     catalysts = news_service.get_latest_catalysts()
     all_news = []
     for cat, items in catalysts.items():
         for item in items:
             all_news.append(f"- [{cat.upper()}] {item.get('title', '')} (Fuente: {item.get('source', 'Web')})")
     
-    news_summary_text = "\n".join(all_news[:20])
+    news_summary_text = "\n".join(all_news[:25])
     logger.info(f"Se recopilaron {len(all_news)} catalizadores informativos.")
 
-    # 3. Analizar Polymarket
+    # 3. Analizar Polymarket con mayor amplitud de categorías
     logger.info("2/4. Escaneando mercados líquidos en Polymarket...")
     poly_summary = poly_paper.get_summary()
-    keywords = ["Trump", "Elon", "Musk", "Fed", "Bitcoin", "Election", "Midterms"]
-    markets = poly_service.search_markets_by_keywords(keywords, limit_per_cat=25)
+    keywords = ["Trump", "Elon", "Musk", "Fed", "Bitcoin", "Crypto", "Election", "Economy", "AI", "Tariff"]
+    markets = poly_service.search_markets_by_keywords(keywords, limit_per_cat=30)
     
     poly_trades_executed = 0
     for m in markets:
@@ -141,8 +147,8 @@ def run_cycle():
     alpaca_cash = float(alpaca_summary.get("cash", 0.0))
     logger.info(f"Saldo disponible en Alpaca: ${alpaca_cash:,.2f} USD")
 
-    # Lista de activos candidatos para evaluar
-    candidates = ["BTC/USD", "ETH/USD", "SOL/USD"]
+    # Lista de activos candidatos para evaluar (Cripto 24/7 y Acciones de Wall Street)
+    candidates = ["BTC/USD", "ETH/USD", "SOL/USD", "AAPL", "NVDA", "TSLA", "MSFT", "GOOGL"]
     
     alpaca_trades_executed = 0
     for sym in candidates:
@@ -195,8 +201,13 @@ def run_cycle():
         logger.info(f"-> Veredicto Gemini [{c_model}] para {sym}: {c_decision} (Convicción: {c_conviction}/10)")
 
         if c_decision == "BUY" and c_conviction >= 7:
-            # Calcular cantidad para ~2.500$
-            qty = round(config.RISK_PER_TRADE_USD / cur_price, 4)
+            # Calcular cantidad (decimal para cripto, entero para acciones)
+            is_crypto = "/" in sym
+            if is_crypto:
+                qty = round(config.RISK_PER_TRADE_USD / cur_price, 4)
+            else:
+                qty = float(max(1, int(config.RISK_PER_TRADE_USD / cur_price)))
+
             if qty > 0:
                 logger.info(f"Ejecutando orden de compra en Alpaca para {qty} {sym}...")
                 tp_pct = float(crypto_analysis.get("target_take_profit_pct", 3.0)) / 100.0
