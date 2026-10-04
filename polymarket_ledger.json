@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 8000.0,
+  "cash_usdc": 6000.0,
   "active_positions": {
     "5114463": {
       "market_id": "5114463",
@@ -72,12 +72,12 @@
       "url": "https://polymarket.com/market/will-flvio-bolsonaro-win-the-2026-brazilian-presidential-election",
       "outcome": "No",
       "entry_price": 0.369,
-      "current_price": 0.3555,
+      "current_price": 0.356,
       "shares": 5420.054200542006,
       "invested_usd": 2000.0,
-      "current_value": 1926.8292682926829,
-      "unrealized_pnl": -73.17073170731715,
-      "unrealized_pnl_pct": -3.658536585365857,
+      "current_value": 1929.5392953929538,
+      "unrealized_pnl": -70.46070460704618,
+      "unrealized_pnl_pct": -3.5230352303523067,
       "catalyst": {
         "category": "Análisis Gemini",
         "headline": "El mercado sobreestima drásticamente las probabilidades de Flávio Bolsonaro. Actualmente, Flávio enfrenta serios obstáculos legales y políticos, incluyendo investigaciones activas ",
@@ -129,6 +129,28 @@
         "score": 9
       },
       "opened_at": "2026-10-04T19:30:34.099575+00:00"
+    },
+    "4037600": {
+      "market_id": "4037600",
+      "question": "Will Flavio Bolsonaro win the most votes in the first round of the 2026 Brazil presidential election?",
+      "event_title": "Brazil Presidential Election First Round Winner",
+      "slug": "will-flavio-bolsonaro-win-the-most-votes-in-the-first-round-of-the-2026-brazil-presidential-election",
+      "url": "https://polymarket.com/market/will-flavio-bolsonaro-win-the-most-votes-in-the-first-round-of-the-2026-brazil-presidential-election",
+      "outcome": "No",
+      "entry_price": 0.655,
+      "current_price": 0.655,
+      "shares": 3053.4351145038167,
+      "invested_usd": 2000.0,
+      "current_value": 2000.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Análisis Gemini",
+        "headline": "La probabilidad de que Flavio Bolsonaro obtenga la mayor cantidad de votos en la primera vuelta de 2026 es extremadamente baja. Primero, el candidato de la izquierda (probablemente",
+        "source": "Google gemini-3.5-flash",
+        "score": 9
+      },
+      "opened_at": "2026-10-04T20:00:32.505601+00:00"
     }
   },
   "closed_trades": [],
