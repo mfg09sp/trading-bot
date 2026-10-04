@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 6087.755228697325,
+  "cash_usdc": 5736.793690235787,
   "active_positions": {
     "5114463": {
       "market_id": "5114463",
@@ -9,12 +9,12 @@
       "url": "https://polymarket.com/market/will-elon-musk-post-200-219-tweets-from-october-2-to-october-9-2026",
       "outcome": "Yes",
       "entry_price": 0.275,
-      "current_price": 0.245,
+      "current_price": 0.275,
       "shares": 7272.727272727273,
       "invested_usd": 2000.0,
-      "current_value": 1781.8181818181818,
-      "unrealized_pnl": -218.18181818181824,
-      "unrealized_pnl_pct": -10.909090909090919,
+      "current_value": 2000.0000000000002,
+      "unrealized_pnl": 2.2737367544323206e-13,
+      "unrealized_pnl_pct": 0.0,
       "catalyst": {
         "category": "Elon Musk / Redes",
         "headline": "Regla de contrato excluye replies. Promedio real de posts principales de Elon en X es ~30/día (~210/sem). Asimetría de +263%.",
@@ -51,12 +51,12 @@
       "url": "https://polymarket.com/market/will-josh-shapiro-win-the-2028-democratic-presidential-nomination",
       "outcome": "Yes",
       "entry_price": 0.058,
-      "current_price": 0.058,
+      "current_price": 0.059,
       "shares": 34482.75862068965,
       "invested_usd": 2000.0,
-      "current_value": 2000.0,
-      "unrealized_pnl": 0.0,
-      "unrealized_pnl_pct": 0.0,
+      "current_value": 2034.4827586206893,
+      "unrealized_pnl": 34.48275862068931,
+      "unrealized_pnl_pct": 1.7241379310344724,
       "catalyst": {
         "category": "Política / Primarias EE.UU.",
         "headline": "Gobernador de Pensilvania con aprobación >60% en estado bisagra clave. Mercado lo infravalora al 5.8% frente a perfiles polarizados (AOC al 17%). Gran asimetría de revalorización.",
@@ -115,20 +115,20 @@
       "slug": "will-flvio-bolsonaro-win-the-2026-brazilian-presidential-election",
       "url": "https://polymarket.com/market/will-flvio-bolsonaro-win-the-2026-brazilian-presidential-election",
       "outcome": "No",
-      "entry_price": 0.208,
-      "current_price": 0.208,
-      "shares": 9615.384615384615,
+      "entry_price": 0.166,
+      "current_price": 0.165,
+      "shares": 12048.192771084337,
       "invested_usd": 2000.0,
-      "current_value": 2000.0,
-      "unrealized_pnl": 0.0,
-      "unrealized_pnl_pct": 0.0,
+      "current_value": 1987.9518072289159,
+      "unrealized_pnl": -12.048192771084132,
+      "unrealized_pnl_pct": -0.6024096385542174,
       "catalyst": {
         "category": "Análisis Gemini",
-        "headline": "El mercado otorga una probabilidad implícita del 79.2% a que Flávio Bolsonaro ganará las elecciones presidenciales de Brasil en 2026, lo cual es una ineficiencia extrema y absurda.",
-        "source": "Google gemini-3.5-flash",
-        "score": 10
+        "headline": "El mercado presenta una ineficiencia extrema. Flávio Bolsonaro enfrenta barreras legales significativas (inelegibilidad del clan Bolsonaro en Brasil) y carece del capital político ",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 9
       },
-      "opened_at": "2026-10-04T20:52:41.738566+00:00"
+      "opened_at": "2026-10-04T22:50:18.313000+00:00"
     }
   },
   "closed_trades": [
@@ -187,10 +187,38 @@
       "realized_pnl_pct": -54.961832061068705,
       "close_reason": "🛑 STOP LOSS (-55.0%)",
       "closed_at": "2026-10-04T20:52:24.551226+00:00"
+    },
+    {
+      "market_id": "601826",
+      "question": "Will Flávio Bolsonaro win the 2026 Brazilian presidential election?",
+      "event_title": "Brazil Presidential Election",
+      "slug": "will-flvio-bolsonaro-win-the-2026-brazilian-presidential-election",
+      "url": "https://polymarket.com/market/will-flvio-bolsonaro-win-the-2026-brazilian-presidential-election",
+      "outcome": "No",
+      "entry_price": 0.208,
+      "current_price": 0.1715,
+      "shares": 9615.384615384615,
+      "invested_usd": 2000.0,
+      "current_value": 1649.0384615384617,
+      "unrealized_pnl": -350.96153846153834,
+      "unrealized_pnl_pct": -17.548076923076913,
+      "catalyst": {
+        "category": "Análisis Gemini",
+        "headline": "El mercado otorga una probabilidad implícita del 79.2% a que Flávio Bolsonaro ganará las elecciones presidenciales de Brasil en 2026, lo cual es una ineficiencia extrema y absurda.",
+        "source": "Google gemini-3.5-flash",
+        "score": 10
+      },
+      "opened_at": "2026-10-04T20:52:41.738566+00:00",
+      "exit_price": 0.1715,
+      "final_value": 1649.0384615384617,
+      "realized_pnl": -350.96153846153834,
+      "realized_pnl_pct": -17.548076923076913,
+      "close_reason": "🛑 STOP LOSS (-17.5%)",
+      "closed_at": "2026-10-04T22:49:55.872680+00:00"
     }
   ],
-  "total_realized_pnl": -1912.244771302675,
+  "total_realized_pnl": -2263.206309764213,
   "win_count": 0,
-  "loss_count": 2,
+  "loss_count": 3,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
