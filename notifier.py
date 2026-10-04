@@ -42,9 +42,20 @@ def send_telegram_message(message: str) -> bool:
         if response.status_code == 200:
             logger.info("Aviso enviado con éxito a Telegram.")
             return True
+        elif response.status_code == 400:
+            # Reintentar en texto plano si Telegram rechaza etiquetas o caracteres como < o >
+            payload_plain = {
+                "chat_id": TELEGRAM_CHAT_ID,
+                "text": message.replace("<b>", "").replace("</b>", "").replace("<i>", "").replace("</i>", "")
+            }
+            res_plain = requests.post(url, json=payload_plain, timeout=8)
+            if res_plain.status_code == 200:
+                logger.info("Aviso enviado con éxito a Telegram (modo texto plano).")
+                return True
+            logger.error(f"Error reintentando en texto plano: {res_plain.status_code} - {res_plain.text}")
         else:
             logger.error(f"Error al enviar mensaje a Telegram: {response.status_code} - {response.text}")
-            return False
+        return False
     except Exception as e:
         logger.error(f"Excepción de conexión al enviar mensaje a Telegram: {e}")
         return False
