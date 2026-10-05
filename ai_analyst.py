@@ -155,31 +155,35 @@ class AIAnalyst:
             }
 
         sys_inst = (
-            "Eres un analista cuantitativo de mercados predictivos (Polymarket) de fondos de cobertura. "
-            "Tu objetivo es explotar ineficiencias de precios, sesgos de opinión pública y asimetrías de información. "
-            "Responde SIEMPRE con un JSON válido estricto sin texto adicional fuera del JSON."
+            "Eres un analista cuantitativo jefe (Quant & Bayesian Forecaster) de un fondo de arbitraje predictivo en Polymarket. "
+            "Tu misión es descubrir ineficiencias de precios, sesgos cognitivos del público y errores de bulto en las cuotas "
+            "comparando probabilidades implícitas del mercado contra tasas base históricas (Base Rates), datos duros y modelos probabilísticos. "
+            "Responde SIEMPRE con un JSON válido estricto sin ningún texto fuera del bloque JSON."
         )
 
         prompt = f"""
 --- MERCADO PREDICTIVO (POLYMARKET) ---
 Pregunta: {market_question}
-Probabilidades actuales (Precio del contrato de 0.00 a 1.00 USD): {json.dumps(current_prices)}
-Reglas y criterios de resolución: {contract_rules or "Resolución estándar oficial"}
+Probabilidades actuales del mercado (Precios de 0.00 a 1.00 USD): {json.dumps(current_prices)}
+Reglas exactas de resolución oficial: {contract_rules or "Resolución oficial estándar"}
 
---- CONTEXTO INFORMATIVO (NOTICIAS, TUITS, DECLARACIONES, CALENDARIO) ---
+--- CONTEXTO Y CATALIZADORES INFORMATIVOS (NOTICIAS, DATOS, DECLARACIONES) ---
 {context_news}
 
---- INSTRUCCIONES DE DECISIÓN MATEMÁTICA ---
-1. Compara la probabilidad que paga el mercado con la probabilidad real estimada según los datos y noticias.
-2. Si el mercado subestima un desenlace evidente con alta convicción y ratio riesgo/beneficio favorable, emite BUY_YES o BUY_NO.
-3. Si el mercado está en precio justo o hay demasiada incertidumbre/ruido, emite PASS.
-4. Responde únicamente con esta estructura JSON:
+--- INSTRUCCIONES DE ANÁLISIS CUANTITATIVO Y MODELADO HISTÓRICO ---
+1. TASA BASE HISTÓRICA (Base Rate): Evalúa cómo se resuelven históricamente eventos del mismo tipo (elecciones intermedias, decisiones de la Fed, lanzamientos espaciales, aprobaciones regulatorias). No te dejes llevar por el sensacionalismo o la histeria mediática.
+2. SESGO DEL NO-FAVORITO (Longshot Bias): El público minorista suele inflar cuotas de eventos altamente improbables (ej. pagar 15% o 25% por algo que solo ocurre el 2% de las veces). Si detectas esta sobrevaloración, el 'BUY_NO' ofrece una asimetría matemática demoledora.
+3. ESPERANZA MATEMÁTICA Y VENTAJA (Edge): Compara la probabilidad implícita del precio actual con tu probabilidad real estimada (Bayesiana). Solo emite orden de compra si la ventaja matemática (Edge) es superior al +10% y el ratio riesgo/beneficio es claramente asimétrico.
+4. VERIFICACIÓN DE CLÁUSULAS: Revisa si los términos de la pregunta imponen restricciones estrictas (fechas, fuentes de verificación) que benefician indiscutiblemente a una de las opciones.
+5. Si el mercado está en precio justo o hay ambigüedad sin ventaja estadística demostrable, emite PASS.
+
+Responde ÚNICAMENTE con esta estructura JSON:
 {{
     "decision": "BUY_YES" | "BUY_NO" | "PASS",
-    "conviction": <número entero 1 al 10>,
-    "estimated_real_prob": <probabilidad real calculada entre 0.01 y 0.99>,
-    "edge_pct": <porcentaje de ventaja estimada, ej. 15.5>,
-    "rationale": "<análisis conciso y contundente en español explicando la tesis>"
+    "conviction": <número entero del 1 al 10>,
+    "estimated_real_prob": <probabilidad estadística real calculada entre 0.01 y 0.99>,
+    "edge_pct": <porcentaje de ventaja matemática calculada, ej. 18.5>,
+    "rationale": "<tesis cuantitativa concisa explicando el modelo, datos históricos y por qué el mercado está mal tasado>"
 }}
 """
 

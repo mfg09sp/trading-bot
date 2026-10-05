@@ -114,11 +114,15 @@ def run_cycle():
     news_summary_text = "\n".join(all_news[:25])
     logger.info(f"Se recopilaron {len(all_news)} catalizadores informativos.")
 
-    # 3. Analizar Polymarket con mayor amplitud de categorías
-    logger.info("2/4. Escaneando mercados líquidos en Polymarket...")
+    # 3. Analizar Polymarket con mayor amplitud de categorías y algoritmos cuantitativos
+    logger.info("2/4. Escaneando mercados líquidos en Polymarket (Política, Macro, Cripto, IA, Tech, Deportes)...")
     poly_summary = poly_paper.get_summary()
-    keywords = ["Trump", "Elon", "Musk", "Fed", "Bitcoin", "Crypto", "Election", "Economy", "AI", "Tariff"]
-    markets = poly_service.search_markets_by_keywords(keywords, limit_per_cat=30)
+    keywords = [
+        "Trump", "Elon", "Musk", "Fed", "Bitcoin", "Crypto", "Election", "President",
+        "Senate", "Economy", "Inflation", "AI", "OpenAI", "Nvidia", "Tariff",
+        "War", "SpaceX", "Champions", "World Cup", "Nobel"
+    ]
+    markets = poly_service.search_markets_by_keywords(keywords, limit_per_cat=35)
     
     poly_trades_executed = 0
     for m in markets:
@@ -186,7 +190,8 @@ def run_cycle():
                         summary=updated_summary
                     )
                     logger.info(f"¡Posición abierta en Polymarket por ${bet_amount} USDC!")
-                    break  # Abrir 1 posición por ciclo para diversificar gradualmente
+                    if poly_trades_executed >= 2:
+                        break  # Hasta 2 posiciones de alta convicción por ciclo para diversificar gradualmente
 
     # 4. Analizar Alpaca Cripto y Acciones
     logger.info("3/4. Analizando activos en Alpaca (Cripto y Acciones)...")

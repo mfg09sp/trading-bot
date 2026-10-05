@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 10035.943896074818,
+  "cash_usdc": 4035.9438960748175,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -88,6 +88,72 @@
         "score": 7
       },
       "opened_at": "2026-10-05T01:47:29.877672+00:00"
+    },
+    "601826": {
+      "market_id": "601826",
+      "question": "Will Flávio Bolsonaro win the 2026 Brazilian presidential election?",
+      "event_title": "Brazil Presidential Election",
+      "slug": "will-flvio-bolsonaro-win-the-2026-brazilian-presidential-election",
+      "url": "https://polymarket.com/market/will-flvio-bolsonaro-win-the-2026-brazilian-presidential-election",
+      "outcome": "No",
+      "entry_price": 0.1805,
+      "current_price": 0.1805,
+      "shares": 11080.3324099723,
+      "invested_usd": 2000.0,
+      "current_value": 2000.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Análisis Gemini",
+        "headline": "La probabilidad de mercado de 0.8195 es una anomalía extrema. Flávio Bolsonaro enfrenta barreras legales significativas, incluyendo la inhabilitación política de su padre (Jair Bol",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 9
+      },
+      "opened_at": "2026-10-05T10:01:27.289008+00:00"
+    },
+    "682705": {
+      "market_id": "682705",
+      "question": "Will Benjamin Netanyahu be the next Prime Minister of Israel?",
+      "event_title": "Prime Minister of Israel after the next election?",
+      "slug": "will-benjamin-netanyahu-be-the-next-prime-minister-of-israel",
+      "url": "https://polymarket.com/market/will-benjamin-netanyahu-be-the-next-prime-minister-of-israel",
+      "outcome": "No",
+      "entry_price": 0.635,
+      "current_price": 0.635,
+      "shares": 3149.6062992125985,
+      "invested_usd": 2000.0,
+      "current_value": 2000.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Análisis Gemini",
+        "headline": "El mercado sobreestima la resiliencia política de Netanyahu a largo plazo. Históricamente, los primeros ministros israelíes enfrentan una alta tasa de rotación tras periodos de cri",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 8
+      },
+      "opened_at": "2026-10-05T10:02:53.214394+00:00"
+    },
+    "4906127": {
+      "market_id": "4906127",
+      "question": "US announces end of Iranian blockade by October 15, 2026?",
+      "event_title": "US announces end of Iranian blockade by...?",
+      "slug": "us-announces-end-of-iranian-blockade-by-october-15-2026",
+      "url": "https://polymarket.com/market/us-announces-end-of-iranian-blockade-by-october-15-2026",
+      "outcome": "No",
+      "entry_price": 0.895,
+      "current_price": 0.895,
+      "shares": 2234.63687150838,
+      "invested_usd": 2000.0,
+      "current_value": 2000.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Análisis Gemini",
+        "headline": "The market is currently pricing a 10.5% probability of a policy reversal (lifting the blockade) within a 15-month window. Historical base rates for the reversal of major geopolitic",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 9
+      },
+      "opened_at": "2026-10-05T10:02:59.349474+00:00"
     }
   },
   "closed_trades": [

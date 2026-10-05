@@ -127,7 +127,7 @@ class PolymarketService:
         Busca mercados activos relacionados con palabras clave (Trump, Musk, Fed, etc.)
         en las categorías más relevantes de Polymarket.
         """
-        categories = ["politics", "crypto", "business", None]
+        categories = ["politics", "crypto", "business", "science", "pop-culture", "sports", None]
         seen_ids = set()
         matched_markets = []
 
