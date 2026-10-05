@@ -327,8 +327,8 @@ def run_bot():
                     if cooldown_remaining > 0:
                         continue
 
-                    # Saltar si ya tenemos posición abierta en este activo
-                    if symbol in current_positions or clean_s in current_positions:
+                    # Saltar si ya tenemos posición abierta en este activo o si es inversión a largo plazo
+                    if symbol in current_positions or clean_s in current_positions or clean_s in config.LONG_TERM_SYMBOLS:
                         continue
 
                     # Descargar velas de 5 minutos

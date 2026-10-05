@@ -38,6 +38,10 @@ FUTURES_SYMBOLS: List[str] = ["BITO", "USO", "GLD", "SLV", "TQQQ", "UPRO", "SOXL
 FUTURES_RISK_PER_TRADE_USD: float = float(os.getenv("FUTURES_RISK_PER_TRADE_USD", "2500.0"))  # Aumentado a $2,500
 MAX_FUTURES_POSITIONS: int = int(os.getenv("MAX_FUTURES_POSITIONS", "2"))
 
+# Activos de Inversión a Largo Plazo (Buy & Hold sin Stop Loss ni Take Profit)
+_long_term_raw = os.getenv("LONG_TERM_SYMBOLS", "SPY,VOO,IVV")
+LONG_TERM_SYMBOLS: List[str] = [s.strip().upper() for s in _long_term_raw.split(",") if s.strip()]
+
 # Base URLs
 if ALPACA_PAPER:
     ALPACA_BASE_URL = "https://paper-api.alpaca.markets"

@@ -66,7 +66,9 @@ def run_cycle():
         current_inv = float(alp_summary.get("long_market_value", 0.0))
 
         for sym, pos in list(alpaca_positions_check.items()):
-            if "/" in sym and sym.replace("/", "") in alpaca_positions_check:
+            clean_sym = sym.replace("/", "").upper()
+            if clean_sym in config.LONG_TERM_SYMBOLS:
+                # Activo de cartera a largo plazo (Buy & Hold): Sin Stop Loss ni Take Profit
                 continue
 
             cur_p = pos.get("current_price", 0.0)
