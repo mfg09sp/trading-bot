@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 3736.793690235787,
+  "cash_usdc": 1736.793690235787,
   "active_positions": {
     "5114463": {
       "market_id": "5114463",
@@ -51,12 +51,12 @@
       "url": "https://polymarket.com/market/will-josh-shapiro-win-the-2028-democratic-presidential-nomination",
       "outcome": "Yes",
       "entry_price": 0.058,
-      "current_price": 0.059,
+      "current_price": 0.0585,
       "shares": 34482.75862068965,
       "invested_usd": 2000.0,
-      "current_value": 2034.4827586206893,
-      "unrealized_pnl": 34.48275862068931,
-      "unrealized_pnl_pct": 1.7241379310344724,
+      "current_value": 2017.2413793103447,
+      "unrealized_pnl": 17.241379310344655,
+      "unrealized_pnl_pct": 0.8620689655172421,
       "catalyst": {
         "category": "Política / Primarias EE.UU.",
         "headline": "Gobernador de Pensilvania con aprobación >60% en estado bisagra clave. Mercado lo infravalora al 5.8% frente a perfiles polarizados (AOC al 17%). Gran asimetría de revalorización.",
@@ -72,12 +72,12 @@
       "url": "https://polymarket.com/market/will-david-lisnard-win-the-2027-french-presidential-election",
       "outcome": "No",
       "entry_price": 0.895,
-      "current_price": 0.8945,
+      "current_price": 0.895,
       "shares": 2234.63687150838,
       "invested_usd": 2000.0,
-      "current_value": 1998.8826815642458,
-      "unrealized_pnl": -1.117318435754214,
-      "unrealized_pnl_pct": -0.055865921787715746,
+      "current_value": 2000.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
       "catalyst": {
         "category": "Análisis Gemini",
         "headline": "David Lisnard, aunque es una figura respetada dentro de la derecha tradicional francesa (LR/Nouvelle Énergie), carece de la proyección nacional y el apoyo masivo necesario para sup",
@@ -116,12 +116,12 @@
       "url": "https://polymarket.com/market/will-flvio-bolsonaro-win-the-2026-brazilian-presidential-election",
       "outcome": "No",
       "entry_price": 0.166,
-      "current_price": 0.165,
+      "current_price": 0.1555,
       "shares": 12048.192771084337,
       "invested_usd": 2000.0,
-      "current_value": 1987.9518072289159,
-      "unrealized_pnl": -12.048192771084132,
-      "unrealized_pnl_pct": -0.6024096385542174,
+      "current_value": 1873.4939759036145,
+      "unrealized_pnl": -126.50602409638554,
+      "unrealized_pnl_pct": -6.325301204819282,
       "catalyst": {
         "category": "Análisis Gemini",
         "headline": "El mercado presenta una ineficiencia extrema. Flávio Bolsonaro enfrenta barreras legales significativas (inelegibilidad del clan Bolsonaro en Brasil) y carece del capital político ",
@@ -151,6 +151,28 @@
         "score": 9
       },
       "opened_at": "2026-10-04T23:00:31.307178+00:00"
+    },
+    "562831": {
+      "market_id": "562831",
+      "question": "2026 Balance of Power: R Senate, R House",
+      "event_title": "Balance of Power: 2026 Midterms",
+      "slug": "2026-balance-of-power-r-senate-r-house-537",
+      "url": "https://polymarket.com/market/2026-balance-of-power-r-senate-r-house-537",
+      "outcome": "Yes",
+      "entry_price": 0.075,
+      "current_price": 0.075,
+      "shares": 26666.666666666668,
+      "invested_usd": 2000.0,
+      "current_value": 2000.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Análisis Gemini",
+        "headline": "El mercado subestima drásticamente la probabilidad de una victoria republicana en ambas cámaras para 2026. Históricamente, el partido del presidente en ejercicio suele sufrir en la",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 7
+      },
+      "opened_at": "2026-10-05T01:47:29.877672+00:00"
     }
   },
   "closed_trades": [
