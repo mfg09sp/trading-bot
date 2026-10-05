@@ -229,6 +229,10 @@ def run_cycle():
         tech_data = {"current_price": cur_price}
         if not bars.empty and len(bars) >= 14:
             close = bars["close"]
+            high = bars["high"]
+            low = bars["low"]
+            vol = bars["volume"]
+
             ema9 = float(close.ewm(span=9, adjust=False).mean().iloc[-1])
             ema21 = float(close.ewm(span=21, adjust=False).mean().iloc[-1])
             delta = close.diff()
@@ -236,19 +240,52 @@ def run_cycle():
             loss = (-delta.where(delta < 0, 0.0)).rolling(14).mean()
             rs = gain / loss
             rsi = float((100 - (100 / (1 + rs))).iloc[-1])
+
+            support = float(low.tail(20).min())
+            resistance = float(high.tail(20).max())
+            dist_support_pct = round((cur_price - support) / cur_price * 100, 2)
+            dist_resist_pct = round((resistance - cur_price) / cur_price * 100, 2)
+            avg_vol = float(vol.tail(14).mean()) if len(vol) >= 14 else 1.0
+            last_vol = float(vol.iloc[-1]) if len(vol) > 0 else 1.0
+            vol_ratio = round(last_vol / avg_vol, 2) if avg_vol > 0 else 1.0
+
+            # Detección algorítmica de patrones chartistas
+            detected_patterns = []
+            if ema9 > ema21 and close.iloc[-1] > ema9:
+                detected_patterns.append("Cruce alcista EMA9/EMA21 con Momentum")
+            if rsi < 38 and dist_support_pct < 1.5:
+                detected_patterns.append("Rebote en Soporte Clave con RSI en Sobreventa")
+            if cur_price >= resistance * 0.995 and vol_ratio > 1.2:
+                detected_patterns.append("Ruptura Alcista de Resistencia (Breakout con Volumen)")
+            if not detected_patterns:
+                detected_patterns.append("Rango de Consolidación Lateral")
+
             tech_data.update({
                 "EMA_9": round(ema9, 2),
                 "EMA_21": round(ema21, 2),
                 "RSI_14": round(rsi, 2),
-                "trend": "Alcista" if ema9 > ema21 else "Bajista/Lateral"
+                "trend": "Alcista" if ema9 > ema21 else "Bajista/Lateral",
+                "support_level": round(support, 2),
+                "resistance_level": round(resistance, 2),
+                "dist_to_support_pct": dist_support_pct,
+                "dist_to_resistance_pct": dist_resist_pct,
+                "volume_expansion_ratio": vol_ratio,
+                "algorithmic_patterns": detected_patterns,
+                "minimum_profitability_target": "Ratio Riesgo/Beneficio >= 2.0"
             })
 
-        logger.info(f"Consultando a Gemini para {sym} (${cur_price:,.2f})...")
+        # Búsqueda en vivo de tuits y noticias específicas del activo
+        clean_sym_name = sym.replace("/", "").replace("USD", "")
+        asset_news = news_service.search_live_web_and_tweets(f"{clean_sym_name} stock crypto news OR earnings OR tweet", max_items=4)
+        asset_news_text = "\n".join([f"- [{item.get('source', 'Web')}] {item.get('title', '')} ({item.get('pub_date', '')})" for item in asset_news])
+        alpaca_context = f"=== TUITS Y NOTICIAS EN VIVO DE {sym} ===\n{asset_news_text or 'Sin alertas de última hora.'}\n\n=== CONTEXTO MACRO Y REDES ===\n{news_summary_text}"
+
+        logger.info(f"Consultando a Gemini para {sym} (${cur_price:,.2f}) con análisis técnico algorítmico y tuits...")
         crypto_analysis = analyst.analyze_crypto_stock(
             symbol=sym,
             current_price=cur_price,
             technical_data=tech_data,
-            context_news=news_summary_text
+            context_news=alpaca_context
         )
 
         c_decision = crypto_analysis.get("decision", "HOLD")
@@ -258,7 +295,11 @@ def run_cycle():
 
         logger.info(f"-> Veredicto Gemini [{c_model}] para {sym}: {c_decision} (Convicción: {c_conviction}/10)")
 
-        if c_decision == "BUY" and c_conviction >= 7:
+        r_r = float(crypto_analysis.get("risk_reward_ratio", 2.0) or 2.0)
+        pattern_detected = crypto_analysis.get("pattern_detected", "Patrón Cuantitativo")
+        profitability = crypto_analysis.get("profitability_assessment", "")
+
+        if c_decision == "BUY" and c_conviction >= 7 and r_r >= 1.8:
             # Calcular cantidad (decimal para cripto, entero para acciones)
             is_crypto = "/" in sym
             if is_crypto:
@@ -267,7 +308,7 @@ def run_cycle():
                 qty = float(max(1, int(config.RISK_PER_TRADE_USD / cur_price)))
 
             if qty > 0:
-                logger.info(f"Ejecutando orden de compra en Alpaca para {qty} {sym}...")
+                logger.info(f"Ejecutando orden de compra en Alpaca para {qty} {sym} (Patrón: {pattern_detected}, R:R: {r_r}:1)...")
                 tp_pct = float(crypto_analysis.get("target_take_profit_pct", 3.0)) / 100.0
                 sl_pct = float(crypto_analysis.get("target_stop_loss_pct", 1.5)) / 100.0
                 
@@ -285,7 +326,7 @@ def run_cycle():
                         side="buy",
                         qty=qty,
                         price=cur_price,
-                        reason=f"Análisis Gemini ({c_model}) | Convicción {c_conviction}/10: {c_rationale}"
+                        reason=f"IA Gemini ({c_model}) | Patrón: {pattern_detected} (R:R {r_r}:1) | {c_rationale}"
                     )
                     logger.info(f"¡Orden ejecutada con éxito en Alpaca para {sym}!")
                     break

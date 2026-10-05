@@ -227,30 +227,43 @@ Responde ÚNICAMENTE con esta estructura JSON:
             }
 
         sys_inst = (
-            "Eres un gestor senior de cartera de trading algorítmico y cuantitativo. "
-            "Evalúas setups de alta probabilidad para criptomonedas y acciones. "
-            "Responde SIEMPRE con un JSON válido estricto sin rodeos."
+            "Eres un gestor cuantitativo senior de fondos de cobertura y analista técnico de precisión. "
+            "Tu misión es evaluar activos en Alpaca (criptomonedas y acciones) combinando patrones chartistas rigurosos, "
+            "tuits/noticias de última hora y rentabilidad matemática estricta (ratio riesgo/beneficio mínimo de 2:1). "
+            "Responde SIEMPRE con un JSON válido estricto sin ningún texto fuera del bloque JSON."
         )
 
         prompt = f"""
---- ACTIVO A ANALIZAR ---
+--- ACTIVO FINANCIERO A ANALIZAR ---
 Símbolo: {symbol}
 Precio Actual: {current_price} USD
-Métricas Técnicas / Niveles: {json.dumps(technical_data)}
+Métricas Técnicas y Patrones de Precio: {json.dumps(technical_data, indent=2)}
 
---- CONTEXTO MACROECONÓMICO Y NOTICIAS ---
+--- INVESTIGACIÓN EN VIVO (NOTICIAS, TUITS EN X, CATALIZADORES Y REDES) ---
 {context_news}
 
---- INSTRUCCIONES ---
-1. Determina si el activo presenta una oportunidad clara de compra con ratio riesgo/beneficio favorable.
-2. Si detectas sobrecompra, resistencia extrema o riesgo de corrección, emite HOLD o PASS.
-3. Responde únicamente con esta estructura JSON:
+--- INSTRUCCIONES DE ANÁLISIS DE PATRONES Y RENTABILIDAD ---
+1. ANÁLISIS DE PATRONES TÉCNICOS:
+   - Evalúa si el precio está testeando soportes/resistencias clave, haciendo un breakout (ruptura con volumen), rebote de sobreventa o cruce de medias móviles.
+   - Detecta si hay figuras de reversión o continuación alcista.
+2. CÁLCULO DE RENTABILIDAD Y RATIO RIESGO/BENEFICIO (R:R):
+   - Una operación SOLO es rentable si el objetivo de ganancia proyectado es al menos el doble de la pérdida asumida (Ratio R:R >= 2.0).
+   - Por ejemplo: Take Profit +3.0% / Stop Loss -1.2% (Ratio 2.5:1).
+   - Si la rentabilidad esperada no compensa el riesgo o el activo está lateral/estancado sin catalizador claro, emite HOLD.
+3. IMPACTO DE TUITS Y NOTICIAS EN VIVO:
+   - Cruza el patrón del gráfico con los titulares, tuits recientes de CEOs/líderes (Elon Musk, Jensen Huang, Sam Altman) o noticias macro.
+4. Si el setup es claro y rentable, emite BUY con convicción >= 7/10.
+
+Responde ÚNICAMENTE con esta estructura JSON:
 {{
     "decision": "BUY" | "HOLD" | "SELL",
     "conviction": <número entero 1 al 10>,
     "target_take_profit_pct": <número ej. 3.0>,
-    "target_stop_loss_pct": <número ej. 1.5>,
-    "rationale": "<explicación estratégica en español de la entrada o abstención>"
+    "target_stop_loss_pct": <número ej. 1.2>,
+    "risk_reward_ratio": <número decimal ej. 2.5>,
+    "pattern_detected": "<nombre del patrón técnico o estructura identificada>",
+    "profitability_assessment": "<evaluación cuantitativa de por qué esta operación es matemáticamente rentable>",
+    "rationale": "<análisis estratégico completo en español integrando gráfico, tuits y noticias>"
 }}
 """
 
