@@ -100,7 +100,10 @@ class PolymarketPaperEngine:
         outcome: str,
         amount_usd: float,
         catalyst: Optional[Dict[str, Any]] = None,
-        force: bool = False
+        force: bool = False,
+        no_stop_loss: bool = False,
+        hold_until_resolution: bool = False,
+        target_exit_date: Optional[str] = None
     ) -> Optional[Dict[str, Any]]:
         """
         Abre una posición simulada en Polymarket.
@@ -138,6 +141,9 @@ class PolymarketPaperEngine:
             "unrealized_pnl": 0.0,
             "unrealized_pnl_pct": 0.0,
             "catalyst": catalyst or {},
+            "no_stop_loss": no_stop_loss,
+            "hold_until_resolution": hold_until_resolution,
+            "target_exit_date": target_exit_date,
             "opened_at": datetime.now(timezone.utc).isoformat()
         }
 
@@ -181,23 +187,38 @@ class PolymarketPaperEngine:
             should_close = False
             close_reason = ""
 
-            # 1. Take Profit (+30% o ganancia >= +$50.00 USD)
-            if pnl_pct >= config.POLYMARKET_TAKE_PROFIT_PCT or pnl >= 50.0:
-                should_close = True
-                close_reason = f"🎯 TAKE PROFIT (+{pnl_pct*100:.1f}%)"
+            no_stop_loss = pos.get("no_stop_loss", False)
+            hold_until_resolution = pos.get("hold_until_resolution", False)
+            target_exit_date = pos.get("target_exit_date")
+            now_iso = datetime.now(timezone.utc).isoformat()
 
-            # 2. Stop Loss (-15% o pérdida <= -$50.00 USD)
-            elif pnl_pct <= -config.POLYMARKET_STOP_LOSS_PCT or pnl <= -50.0:
-                should_close = True
-                close_reason = f"🛑 STOP LOSS ({pnl_pct*100:.1f}%)"
-
-            # 3. Mercado resuelto o cerrado
-            elif updated_m.get("closed") or current_price >= 0.99 or current_price <= 0.01:
+            # 1. Mercado resuelto o cerrado por Polymarket
+            if updated_m.get("closed") or current_price >= 0.99 or current_price <= 0.01:
                 should_close = True
                 if current_price >= 0.95:
                     close_reason = "🏁 RESOLUCIÓN GANADA ($1.00)"
                 else:
                     close_reason = "❌ RESOLUCIÓN PERDIDA ($0.00)"
+
+            # 2. Retirada programada por fecha objetivo (ej. tras elecciones del 29 nov 2026)
+            elif target_exit_date and now_iso >= target_exit_date:
+                should_close = True
+                close_reason = f"📅 RETIRADA PROGRAMADA TRAS ELECCIONES ({target_exit_date[:10]} - Cuota: ${current_price:.3f} / P&L: {pnl_pct*100:+.1f}%)"
+
+            # 3. Retirada por máxima cotización en posición de convicción (precio sube a cota de victoria >= 0.95)
+            elif hold_until_resolution and current_price >= 0.95:
+                should_close = True
+                close_reason = f"🎯 RETIRADA MÁXIMA TRAS SALIDA/VICTORIA (${current_price:.3f} - +{pnl_pct*100:.1f}%)"
+
+            # 4. Take Profit estándar (solo para posiciones normales sin hold_until_resolution)
+            elif not hold_until_resolution and pnl_pct >= config.POLYMARKET_TAKE_PROFIT_PCT:
+                should_close = True
+                close_reason = f"🎯 TAKE PROFIT (+{pnl_pct*100:.1f}%)"
+
+            # 5. Stop Loss estándar (solo para posiciones normales sin no_stop_loss ni hold_until_resolution)
+            elif not no_stop_loss and not hold_until_resolution and pnl_pct <= -config.POLYMARKET_STOP_LOSS_PCT:
+                should_close = True
+                close_reason = f"🛑 STOP LOSS ({pnl_pct*100:.1f}%)"
 
             if should_close:
                 # Cerrar posición

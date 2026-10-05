@@ -97,7 +97,16 @@ def main():
         "source": f"Google {model_used} (Convicción {conviction}/10)"
     }
     
-    pos = paper.open_position(market_data, "Yes", bet_amount, catalyst_info, force=True)
+    pos = paper.open_position(
+        market=market_data,
+        outcome="Yes",
+        amount_usd=bet_amount,
+        catalyst=catalyst_info,
+        force=True,
+        no_stop_loss=True,
+        hold_until_resolution=True,
+        target_exit_date="2026-11-29T23:59:59Z"
+    )
     
     if pos:
         logger.info(f"¡Apuesta de ${bet_amount:,.2f} USDC ejecutada con éxito!")
