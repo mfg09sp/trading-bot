@@ -99,14 +99,15 @@ class PolymarketPaperEngine:
         market: Dict[str, Any],
         outcome: str,
         amount_usd: float,
-        catalyst: Optional[Dict[str, Any]] = None
+        catalyst: Optional[Dict[str, Any]] = None,
+        force: bool = False
     ) -> Optional[Dict[str, Any]]:
         """
         Abre una posición simulada en Polymarket.
         Compra 'shares' del contrato seleccionado (Yes o No).
         """
         market_id = market["id"]
-        if market_id in self.data["active_positions"]:
+        if market_id in self.data["active_positions"] and not force:
             logger.info(f"Ya existe posición abierta para el mercado {market_id}")
             return None
 
@@ -115,7 +116,7 @@ class PolymarketPaperEngine:
             logger.warning(f"Precio fuera de rango operativo ({price}) para {outcome}")
             return None
 
-        if not self.can_open_position(amount_usd):
+        if not force and not self.can_open_position(amount_usd):
             logger.warning(f"No se puede abrir posición: saldo o límite de posiciones alcanzado.")
             return None
 

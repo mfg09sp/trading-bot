@@ -49,7 +49,7 @@ else:
 # Parámetros de Polymarket (Paper Trading / Simulación)
 POLYMARKET_STARTING_BALANCE_USDC: float = float(os.getenv("POLYMARKET_STARTING_BALANCE_USDC", "20000.0"))  # $20,000 USDC
 POLYMARKET_MAX_BET_USDC: float = float(os.getenv("POLYMARKET_MAX_BET_USDC", "2000.0"))  # $2,000 USDC por apuesta directa
-POLYMARKET_MAX_POSITIONS: int = int(os.getenv("POLYMARKET_MAX_POSITIONS", "8"))
+POLYMARKET_MAX_POSITIONS: int = int(os.getenv("POLYMARKET_MAX_POSITIONS", "15"))
 POLYMARKET_TAKE_PROFIT_PCT: float = float(os.getenv("POLYMARKET_TAKE_PROFIT_PCT", "0.30"))  # +30%
 POLYMARKET_STOP_LOSS_PCT: float = float(os.getenv("POLYMARKET_STOP_LOSS_PCT", "0.15"))      # -15%
 POLYMARKET_POLL_INTERVAL_SECONDS: int = int(os.getenv("POLYMARKET_POLL_INTERVAL_SECONDS", "300"))  # 5 minutos
