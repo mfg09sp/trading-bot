@@ -153,25 +153,39 @@ class AlpacaService:
         symbol: str,
         qty: float,
         current_price: float,
-        tp_pct: float,
-        sl_pct: float
+        tp_pct: Optional[float] = None,
+        sl_pct: Optional[float] = None,
+        target_tp_price: Optional[float] = None,
+        target_sl_price: Optional[float] = None
     ):
         """
-        Coloca una orden bracket atómica:
-        - Orden principal: Compra a mercado
-        - Orden de Take Profit: Venta límite a current_price * (1 + tp_pct)
-        - Orden de Stop Loss: Venta stop a current_price * (1 - sl_pct)
-        Ambas quedan registradas y aseguradas directamente en Alpaca.
+        Coloca una orden bracket atómica en Alpaca:
+        - Si la IA proporciona un precio objetivo esperado (target_tp_price), se usa directamente.
+        - De lo contrario, se calcula usando tp_pct / sl_pct.
+        - Orden de Take Profit: Venta límite al valor esperado de subida
+        - Orden de Stop Loss: Venta stop para proteger el capital si la hipótesis falla
         """
-        if current_price < 1.0:
-            tp_price = round(current_price * (1.0 + tp_pct), 4)
-            sl_price = round(current_price * (1.0 - sl_pct), 4)
-        elif current_price < 50.0:
-            tp_price = round(current_price * (1.0 + tp_pct), 3)
-            sl_price = round(current_price * (1.0 - sl_pct), 3)
+        if target_tp_price is not None and target_tp_price > current_price:
+            tp_price = target_tp_price
         else:
-            tp_price = round(current_price * (1.0 + tp_pct), 2)
-            sl_price = round(current_price * (1.0 - sl_pct), 2)
+            pct = tp_pct if tp_pct is not None else config.TAKE_PROFIT_PCT
+            tp_price = current_price * (1.0 + pct)
+
+        if target_sl_price is not None and 0 < target_sl_price < current_price:
+            sl_price = target_sl_price
+        else:
+            pct = sl_pct if sl_pct is not None else config.STOP_LOSS_PCT
+            sl_price = current_price * (1.0 - pct)
+
+        if current_price < 1.0:
+            tp_price = round(tp_price, 4)
+            sl_price = round(sl_price, 4)
+        elif current_price < 50.0:
+            tp_price = round(tp_price, 3)
+            sl_price = round(sl_price, 3)
+        else:
+            tp_price = round(tp_price, 2)
+            sl_price = round(sl_price, 2)
 
         order_data = MarketOrderRequest(
             symbol=symbol,

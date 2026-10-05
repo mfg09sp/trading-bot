@@ -98,23 +98,50 @@ def notify_bot_started(paper_mode: bool, symbols: list, risk_usd: float, total_e
     send_telegram_message(msg)
 
 
-def notify_order_placed(symbol: str, qty: float, entry_price: float, tp_price: float, sl_price: float, total_equity: float = None, cash: float = None, invested: float = None) -> None:
+def notify_order_placed(
+    symbol: str,
+    qty: float,
+    entry_price: float,
+    tp_price: float,
+    sl_price: float,
+    total_equity: float = None,
+    cash: float = None,
+    invested: float = None,
+    ai_prediction: str = None,
+    pattern: str = None,
+    reason: str = None
+) -> None:
     profit_pct = ((tp_price - entry_price) / entry_price) * 100
     loss_pct = ((entry_price - sl_price) / entry_price) * 100
     qty_str = f"{qty:.6f}".rstrip("0").rstrip(".") if qty < 1 else f"{qty:.2f}"
     footer = _equity_footer(total_equity, cash, invested)
     footer_str = f"{footer}━━━━━━━━━━━━━━━━━━\n" if footer else ""
+
+    ai_block = ""
+    if ai_prediction:
+        clean_pred = str(ai_prediction).replace("<", "&lt;").replace(">", "&gt;")
+        ai_block += f"🧠 <b>Predicción IA:</b> {clean_pred}\n"
+    if pattern:
+        clean_pat = str(pattern).replace("<", "&lt;").replace(">", "&gt;")
+        ai_block += f"📊 <b>Patrón Gráfica:</b> {clean_pat}\n"
+    if reason and not ai_prediction:
+        clean_re = str(reason).replace("<", "&lt;").replace(">", "&gt;")
+        ai_block += f"💡 <b>Tesis:</b> {clean_re[:150]}\n"
+    if ai_block:
+        ai_block += "━━━━━━━━━━━━━━━━━━\n"
+
     msg = (
-        f"🚀 <b>NUEVA ORDEN EJECUTADA: {symbol}</b>\n"
+        f"🚀 <b>NUEVA ORDEN EJECUTADA POR IA: {symbol}</b>\n"
         f"━━━━━━━━━━━━━━━━━━\n"
         f"🔹 <b>Acción:</b> COMPRA (Long)\n"
         f"🔹 <b>Cantidad:</b> {qty_str}\n"
         f"🔹 <b>Precio Entrada:</b> {_fmt(entry_price)}\n"
-        f"🎯 <b>Take Profit:</b> {_fmt(tp_price)} (+{profit_pct:.1f}%)\n"
-        f"🛑 <b>Stop Loss:</b> {_fmt(sl_price)} (-{loss_pct:.1f}%)\n"
+        f"🎯 <b>Valor Esperado de Subida (TP):</b> {_fmt(tp_price)} (+{profit_pct:.1f}%)\n"
+        f"🛑 <b>Stop Loss de Seguridad:</b> {_fmt(sl_price)} (-{loss_pct:.1f}%)\n"
         f"━━━━━━━━━━━━━━━━━━\n"
+        f"{ai_block}"
         f"{footer_str}"
-        f"<i>Orden bracket vinculada y protegida en el exchange.</i>"
+        f"<i>El bot vigilará la posición para sacar en el Stop Loss o al llegar al valor esperado.</i>"
     )
     logger.info(f"[NOTIFICACIÓN] Orden compra enviada en {symbol} - TP: {_fmt(tp_price)}, SL: {_fmt(sl_price)}")
     send_telegram_message(msg)

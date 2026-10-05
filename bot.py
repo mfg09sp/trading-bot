@@ -19,6 +19,8 @@ from datetime import datetime
 
 import config
 from alpaca_service import AlpacaService
+from ai_analyst import AIAnalyst
+from news_service import NewsService
 from strategy import evaluate_market_data
 from market_screener import scan_promising_assets, scan_futures_candidates
 from notifier import (
@@ -116,12 +118,13 @@ def run_bot():
         logger.info(f"Valor de Portafolio: ${account['portfolio_value']:,.2f}")
         logger.info(f"Dinero Invertido: ${account['invested']:,.2f}")
         logger.info(f"Máximo de posiciones simultáneas: {config.MAX_ACTIVE_POSITIONS}")
-        logger.info(f"Riesgo por operación: ${config.RISK_PER_TRADE_USD:,.2f}")
-        logger.info(f"Take Profit: +{config.TAKE_PROFIT_PCT*100:.1f}% | Stop Loss: -{config.STOP_LOSS_PCT*100:.1f}%")
-        logger.info(f"Filtro Cooldown anti-sobreoperativa: {config.COOLDOWN_MINUTES} minutos")
     except Exception as e:
         logger.error(f"Fallo al obtener estado de cuenta: {e}")
         return
+
+    analyst = AIAnalyst()
+    news_service = NewsService()
+    logger.info(f"Cerebro IA Activo: Google Gemini (API configurada: {analyst.is_available()})")
 
     # Notificar inicio a Telegram
     notify_bot_started(
@@ -248,32 +251,9 @@ def run_bot():
                     f"P&L: ${pnl:.2f} ({pnl_pct:+.2f}%)"
                 )
 
-                # Evaluar velas de 5 minutos de la posición abierta
-                pos_bars = alpaca.get_bars(symbol, limit=35)
-                if not pos_bars.empty:
-                    exit_signal, exit_ind = evaluate_market_data(
-                        pos_bars,
-                        entry_price=pos['avg_entry_price']
-                    )
-                    # Solo cierra anticipadamente si se cumplió condición técnica estricta
-                    if exit_signal == "SELL":
-                        exit_reason = exit_ind.get("reason", "Señal técnica de venta")
-                        cur_p = pos.get("current_price", 0.0)
-                        entry_p = pos.get("avg_entry_price", cur_p)
-                        qty = pos.get("qty", 1.0)
-                        real_pnl = (cur_p - entry_p) * qty if (cur_p > 0 and entry_p > 0) else pnl
-
-                        logger.info(f"[{symbol}] SALIDA DINÁMICA: {exit_reason}. Cerrando a {cur_p} (P&L: ${real_pnl:+.2f})...")
-                        close_res = alpaca.close_position(symbol)
-                        if close_res:
-                            eq_now, cash_now, inv_now = get_current_equity_safe(alpaca)
-                            notify_dynamic_exit(symbol, cur_p, real_pnl, exit_reason, total_equity=eq_now, cash=cash_now, invested=inv_now)
-                            cooldown_tracker[symbol] = time.time()
-                            cooldown_tracker[clean_sym] = time.time()
-                            current_positions.pop(symbol, None)
-                            current_positions.pop(clean_sym, None)
-                            previous_positions.pop(symbol, None)
-                            previous_positions.pop(clean_sym, None)
+                # El bot vigila la posición: las órdenes bracket de Alpaca ejecutan automáticamente
+                # la salida al llegar al valor esperado de subida (Take Profit) o al Stop Loss de seguridad.
+                pass
 
             # Actualizar registro de posiciones con los datos reales de Alpaca
             previous_positions = current_positions.copy()
@@ -351,53 +331,137 @@ def run_bot():
                     if symbol in current_positions or clean_s in current_positions:
                         continue
 
-                    # Descargar velas de 5 minutos (filtrado de ruido)
+                    # Descargar velas de 5 minutos
                     bars_df = alpaca.get_bars(symbol, limit=40)
-                    if bars_df.empty or len(bars_df) < 25:
+                    if bars_df.empty or len(bars_df) < 20:
                         continue
 
-                    # Evaluar estrategia técnica
-                    signal, indicators = evaluate_market_data(bars_df)
-                    price = indicators.get("price", 0.0)
+                    price = float(bars_df["close"].iloc[-1])
                     price_str = format_price(price)
-                    rsi = indicators.get("rsi", "N/A")
-                    ema_f = indicators.get("ema_fast", "N/A")
-                    ema_s = indicators.get("ema_slow", "N/A")
 
-                    logger.info(
-                        f"[{symbol}] Precio: {price_str} | RSI: {rsi} | "
-                        f"EMA(9): {ema_f} | EMA(21): {ema_s} | Señal: {signal}"
+                    # Preparar métricas y velas de la gráfica para el análisis de la IA
+                    close = bars_df["close"]
+                    high = bars_df["high"]
+                    low = bars_df["low"]
+                    vol = bars_df["volume"]
+
+                    ema9 = float(close.ewm(span=9, adjust=False).mean().iloc[-1])
+                    ema21 = float(close.ewm(span=21, adjust=False).mean().iloc[-1])
+                    delta = close.diff()
+                    gain = delta.where(delta > 0, 0.0).rolling(14).mean()
+                    loss = (-delta.where(delta < 0, 0.0)).rolling(14).mean()
+                    rs = gain / loss
+                    rsi = float((100 - (100 / (1 + rs))).iloc[-1])
+                    support = float(low.tail(20).min())
+                    resistance = float(high.tail(20).max())
+                    avg_vol = float(vol.tail(14).mean()) if len(vol) >= 14 else 1.0
+                    last_vol = float(vol.iloc[-1]) if len(vol) > 0 else 1.0
+
+                    recent_candles = []
+                    for idx, row in bars_df.tail(8).iterrows():
+                        recent_candles.append({
+                            "time": str(idx)[-8:],
+                            "open": round(float(row["open"]), 2),
+                            "high": round(float(row["high"]), 2),
+                            "low": round(float(row["low"]), 2),
+                            "close": round(float(row["close"]), 2),
+                            "volume": int(row["volume"])
+                        })
+
+                    tech_data = {
+                        "current_price": price,
+                        "EMA_9": round(ema9, 2),
+                        "EMA_21": round(ema21, 2),
+                        "RSI_14": round(rsi, 2),
+                        "support_level": round(support, 2),
+                        "resistance_level": round(resistance, 2),
+                        "dist_to_support_pct": round((price - support) / price * 100, 2),
+                        "dist_to_resistance_pct": round((resistance - price) / price * 100, 2),
+                        "volume_ratio": round(last_vol / avg_vol, 2) if avg_vol > 0 else 1.0,
+                        "last_candles": recent_candles
+                    }
+
+                    # Buscar noticias y tuits en vivo
+                    clean_sym_name = symbol.replace("/", "").replace("USD", "")
+                    asset_news = news_service.search_live_web_and_tweets(f"{clean_sym_name} stock crypto news OR earnings OR tweet", max_items=3)
+                    asset_news_text = "\n".join([f"- [{item.get('source', 'Web')}] {item.get('title', '')}" for item in asset_news])
+                    context_news = f"Catalizadores en vivo para {symbol}:\n{asset_news_text or 'Sin alertas de última hora.'}"
+
+                    # 🧠 CONSULTAR A LA IA (Google Gemini): Analiza la gráfica, predice el movimiento y toma la decisión
+                    logger.info(f"🧠 Consultando a Google Gemini para {symbol} ({price_str}) - Analizando gráfica y prediciendo movimiento...")
+                    ai_res = analyst.analyze_crypto_stock(
+                        symbol=symbol,
+                        current_price=price,
+                        technical_data=tech_data,
+                        context_news=context_news
                     )
 
-                    # Si hay señal de COMPRA confirmada
-                    if signal == "BUY":
-                        reason = indicators.get("reason", "Señal técnica de compra")
-                        logger.info(f"🚀 ¡SEÑAL DE COMPRA CONFIRMADA EN {symbol}! Motivo: {reason}")
-                        qty = calculate_order_qty(symbol, price, config.RISK_PER_TRADE_USD)
+                    decision = ai_res.get("decision", "HOLD")
+                    conviction = ai_res.get("conviction", 0)
+                    chart_prediction = ai_res.get("chart_prediction", "")
+                    pattern = ai_res.get("pattern_detected", "")
+                    r_r = float(ai_res.get("risk_reward_ratio", 2.0) or 2.0)
+                    model_used = ai_res.get("model_used", "gemini")
 
+                    logger.info(
+                        f"[{symbol}] Veredicto IA [{model_used}]: {decision} | Convicción: {conviction}/10 | "
+                        f"Patrón: {pattern} | Predicción: {chart_prediction[:80]}..."
+                    )
+
+                    # La IA es quien decide la compra basándose en su predicción técnica
+                    if decision == "BUY" and conviction >= 7 and r_r >= 1.8:
+                        qty = calculate_order_qty(symbol, price, config.RISK_PER_TRADE_USD)
                         if qty <= 0:
                             logger.warning(f"Cantidad calculada es 0 para {symbol} con riesgo de ${config.RISK_PER_TRADE_USD}")
                             continue
+
+                        # Extraer valor esperado de subida y stop loss calculados por la IA
+                        target_tp_price = ai_res.get("predicted_target_price")
+                        target_sl_price = ai_res.get("predicted_stop_loss_price")
+                        tp_pct = float(ai_res.get("target_take_profit_pct", 3.0)) / 100.0
+                        sl_pct = float(ai_res.get("target_stop_loss_pct", 1.2)) / 100.0
+
+                        logger.info(
+                            f"🚀 ¡COMPRA AUTORIZADA POR LA IA PARA {symbol}! "
+                            f"Predicción: {chart_prediction} | TP esperado: {target_tp_price} (+{tp_pct*100:.1f}%) | SL: {target_sl_price} (-{sl_pct*100:.1f}%)"
+                        )
 
                         try:
                             order, tp_price, sl_price = alpaca.place_bracket_order(
                                 symbol=symbol,
                                 qty=qty,
                                 current_price=price,
-                                tp_pct=config.TAKE_PROFIT_PCT,
-                                sl_pct=config.STOP_LOSS_PCT
+                                tp_pct=tp_pct,
+                                sl_pct=sl_pct,
+                                target_tp_price=target_tp_price,
+                                target_sl_price=target_sl_price
                             )
-                            logger.info(f"[OK] Orden bracket enviada con ID: {order.id} (TP={tp_price}, SL={sl_price})")
+                            logger.info(f"[OK] Orden bracket enviada con ID: {order.id} (Valor esperado TP={tp_price}, SL={sl_price})")
                             eq_now, cash_now, inv_now = get_current_equity_safe(alpaca)
-                            notify_order_placed(symbol, qty, price, tp_price, sl_price, total_equity=eq_now, cash=cash_now, invested=inv_now)
+                            notify_order_placed(
+                                symbol=symbol,
+                                qty=qty,
+                                entry_price=price,
+                                tp_price=tp_price,
+                                sl_price=sl_price,
+                                total_equity=eq_now,
+                                cash=cash_now,
+                                invested=inv_now,
+                                ai_prediction=chart_prediction,
+                                pattern=pattern,
+                                reason=ai_res.get("rationale")
+                            )
 
-                            # Registrar posición localmente con datos reales
+                            # Registrar posición localmente
                             pos_data = {
                                 "qty": qty,
                                 "avg_entry_price": price,
                                 "current_price": price,
                                 "unrealized_pl": 0.0,
-                                "unrealized_plpc": 0.0
+                                "unrealized_plpc": 0.0,
+                                "target_tp_price": tp_price,
+                                "target_sl_price": sl_price,
+                                "ai_prediction": chart_prediction
                             }
                             current_positions[symbol] = pos_data
                             current_positions[clean_s] = pos_data
@@ -405,6 +469,7 @@ def run_bot():
                             previous_positions[clean_s] = pos_data
                             available_slots -= 1
                             logger.info(f"Huecos restantes disponibles para nuevas compras: {available_slots}")
+                            break
                         except Exception as e:
                             logger.error(f"Error al enviar orden bracket para {symbol}: {e}")
 

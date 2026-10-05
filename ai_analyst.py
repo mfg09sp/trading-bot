@@ -242,28 +242,33 @@ Métricas Técnicas y Patrones de Precio: {json.dumps(technical_data, indent=2)}
 --- INVESTIGACIÓN EN VIVO (NOTICIAS, TUITS EN X, CATALIZADORES Y REDES) ---
 {context_news}
 
---- INSTRUCCIONES DE ANÁLISIS DE PATRONES Y RENTABILIDAD ---
-1. ANÁLISIS DE PATRONES TÉCNICOS:
-   - Evalúa si el precio está testeando soportes/resistencias clave, haciendo un breakout (ruptura con volumen), rebote de sobreventa o cruce de medias móviles.
-   - Detecta si hay figuras de reversión o continuación alcista.
-2. CÁLCULO DE RENTABILIDAD Y RATIO RIESGO/BENEFICIO (R:R):
-   - Una operación SOLO es rentable si el objetivo de ganancia proyectado es al menos el doble de la pérdida asumida (Ratio R:R >= 2.0).
-   - Por ejemplo: Take Profit +3.0% / Stop Loss -1.2% (Ratio 2.5:1).
-   - Si la rentabilidad esperada no compensa el riesgo o el activo está lateral/estancado sin catalizador claro, emite HOLD.
-3. IMPACTO DE TUITS Y NOTICIAS EN VIVO:
-   - Cruza el patrón del gráfico con los titulares, tuits recientes de CEOs/líderes (Elon Musk, Jensen Huang, Sam Altman) o noticias macro.
-4. Si el setup es claro y rentable, emite BUY con convicción >= 7/10.
+--- INSTRUCCIONES DE ANÁLISIS DE GRÁFICA, PREDICCIÓN Y RENTABILIDAD ---
+1. ANÁLISIS DE LA GRÁFICA Y VELAS:
+   - Analiza la acción del precio: estructura de velas recientes (mechas de rechazo, velas envolventes, consolidación), soportes/resistencias clave y volumen.
+   - Determina la tendencia predominante y si existe un patrón chartista claro (ej. ruptura de resistencia, doble suelo, retroceso a media móvil EMA9/EMA21, rebote en sobreventa RSI).
+2. PREDICCIÓN DE MOVIMIENTO FUTURO:
+   - Predice explícitamente qué va a hacer la gráfica en las próximas horas/sesiones (si romperá al alza, corregirá o seguirá lateral).
+   - Calcula el VALOR ESPERADO DE SUBIDA (precio objetivo donde el precio encontrará resistencia o culminará el impulso).
+3. RIESGO Y CONTROL DE STOP LOSS:
+   - Determina el nivel de Stop Loss técnico donde la hipótesis alcista queda invalidada.
+   - Exige una relación Riesgo/Beneficio (R:R) de al menos 1.8 a 1 (lo ideal >= 2.0).
+   - Si no hay una ventaja estadística clara, si el activo está en rango sucio o la relación riesgo/beneficio es desfavorable, emite HOLD.
+4. TOMA DE ACCIÓN:
+   - Solo emite BUY si predices subida con convicción >= 7/10 y R:R >= 1.8. En caso contrario emite HOLD.
 
 Responde ÚNICAMENTE con esta estructura JSON:
 {{
     "decision": "BUY" | "HOLD" | "SELL",
     "conviction": <número entero 1 al 10>,
-    "target_take_profit_pct": <número ej. 3.0>,
-    "target_stop_loss_pct": <número ej. 1.2>,
-    "risk_reward_ratio": <número decimal ej. 2.5>,
-    "pattern_detected": "<nombre del patrón técnico o estructura identificada>",
+    "chart_prediction": "<predicción clara de qué va a hacer la gráfica en el corto plazo>",
+    "predicted_target_price": <precio esperado de subida exacto en USD, ej. 362.50>,
+    "predicted_stop_loss_price": <precio exacto de stop loss técnico en USD, ej. 348.10>,
+    "target_take_profit_pct": <porcentaje esperado de subida ej. 3.2>,
+    "target_stop_loss_pct": <porcentaje de stop loss ej. 1.2>,
+    "risk_reward_ratio": <número decimal ej. 2.6>,
+    "pattern_detected": "<nombre del patrón técnico o figura chartista identificada>",
     "profitability_assessment": "<evaluación cuantitativa de por qué esta operación es matemáticamente rentable>",
-    "rationale": "<análisis estratégico completo en español integrando gráfico, tuits y noticias>"
+    "rationale": "<análisis estratégico completo en español integrando velas, predicción, tuits y noticias>"
 }}
 """
 

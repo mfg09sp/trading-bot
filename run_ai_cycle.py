@@ -82,17 +82,17 @@ def run_cycle():
             should_close = False
             is_tp = False
 
-            # Venta por Take Profit (si sube +2.5%/+3% o gana >= +$50.00 USD)
-            if pnl_pct >= tp_pct_thresh or pnl >= 50.0:
+            # Venta por Take Profit al valor esperado de subida (ej. >= +2.5% acciones / +3.0% cripto)
+            if pnl_pct >= tp_pct_thresh:
                 should_close = True
                 is_tp = True
-            # Venta por Stop Loss (si cae -1.0%/-1.5% o pierde <= -$50.00 USD)
-            elif pnl_pct <= sl_pct_thresh or pnl <= -50.0:
+            # Venta por Stop Loss de protección (ej. <= -1.0% acciones / -1.5% cripto)
+            elif pnl_pct <= sl_pct_thresh:
                 should_close = True
                 is_tp = False
 
             if should_close and cur_p > 0:
-                logger.info(f"[{sym}] Activando salida de riesgo en Alpaca ({'Take Profit' if is_tp else 'Stop Loss'}). P&L: ${pnl:+.2f}")
+                logger.info(f"[{sym}] Activando salida de riesgo en Alpaca ({'Take Profit (Valor Esperado Alcanzado)' if is_tp else 'Stop Loss'}). P&L: ${pnl:+.2f}")
                 res = alpaca.close_position(sym)
                 if res:
                     time.sleep(1)
@@ -309,26 +309,37 @@ def run_cycle():
 
             if qty > 0:
                 logger.info(f"Ejecutando orden de compra en Alpaca para {qty} {sym} (Patrón: {pattern_detected}, R:R: {r_r}:1)...")
+                target_tp_price = crypto_analysis.get("predicted_target_price")
+                target_sl_price = crypto_analysis.get("predicted_stop_loss_price")
+                chart_pred = crypto_analysis.get("chart_prediction", "")
                 tp_pct = float(crypto_analysis.get("target_take_profit_pct", 3.0)) / 100.0
                 sl_pct = float(crypto_analysis.get("target_stop_loss_pct", 1.5)) / 100.0
                 
-                order = alpaca.place_bracket_order(
+                order, tp_price, sl_price = alpaca.place_bracket_order(
                     symbol=sym,
                     qty=qty,
-                    side="buy",
-                    take_profit_pct=tp_pct,
-                    stop_loss_pct=sl_pct
+                    current_price=cur_price,
+                    tp_pct=tp_pct,
+                    sl_pct=sl_pct,
+                    target_tp_price=target_tp_price,
+                    target_sl_price=target_sl_price
                 )
                 if order:
                     alpaca_trades_executed += 1
                     notifier.notify_order_placed(
                         symbol=sym,
-                        side="buy",
                         qty=qty,
-                        price=cur_price,
-                        reason=f"IA Gemini ({c_model}) | Patrón: {pattern_detected} (R:R {r_r}:1) | {c_rationale}"
+                        entry_price=cur_price,
+                        tp_price=tp_price,
+                        sl_price=sl_price,
+                        total_equity=current_eq,
+                        cash=current_cash,
+                        invested=current_inv,
+                        ai_prediction=chart_pred,
+                        pattern=pattern_detected,
+                        reason=c_rationale
                     )
-                    logger.info(f"¡Orden ejecutada con éxito en Alpaca para {sym}!")
+                    logger.info(f"¡Orden ejecutada con éxito en Alpaca para {sym}! TP={tp_price}, SL={sl_price}")
                     break
 
     # 5. Reporte consolidado de cartera
