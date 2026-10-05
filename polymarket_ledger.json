@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 10035.943896074818,
+  "cash_usdc": 8035.9438960748175,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -88,6 +88,28 @@
         "score": 7
       },
       "opened_at": "2026-10-05T01:47:29.877672+00:00"
+    },
+    "601826": {
+      "market_id": "601826",
+      "question": "Will Flávio Bolsonaro win the 2026 Brazilian presidential election?",
+      "event_title": "Brazil Presidential Election",
+      "slug": "will-flvio-bolsonaro-win-the-2026-brazilian-presidential-election",
+      "url": "https://polymarket.com/market/will-flvio-bolsonaro-win-the-2026-brazilian-presidential-election",
+      "outcome": "No",
+      "entry_price": 0.1805,
+      "current_price": 0.1805,
+      "shares": 11080.3324099723,
+      "invested_usd": 2000.0,
+      "current_value": 2000.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Análisis Gemini",
+        "headline": "Una probabilidad implícita del 82% para la victoria presidencial de Flávio Bolsonaro en 2026 representa una ineficiencia extrema del mercado. En el panorama político brasileño, la ",
+        "source": "Google gemini-3.5-flash",
+        "score": 10
+      },
+      "opened_at": "2026-10-05T09:56:52.660703+00:00"
     }
   },
   "closed_trades": [
