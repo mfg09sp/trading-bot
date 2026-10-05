@@ -56,6 +56,53 @@ def run_cycle():
     for trade in closed_trades:
         notifier.notify_polymarket_close(trade, poly_paper.get_summary())
 
+    # 1.6. Evaluar salidas de posiciones abiertas en Alpaca (Take Profit / Stop Loss / ±$50)
+    logger.info("Evaluando Take Profit y Stop Loss de posiciones de Alpaca (Bolsa y Cripto)...")
+    try:
+        alpaca_positions_check = alpaca.get_open_positions()
+        alp_summary = alpaca.get_account_summary()
+        current_eq = float(alp_summary.get("portfolio_value", 0.0))
+        current_cash = float(alp_summary.get("cash", 0.0))
+        current_inv = float(alp_summary.get("long_market_value", 0.0))
+
+        for sym, pos in list(alpaca_positions_check.items()):
+            if "/" in sym and sym.replace("/", "") in alpaca_positions_check:
+                continue
+
+            cur_p = pos.get("current_price", 0.0)
+            entry_p = pos.get("avg_entry_price", cur_p)
+            qty = pos.get("qty", 0.0)
+            pnl = pos.get("unrealized_pl", 0.0)
+            pnl_pct = pos.get("unrealized_plpc", 0.0)
+
+            is_crypto = "/" in sym or (sym.endswith("USD") and len(sym) > 4)
+            tp_pct_thresh = 0.030 if is_crypto else 0.025
+            sl_pct_thresh = -0.015 if is_crypto else -0.010
+
+            should_close = False
+            is_tp = False
+
+            # Venta por Take Profit (si sube +2.5%/+3% o gana >= +$50.00 USD)
+            if pnl_pct >= tp_pct_thresh or pnl >= 50.0:
+                should_close = True
+                is_tp = True
+            # Venta por Stop Loss (si cae -1.0%/-1.5% o pierde <= -$50.00 USD)
+            elif pnl_pct <= sl_pct_thresh or pnl <= -50.0:
+                should_close = True
+                is_tp = False
+
+            if should_close and cur_p > 0:
+                logger.info(f"[{sym}] Activando salida de riesgo en Alpaca ({'Take Profit' if is_tp else 'Stop Loss'}). P&L: ${pnl:+.2f}")
+                res = alpaca.close_position(sym)
+                if res:
+                    time.sleep(1)
+                    if is_tp:
+                        notifier.notify_tp_hit(sym, cur_p, pnl, total_equity=current_eq, cash=current_cash, invested=current_inv)
+                    else:
+                        notifier.notify_sl_hit(sym, cur_p, pnl, total_equity=current_eq, cash=current_cash, invested=current_inv)
+    except Exception as e:
+        logger.error(f"Error evaluando salidas en Alpaca: {e}")
+
     # 2. Recopilar contexto informativo masivo (Noticias, RSS, Tuits, Macro)
     logger.info("1/4. Recopilando noticias de Trump, Elon Musk, Fed, Cripto e IA...")
     catalysts = news_service.get_latest_catalysts()

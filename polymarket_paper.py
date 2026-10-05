@@ -180,13 +180,13 @@ class PolymarketPaperEngine:
             should_close = False
             close_reason = ""
 
-            # 1. Take Profit
-            if pnl_pct >= config.POLYMARKET_TAKE_PROFIT_PCT:
+            # 1. Take Profit (+30% o ganancia >= +$50.00 USD)
+            if pnl_pct >= config.POLYMARKET_TAKE_PROFIT_PCT or pnl >= 50.0:
                 should_close = True
                 close_reason = f"🎯 TAKE PROFIT (+{pnl_pct*100:.1f}%)"
 
-            # 2. Stop Loss
-            elif pnl_pct <= -config.POLYMARKET_STOP_LOSS_PCT:
+            # 2. Stop Loss (-15% o pérdida <= -$50.00 USD)
+            elif pnl_pct <= -config.POLYMARKET_STOP_LOSS_PCT or pnl <= -50.0:
                 should_close = True
                 close_reason = f"🛑 STOP LOSS ({pnl_pct*100:.1f}%)"
 
