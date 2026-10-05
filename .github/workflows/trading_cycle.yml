@@ -15,7 +15,7 @@ permissions:
 jobs:
   trade-cycle:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     env:
       ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
       ALPACA_APT_KEY: ${{ secrets.ALPACA_APT_KEY }}
@@ -59,4 +59,8 @@ jobs:
           git config user.name "AI-Trading-Bot[bot]"
           git config user.email "bot@trading.ai"
           git add polymarket_ledger.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update polymarket ledger [skip ci]" && git push || true)
+          git diff --quiet && git diff --staged --quiet || (
+            git commit -m "Auto-update polymarket ledger [skip ci]"
+            git pull --rebase origin main || true
+            git push origin main || true
+          )

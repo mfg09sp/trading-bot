@@ -124,17 +124,18 @@ def run_cycle():
         "Senate", "Economy", "Inflation", "AI", "OpenAI", "Nvidia", "Tariff",
         "War", "SpaceX", "Champions", "World Cup", "Nobel"
     ]
-    markets = poly_service.search_markets_by_keywords(keywords, limit_per_cat=35)
+    markets = poly_service.search_markets_by_keywords(keywords, limit_per_cat=10)
+    active_poly_ids = set(poly_paper.data.get("active_positions", {}).keys())
+    # Evaluar solo hasta 8 candidatos no activos para mantener el ciclo ágil (< 2 min)
+    unheld_markets = [m for m in markets if m.get("id") not in active_poly_ids][:8]
     
     poly_trades_executed = 0
-    for m in markets:
+    for m in unheld_markets:
         # Si ya alcanzamos el límite de posiciones o no hay saldo suficiente
         if not poly_paper.can_open_position(config.POLYMARKET_MAX_BET_USDC):
             break
 
         m_id = m.get("id")
-        if m_id in poly_paper.data.get("active_positions", {}):
-            continue
 
         q = m.get("question", "")
         prices = m.get("prices", {})
@@ -212,7 +213,11 @@ def run_cycle():
     
     alpaca_trades_executed = 0
     for sym in candidates:
-        clean_sym = sym.replace("/", "")
+        clean_sym = sym.replace("/", "").upper()
+        # Omitir activos de cartera a largo plazo (Buy & Hold)
+        if clean_sym in config.LONG_TERM_SYMBOLS:
+            continue
+
         # Si ya tenemos posición abierta en este activo, no sobreoperar
         if sym in alpaca_positions or clean_sym in alpaca_positions:
             logger.info(f"Posición ya existente para {sym}, se mantiene monitorización.")
@@ -223,7 +228,7 @@ def run_cycle():
             break
 
         # Obtener precio actual y datos técnicos
-        cur_price = alpaca.get_current_price(sym)
+        cur_price = alpaca.get_latest_price(sym) or alpaca.get_current_price(sym) or 0.0
         if cur_price <= 0:
             continue
 

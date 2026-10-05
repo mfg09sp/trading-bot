@@ -148,6 +148,10 @@ class AlpacaService:
             return float(df["close"].iloc[-1])
         return None
 
+    def get_current_price(self, symbol: str) -> Optional[float]:
+        """Alias de compatibilidad para get_latest_price."""
+        return self.get_latest_price(symbol)
+
     def place_bracket_order(
         self,
         symbol: str,
