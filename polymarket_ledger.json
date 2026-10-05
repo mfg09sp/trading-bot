@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 4035.9438960748166,
+  "cash_usdc": 2035.9438960748166,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -154,6 +154,28 @@
         "score": 9
       },
       "opened_at": "2026-10-05T10:02:59.349474+00:00"
+    },
+    "601819": {
+      "market_id": "601819",
+      "question": "Will Luiz Inácio Lula da Silva win the 2026 Brazilian presidential election?",
+      "event_title": "Brazil Presidential Election",
+      "slug": "will-luiz-incio-lula-da-silva-win-the-2026-brazilian-presidential-election",
+      "url": "https://polymarket.com/market/will-luiz-incio-lula-da-silva-win-the-2026-brazilian-presidential-election",
+      "outcome": "No",
+      "entry_price": 0.825,
+      "current_price": 0.825,
+      "shares": 2424.2424242424245,
+      "invested_usd": 2000.0,
+      "current_value": 2000.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Análisis Gemini",
+        "headline": "The market is currently pricing Lula's victory at 17.5%. Historical base rates for incumbent re-election in Brazil, combined with current political polarization, economic headwinds",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 8
+      },
+      "opened_at": "2026-10-05T10:04:40.918712+00:00"
     }
   },
   "closed_trades": [
