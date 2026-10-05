@@ -143,13 +143,18 @@ def run_cycle():
         if (yes_p < 0.05 or yes_p > 0.95) and (no_p < 0.05 or no_p > 0.95):
             continue
 
+        # Investigar tuits, declaraciones y noticias específicas en vivo para esta pregunta
+        targeted_news = news_service.search_live_web_and_tweets(q, max_items=5)
+        targeted_text = "\n".join([f"- [{item.get('source', 'Web')}] {item.get('title', '')} ({item.get('pub_date', '')})" for item in targeted_news])
+        combined_context = f"=== TUITS Y NOTICIAS EN VIVO PARA ESTA PREGUNTA ===\n{targeted_text or 'Sin menciones específicas en los últimos minutos.'}\n\n=== CONTEXTO GLOBAL Y REDES (TRUMP, ELON MUSK, MACRO, CRIPTO) ===\n{news_summary_text}"
+
         logger.info(f"Consultando a Gemini para Polymarket: {q[:60]}... (Yes: ${yes_p:.3f}, No: ${no_p:.3f})")
         
-        # Consultar Gemini
+        # Consultar Gemini con contexto enriquecido en vivo
         analysis = analyst.analyze_market_opportunity(
             market_question=q,
             current_prices={"YES": yes_p, "NO": no_p},
-            context_news=news_summary_text,
+            context_news=combined_context,
             contract_rules=m.get("description", "Resolución estándar oficial")
         )
 

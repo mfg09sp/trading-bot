@@ -17,10 +17,13 @@ logger = logging.getLogger("NewsService")
 
 class NewsService:
     TOPICS = {
-        "elon_musk": "Elon+Musk+tweet+OR+X+OR+Tesla+OR+SpaceX",
-        "donald_trump": "Donald+Trump+Truth+Social+OR+rally+OR+speech",
-        "fed_rates": "Federal+Reserve+interest+rates+OR+Jerome+Powell",
-        "crypto": "Bitcoin+OR+Ethereum+ETF+OR+crypto+regulation"
+        "elon_musk_tweets": "Elon+Musk+tweet+OR+X+post+OR+Tesla+OR+SpaceX",
+        "donald_trump_truth": "Donald+Trump+Truth+Social+OR+speech+OR+rally",
+        "tech_ai_breakthroughs": "OpenAI+OR+ChatGPT+OR+Sam+Altman+OR+Nvidia+tweet",
+        "fed_rates_macro": "Federal+Reserve+rates+OR+Jerome+Powell+OR+inflation",
+        "crypto_market": "Bitcoin+OR+Ethereum+ETF+OR+crypto+regulation",
+        "geopolitics_breaking": "breaking+news+White+House+OR+Pentagon+OR+UN+OR+war",
+        "election_polling": "poll+election+odds+prediction+OR+approval+rating"
     }
 
     def __init__(self):
@@ -65,6 +68,25 @@ class NewsService:
             logger.error(f"Error al parsear noticias para {query}: {e}")
 
         return items
+
+    def search_live_web_and_tweets(self, question: str, max_items: int = 6) -> List[Dict[str, Any]]:
+        """
+        Realiza una búsqueda dirigida en internet y redes sociales (X/Twitter, noticias y declaraciones)
+        específicamente para los protagonistas y entidades de la pregunta de Polymarket.
+        """
+        clean_q = re.sub(r"[^\w\s]", " ", question)
+        words = clean_q.split()
+        stop_words = {
+            "will", "the", "and", "from", "that", "this", "what", "which", "after", "before",
+            "october", "november", "december", "january", "winner", "most", "votes", "round",
+            "between", "first", "next", "win", "post", "tweets", "posts", "market", "power"
+        }
+        keywords = [w for w in words if len(w) > 2 and w.lower() not in stop_words]
+        search_terms = keywords[:4] if keywords else words[:3]
+        target_query = "+".join(search_terms) + "+tweet+OR+X+OR+statement+OR+news"
+
+        logger.info(f"[Live Web & Tweets] Investigando en internet y redes para: '{' '.join(search_terms)}'")
+        return self.fetch_topic_news(target_query, max_items=max_items)
 
     def get_latest_catalysts(self) -> Dict[str, List[Dict[str, Any]]]:
         """Obtiene las noticias y declaraciones más recientes agrupadas por temática."""

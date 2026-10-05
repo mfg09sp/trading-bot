@@ -174,8 +174,9 @@ Reglas exactas de resolución oficial: {contract_rules or "Resolución oficial e
 1. TASA BASE HISTÓRICA (Base Rate): Evalúa cómo se resuelven históricamente eventos del mismo tipo (elecciones intermedias, decisiones de la Fed, lanzamientos espaciales, aprobaciones regulatorias). No te dejes llevar por el sensacionalismo o la histeria mediática.
 2. SESGO DEL NO-FAVORITO (Longshot Bias): El público minorista suele inflar cuotas de eventos altamente improbables (ej. pagar 15% o 25% por algo que solo ocurre el 2% de las veces). Si detectas esta sobrevaloración, el 'BUY_NO' ofrece una asimetría matemática demoledora.
 3. ESPERANZA MATEMÁTICA Y VENTAJA (Edge): Compara la probabilidad implícita del precio actual con tu probabilidad real estimada (Bayesiana). Solo emite orden de compra si la ventaja matemática (Edge) es superior al +10% y el ratio riesgo/beneficio es claramente asimétrico.
-4. VERIFICACIÓN DE CLÁUSULAS: Revisa si los términos de la pregunta imponen restricciones estrictas (fechas, fuentes de verificación) que benefician indiscutiblemente a una de las opciones.
-5. Si el mercado está en precio justo o hay ambigüedad sin ventaja estadística demostrable, emite PASS.
+4. IMPACTO DE TUITS, REDES Y DECLARACIONES EN VIVO: Analiza rigurosamente los tuits en X/Twitter, publicaciones en Truth Social, discursos y filtraciones recientes proporcionadas en el contexto en vivo. Si Elon Musk, Trump, candidatos o líderes clave han posteado algo determinante en las últimas horas, úsalo como catalizador de primer orden.
+5. VERIFICACIÓN DE CLÁUSULAS: Revisa si los términos de la pregunta imponen restricciones estrictas (fechas, fuentes de verificación) que benefician indiscutiblemente a una de las opciones.
+6. Si el mercado está en precio justo o hay ambigüedad sin ventaja estadística demostrable, emite PASS.
 
 Responde ÚNICAMENTE con esta estructura JSON:
 {{
