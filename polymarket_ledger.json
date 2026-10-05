@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 1000.0,
+  "cash_usdc": 844.8753462603881,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -89,28 +89,6 @@
       },
       "opened_at": "2026-10-05T01:47:29.877672+00:00"
     },
-    "601826": {
-      "market_id": "601826",
-      "question": "Will Flávio Bolsonaro win the 2026 Brazilian presidential election?",
-      "event_title": "Brazil Presidential Election",
-      "slug": "will-flvio-bolsonaro-win-the-2026-brazilian-presidential-election",
-      "url": "https://polymarket.com/market/will-flvio-bolsonaro-win-the-2026-brazilian-presidential-election",
-      "outcome": "No",
-      "entry_price": 0.1805,
-      "current_price": 0.1665,
-      "shares": 11080.3324099723,
-      "invested_usd": 2000.0,
-      "current_value": 1844.875346260388,
-      "unrealized_pnl": -155.12465373961209,
-      "unrealized_pnl_pct": -7.7562326869806,
-      "catalyst": {
-        "category": "Análisis Gemini",
-        "headline": "La probabilidad de mercado de 0.8195 es una anomalía extrema. Flávio Bolsonaro enfrenta barreras legales significativas, incluyendo la inhabilitación política de su padre (Jair Bol",
-        "source": "Google gemini-3.1-flash-lite",
-        "score": 9
-      },
-      "opened_at": "2026-10-05T10:01:27.289008+00:00"
-    },
     "682705": {
       "market_id": "682705",
       "question": "Will Benjamin Netanyahu be the next Prime Minister of Israel?",
@@ -197,6 +175,28 @@
         "source": "Google gemini-3.1-flash-lite (Convicción 7/10)"
       },
       "opened_at": "2026-10-05T10:47:23.066094+00:00"
+    },
+    "601826": {
+      "market_id": "601826",
+      "question": "Will Flávio Bolsonaro win the 2026 Brazilian presidential election?",
+      "event_title": "Brazil Presidential Election",
+      "slug": "will-flvio-bolsonaro-win-the-2026-brazilian-presidential-election",
+      "url": "https://polymarket.com/market/will-flvio-bolsonaro-win-the-2026-brazilian-presidential-election",
+      "outcome": "Yes",
+      "entry_price": 0.8335,
+      "current_price": 0.8335,
+      "shares": 2399.520095980804,
+      "invested_usd": 2000.0,
+      "current_value": 2000.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Análisis Gemini",
+        "headline": "The market is currently pricing Flávio Bolsonaro at 83.35% following confirmed reports of him leading the first round and entering a run-off against the incumbent. Historical base ",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 9
+      },
+      "opened_at": "2026-10-05T10:49:19.215041+00:00"
     }
   },
   "closed_trades": [
@@ -392,10 +392,38 @@
       "realized_pnl_pct": 8.734939759036136,
       "close_reason": "🎯 TAKE PROFIT (+8.7%)",
       "closed_at": "2026-10-05T09:55:28.152017+00:00"
+    },
+    {
+      "market_id": "601826",
+      "question": "Will Flávio Bolsonaro win the 2026 Brazilian presidential election?",
+      "event_title": "Brazil Presidential Election",
+      "slug": "will-flvio-bolsonaro-win-the-2026-brazilian-presidential-election",
+      "url": "https://polymarket.com/market/will-flvio-bolsonaro-win-the-2026-brazilian-presidential-election",
+      "outcome": "No",
+      "entry_price": 0.1805,
+      "current_price": 0.1665,
+      "shares": 11080.3324099723,
+      "invested_usd": 2000.0,
+      "current_value": 1844.875346260388,
+      "unrealized_pnl": -155.12465373961209,
+      "unrealized_pnl_pct": -7.7562326869806,
+      "catalyst": {
+        "category": "Análisis Gemini",
+        "headline": "La probabilidad de mercado de 0.8195 es una anomalía extrema. Flávio Bolsonaro enfrenta barreras legales significativas, incluyendo la inhabilitación política de su padre (Jair Bol",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 9
+      },
+      "opened_at": "2026-10-05T10:01:27.289008+00:00",
+      "exit_price": 0.1665,
+      "final_value": 1844.875346260388,
+      "realized_pnl": -155.12465373961209,
+      "realized_pnl_pct": -7.7562326869806,
+      "close_reason": "🛑 STOP LOSS (-7.8%)",
+      "closed_at": "2026-10-05T10:48:57.879948+00:00"
     }
   ],
-  "total_realized_pnl": -1964.0561039251832,
+  "total_realized_pnl": -2119.1807576647952,
   "win_count": 3,
-  "loss_count": 4,
+  "loss_count": 5,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
