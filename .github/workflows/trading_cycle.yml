@@ -74,13 +74,13 @@ jobs:
             git push origin main || true
           )
 
-      - name: 🔄 Despertar siguiente ciclo en la nube (10 minutos)
+      - name: 🔄 Escuchar Telegram y despertar siguiente ciclo (10 minutos)
         if: always()
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          echo "Esperando 10 minutos (600s) para encadenar el siguiente ciclo continuo..."
-          sleep 600
+          echo "Escuchando comandos interactivos en Telegram durante 10 minutos (600s)..."
+          python telegram_listener.py --duration 600 || sleep 600
           if [ -n "$GH_PAT" ]; then
             echo "Enviando señal para despertar el siguiente ciclo en GitHub Actions..."
             curl -s -X POST \

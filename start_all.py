@@ -57,6 +57,15 @@ def ai_cycle_scheduler(interval_minutes: int = 10):
         time.sleep(interval_minutes * 60)
 
 
+def telegram_listener_thread():
+    logger.info("-> Hilo: Escuchador interactivo de Telegram arrancado.")
+    try:
+        from telegram_listener import listen_loop
+        listen_loop(duration_seconds=0)
+    except Exception as e:
+        logger.error(f"Error en hilo de Telegram listener: {e}")
+
+
 def main():
     print("=" * 65)
     print("   🤖 INICIANDO SISTEMA AUTÓNOMO GLOBAL DE TRADING (IA GEMINI)   ")
@@ -71,6 +80,7 @@ def main():
         "  • Polymarket Monitor (60s)\n"
         "  • Alpaca Cripto & Acciones (60s)\n"
         "  • Radar IA Gemini (Ciclo cada 10m)\n"
+        "  • Escuchador Interactivo Telegram (/estado, como va)\n"
         "━━━━━━━━━━━━━━━━━━━━\n"
         "💡 <i>Operando en modo Paper Trading con posiciones de \$2,000+.</i>"
     )
@@ -80,10 +90,12 @@ def main():
     t1 = threading.Thread(target=poly_monitor_thread, daemon=True)
     t2 = threading.Thread(target=alpaca_monitor_thread, daemon=True)
     t3 = threading.Thread(target=ai_cycle_scheduler, args=(10,), daemon=True)
+    t4 = threading.Thread(target=telegram_listener_thread, daemon=True)
 
     t1.start()
     t2.start()
     t3.start()
+    t4.start()
 
     logger.info("Todos los servicios están en ejecución. Presiona Ctrl+C para detener.")
 
