@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 0.0,
+  "cash_usdc": 418.3006535947711,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -9,12 +9,12 @@
       "url": "https://polymarket.com/market/will-david-lisnard-win-the-2027-french-presidential-election",
       "outcome": "No",
       "entry_price": 0.895,
-      "current_price": 0.885,
+      "current_price": 0.8855,
       "shares": 2234.63687150838,
       "invested_usd": 2000.0,
-      "current_value": 1977.6536312849162,
-      "unrealized_pnl": -22.346368715083827,
-      "unrealized_pnl_pct": -1.1173184357541908,
+      "current_value": 1978.7709497206704,
+      "unrealized_pnl": -21.229050279329613,
+      "unrealized_pnl_pct": -1.0614525139664877,
       "catalyst": {
         "category": "Análisis Gemini",
         "headline": "David Lisnard, aunque es una figura respetada dentro de la derecha tradicional francesa (LR/Nouvelle Énergie), carece de la proyección nacional y el apoyo masivo necesario para sup",
@@ -187,12 +187,12 @@
       "url": "https://polymarket.com/market/will-flvio-bolsonaro-win-the-2026-brazilian-presidential-election",
       "outcome": "No",
       "entry_price": 0.1545,
-      "current_price": 0.1555,
+      "current_price": 0.157,
       "shares": 8220.476149624717,
       "invested_usd": 1270.0635651170187,
-      "current_value": 1278.2840412666435,
-      "unrealized_pnl": 8.220476149624801,
-      "unrealized_pnl_pct": 0.6472491909385119,
+      "current_value": 1290.6147554910806,
+      "unrealized_pnl": 20.55119037406189,
+      "unrealized_pnl_pct": 1.61812297734628,
       "catalyst": {
         "category": "Análisis Gemini",
         "headline": "The market is heavily overpricing Flávio Bolsonaro at 84.55% based on a 'momentum' bias following the first-round runoff. Historical base rates for candidates in Brazilian runoffs ",
@@ -204,30 +204,30 @@
       "target_exit_date": null,
       "opened_at": "2026-10-06T19:09:02.337812+00:00"
     },
-    "4877189": {
-      "market_id": "4877189",
-      "question": "Will Croatia win on 2026-10-06?",
+    "4877193": {
+      "market_id": "4877193",
+      "question": "Will Spain win on 2026-10-06?",
       "event_title": "Croatia vs. Spain",
-      "slug": "unl-hrv-esp-2026-10-06-hrv",
-      "url": "https://polymarket.com/market/unl-hrv-esp-2026-10-06-hrv",
+      "slug": "unl-hrv-esp-2026-10-06-esp",
+      "url": "https://polymarket.com/market/unl-hrv-esp-2026-10-06-esp",
       "outcome": "No",
-      "entry_price": 0.645,
-      "current_price": 0.625,
-      "shares": 2614.37908496732,
-      "invested_usd": 1686.2745098039215,
-      "current_value": 1633.986928104575,
-      "unrealized_pnl": -52.28758169934645,
-      "unrealized_pnl_pct": -3.1007751937984525,
+      "entry_price": 0.465,
+      "current_price": 0.465,
+      "shares": 4301.075268817204,
+      "invested_usd": 2000.0,
+      "current_value": 2000.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
       "catalyst": {
         "category": "Análisis Gemini",
-        "headline": "Historical base rates for Croatia against top-tier European opposition (Spain) in competitive UEFA Nations League fixtures indicate a win probability closer to 20-25%. The market's",
+        "headline": "The market is misinterpreting a political news event as a sports event. The question 'Will Spain win on 2026-10-06?' refers to a sports match, but the provided context confirms tha",
         "source": "Google gemini-3.1-flash-lite",
-        "score": 8
+        "score": 10
       },
       "no_stop_loss": false,
       "hold_until_resolution": false,
       "target_exit_date": null,
-      "opened_at": "2026-10-06T19:52:14.335744+00:00"
+      "opened_at": "2026-10-06T20:13:24.974896+00:00"
     }
   },
   "closed_trades": [
@@ -571,10 +571,41 @@
       "realized_pnl_pct": -15.686274509803921,
       "close_reason": "🛑 STOP LOSS (-15.7%)",
       "closed_at": "2026-10-06T19:52:00.951404+00:00"
+    },
+    {
+      "market_id": "4877189",
+      "question": "Will Croatia win on 2026-10-06?",
+      "event_title": "Croatia vs. Spain",
+      "slug": "unl-hrv-esp-2026-10-06-hrv",
+      "url": "https://polymarket.com/market/unl-hrv-esp-2026-10-06-hrv",
+      "outcome": "No",
+      "entry_price": 0.645,
+      "current_price": 0.925,
+      "shares": 2614.37908496732,
+      "invested_usd": 1686.2745098039215,
+      "current_value": 2418.300653594771,
+      "unrealized_pnl": 732.0261437908496,
+      "unrealized_pnl_pct": 43.4108527131783,
+      "catalyst": {
+        "category": "Análisis Gemini",
+        "headline": "Historical base rates for Croatia against top-tier European opposition (Spain) in competitive UEFA Nations League fixtures indicate a win probability closer to 20-25%. The market's",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-06T19:52:14.335744+00:00",
+      "exit_price": 0.925,
+      "final_value": 2418.300653594771,
+      "realized_pnl": 732.0261437908496,
+      "realized_pnl_pct": 43.4108527131783,
+      "close_reason": "🎯 TAKE PROFIT (+43.4%)",
+      "closed_at": "2026-10-06T20:13:12.133700+00:00"
     }
   ],
-  "total_realized_pnl": -2908.931403433644,
-  "win_count": 4,
+  "total_realized_pnl": -2176.9052596427946,
+  "win_count": 5,
   "loss_count": 8,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
