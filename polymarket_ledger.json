@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 418.3006535947711,
+  "cash_usdc": 3622.601728863588,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -119,12 +119,12 @@
       "url": "https://polymarket.com/market/us-announces-end-of-iranian-blockade-by-october-15-2026",
       "outcome": "No",
       "entry_price": 0.895,
-      "current_price": 0.895,
+      "current_price": 0.885,
       "shares": 2234.63687150838,
       "invested_usd": 2000.0,
-      "current_value": 2000.0,
-      "unrealized_pnl": 0.0,
-      "unrealized_pnl_pct": 0.0,
+      "current_value": 1977.6536312849162,
+      "unrealized_pnl": -22.346368715083827,
+      "unrealized_pnl_pct": -1.1173184357541908,
       "catalyst": {
         "category": "Análisis Gemini",
         "headline": "The market is currently pricing a 10.5% probability of a policy reversal (lifting the blockade) within a 15-month window. Historical base rates for the reversal of major geopolitic",
@@ -187,12 +187,12 @@
       "url": "https://polymarket.com/market/will-flvio-bolsonaro-win-the-2026-brazilian-presidential-election",
       "outcome": "No",
       "entry_price": 0.1545,
-      "current_price": 0.1585,
+      "current_price": 0.157,
       "shares": 8220.476149624717,
       "invested_usd": 1270.0635651170187,
-      "current_value": 1302.9454697155177,
-      "unrealized_pnl": 32.88190459849898,
-      "unrealized_pnl_pct": 2.5889967637540474,
+      "current_value": 1290.6147554910806,
+      "unrealized_pnl": 20.55119037406189,
+      "unrealized_pnl_pct": 1.61812297734628,
       "catalyst": {
         "category": "Análisis Gemini",
         "headline": "The market is heavily overpricing Flávio Bolsonaro at 84.55% based on a 'momentum' bias following the first-round runoff. Historical base rates for candidates in Brazilian runoffs ",
@@ -203,31 +203,6 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-10-06T19:09:02.337812+00:00"
-    },
-    "4877193": {
-      "market_id": "4877193",
-      "question": "Will Spain win on 2026-10-06?",
-      "event_title": "Croatia vs. Spain",
-      "slug": "unl-hrv-esp-2026-10-06-esp",
-      "url": "https://polymarket.com/market/unl-hrv-esp-2026-10-06-esp",
-      "outcome": "No",
-      "entry_price": 0.465,
-      "current_price": 0.575,
-      "shares": 4301.075268817204,
-      "invested_usd": 2000.0,
-      "current_value": 2473.1182795698924,
-      "unrealized_pnl": 473.11827956989237,
-      "unrealized_pnl_pct": 23.65591397849461,
-      "catalyst": {
-        "category": "Análisis Gemini",
-        "headline": "The market is misinterpreting a political news event as a sports event. The question 'Will Spain win on 2026-10-06?' refers to a sports match, but the provided context confirms tha",
-        "source": "Google gemini-3.1-flash-lite",
-        "score": 10
-      },
-      "no_stop_loss": false,
-      "hold_until_resolution": false,
-      "target_exit_date": null,
-      "opened_at": "2026-10-06T20:13:24.974896+00:00"
     }
   },
   "closed_trades": [
@@ -602,10 +577,41 @@
       "realized_pnl_pct": 43.4108527131783,
       "close_reason": "🎯 TAKE PROFIT (+43.4%)",
       "closed_at": "2026-10-06T20:13:12.133700+00:00"
+    },
+    {
+      "market_id": "4877193",
+      "question": "Will Spain win on 2026-10-06?",
+      "event_title": "Croatia vs. Spain",
+      "slug": "unl-hrv-esp-2026-10-06-esp",
+      "url": "https://polymarket.com/market/unl-hrv-esp-2026-10-06-esp",
+      "outcome": "No",
+      "entry_price": 0.465,
+      "current_price": 0.745,
+      "shares": 4301.075268817204,
+      "invested_usd": 2000.0,
+      "current_value": 3204.301075268817,
+      "unrealized_pnl": 1204.301075268817,
+      "unrealized_pnl_pct": 60.21505376344085,
+      "catalyst": {
+        "category": "Análisis Gemini",
+        "headline": "The market is misinterpreting a political news event as a sports event. The question 'Will Spain win on 2026-10-06?' refers to a sports match, but the provided context confirms tha",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 10
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-06T20:13:24.974896+00:00",
+      "exit_price": 0.745,
+      "final_value": 3204.301075268817,
+      "realized_pnl": 1204.301075268817,
+      "realized_pnl_pct": 60.21505376344085,
+      "close_reason": "🎯 TAKE PROFIT (+60.2%)",
+      "closed_at": "2026-10-06T20:34:39.857040+00:00"
     }
   ],
-  "total_realized_pnl": -2176.9052596427946,
-  "win_count": 5,
+  "total_realized_pnl": -972.6041843739777,
+  "win_count": 6,
   "loss_count": 8,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
