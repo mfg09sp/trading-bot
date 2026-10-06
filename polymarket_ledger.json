@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 3622.601728863588,
+  "cash_usdc": 1622.601728863588,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -75,12 +75,12 @@
       "url": "https://polymarket.com/market/2026-balance-of-power-r-senate-r-house-537",
       "outcome": "Yes",
       "entry_price": 0.075,
-      "current_price": 0.085,
+      "current_price": 0.075,
       "shares": 26666.666666666668,
       "invested_usd": 2000.0,
-      "current_value": 2266.666666666667,
-      "unrealized_pnl": 266.66666666666697,
-      "unrealized_pnl_pct": 13.333333333333346,
+      "current_value": 2000.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
       "catalyst": {
         "category": "Análisis Gemini",
         "headline": "El mercado subestima drásticamente la probabilidad de una victoria republicana en ambas cámaras para 2026. Históricamente, el partido del presidente en ejercicio suele sufrir en la",
@@ -203,6 +203,31 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-10-06T19:09:02.337812+00:00"
+    },
+    "562803": {
+      "market_id": "562803",
+      "question": "Will the Republican Party control the House after the 2026 Midterm elections?",
+      "event_title": "Which party will win the House in 2026?",
+      "slug": "will-the-republican-party-control-the-house-after-the-2026-midterm-elections",
+      "url": "https://polymarket.com/market/will-the-republican-party-control-the-house-after-the-2026-midterm-elections",
+      "outcome": "No",
+      "entry_price": 0.915,
+      "current_price": 0.915,
+      "shares": 2185.7923497267757,
+      "invested_usd": 2000.0,
+      "current_value": 2000.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Análisis Gemini",
+        "headline": "The current market price of 0.085 for a Republican House majority reflects an extreme longshot bias. Historically, midterm elections rarely result in such lopsided outcomes, but th",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-06T23:25:16.285907+00:00"
     }
   },
   "closed_trades": [
