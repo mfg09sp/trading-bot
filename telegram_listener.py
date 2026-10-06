@@ -65,7 +65,12 @@ def get_help_message() -> str:
     )
 
 
+_last_report_sent_time = 0.0
+_last_help_sent_time = 0.0
+
+
 def process_message(msg: dict) -> None:
+    global _last_report_sent_time, _last_help_sent_time
     chat_id = str(msg.get("chat", {}).get("id", ""))
     text = (msg.get("text") or "").strip()
     user_name = msg.get("from", {}).get("first_name", "Usuario")
@@ -87,6 +92,11 @@ def process_message(msg: dict) -> None:
     is_report_request = any(clean_text == kw or clean_text.startswith(kw) for kw in report_keywords)
 
     if is_report_request:
+        now = time.time()
+        if now - _last_report_sent_time < 5.0:
+            logger.info("Reporte omitido por duplicado reciente (<5s).")
+            return
+        _last_report_sent_time = now
         logger.info(f"Generando y enviando informe solicitado por {user_name}...")
         report = generate_portfolio_report()
         send_reply(chat_id, report)
@@ -106,6 +116,10 @@ def process_message(msg: dict) -> None:
 
     # Comando de ayuda
     if clean_text in ["/help", "/ayuda", "ayuda", "help"]:
+        now = time.time()
+        if now - _last_help_sent_time < 5.0:
+            return
+        _last_help_sent_time = now
         send_reply(chat_id, get_help_message())
         return
 
@@ -130,19 +144,6 @@ def listen_loop(duration_seconds: int = 0) -> None:
 
     start_time = time.time()
     offset: Optional[int] = None
-
-    # Primero limpiar mensajes muy viejos obteniendo el último offset
-    try:
-        res = requests.get(
-            f"https://api.telegram.org/bot{config.TELEGRAM_BOT_TOKEN}/getUpdates?offset=-1&timeout=2",
-            timeout=5
-        )
-        if res.status_code == 200:
-            updates = res.json().get("result", [])
-            if updates:
-                offset = updates[-1]["update_id"] + 1
-    except Exception as e:
-        logger.warning(f"Aviso al sincronizar offset inicial de Telegram: {e}")
 
     while True:
         # Verificar si se cumplió la duración
