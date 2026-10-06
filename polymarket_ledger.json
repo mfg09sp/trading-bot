@@ -9,12 +9,12 @@
       "url": "https://polymarket.com/market/will-david-lisnard-win-the-2027-french-presidential-election",
       "outcome": "No",
       "entry_price": 0.895,
-      "current_price": 0.8755,
+      "current_price": 0.8835,
       "shares": 2234.63687150838,
       "invested_usd": 2000.0,
-      "current_value": 1956.4245810055866,
-      "unrealized_pnl": -43.57541899441344,
-      "unrealized_pnl_pct": -2.1787709497206786,
+      "current_value": 1974.3016759776535,
+      "unrealized_pnl": -25.69832402234647,
+      "unrealized_pnl_pct": -1.2849162011173259,
       "catalyst": {
         "category": "Análisis Gemini",
         "headline": "David Lisnard, aunque es una figura respetada dentro de la derecha tradicional francesa (LR/Nouvelle Énergie), carece de la proyección nacional y el apoyo masivo necesario para sup",
@@ -89,28 +89,6 @@
       },
       "opened_at": "2026-10-05T01:47:29.877672+00:00"
     },
-    "601826": {
-      "market_id": "601826",
-      "question": "Will Flávio Bolsonaro win the 2026 Brazilian presidential election?",
-      "event_title": "Brazil Presidential Election",
-      "slug": "will-flvio-bolsonaro-win-the-2026-brazilian-presidential-election",
-      "url": "https://polymarket.com/market/will-flvio-bolsonaro-win-the-2026-brazilian-presidential-election",
-      "outcome": "No",
-      "entry_price": 0.1805,
-      "current_price": 0.1545,
-      "shares": 11080.3324099723,
-      "invested_usd": 2000.0,
-      "current_value": 1711.9113573407203,
-      "unrealized_pnl": -288.0886426592797,
-      "unrealized_pnl_pct": -14.404432132963988,
-      "catalyst": {
-        "category": "Análisis Gemini",
-        "headline": "La probabilidad de mercado de 0.8195 es una anomalía extrema. Flávio Bolsonaro enfrenta barreras legales significativas, incluyendo la inhabilitación política de su padre (Jair Bol",
-        "source": "Google gemini-3.1-flash-lite",
-        "score": 9
-      },
-      "opened_at": "2026-10-05T10:01:27.289008+00:00"
-    },
     "682705": {
       "market_id": "682705",
       "question": "Will Benjamin Netanyahu be the next Prime Minister of Israel?",
@@ -141,12 +119,12 @@
       "url": "https://polymarket.com/market/us-announces-end-of-iranian-blockade-by-october-15-2026",
       "outcome": "No",
       "entry_price": 0.895,
-      "current_price": 0.865,
+      "current_price": 0.875,
       "shares": 2234.63687150838,
       "invested_usd": 2000.0,
-      "current_value": 1932.9608938547487,
-      "unrealized_pnl": -67.03910614525125,
-      "unrealized_pnl_pct": -3.3519553072625725,
+      "current_value": 1955.3072625698323,
+      "unrealized_pnl": -44.692737430167654,
+      "unrealized_pnl_pct": -2.2346368715083815,
       "catalyst": {
         "category": "Análisis Gemini",
         "headline": "The market is currently pricing a 10.5% probability of a policy reversal (lifting the blockade) within a 15-month window. Historical base rates for the reversal of major geopolitic",
@@ -225,6 +203,31 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-10-06T17:52:42.437451+00:00"
+    },
+    "4877189": {
+      "market_id": "4877189",
+      "question": "Will Croatia win on 2026-10-06?",
+      "event_title": "Croatia vs. Spain",
+      "slug": "unl-hrv-esp-2026-10-06-hrv",
+      "url": "https://polymarket.com/market/unl-hrv-esp-2026-10-06-hrv",
+      "outcome": "No",
+      "entry_price": 0.915,
+      "current_price": 0.915,
+      "shares": 1834.612415421643,
+      "invested_usd": 1678.6703601108034,
+      "current_value": 1678.6703601108034,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Análisis Gemini",
+        "headline": "Croatia faces Spain in a high-stakes UEFA Nations League match. Historically, Spain maintains a significant ELO rating advantage over Croatia in head-to-head encounters. The curren",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 9
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-06T18:32:39.064175+00:00"
     }
   },
   "closed_trades": [
@@ -447,10 +450,38 @@
       "realized_pnl_pct": -21.12676056338027,
       "close_reason": "🛑 STOP LOSS (-21.1%)",
       "closed_at": "2026-10-05T11:00:56.390076+00:00"
+    },
+    {
+      "market_id": "601826",
+      "question": "Will Flávio Bolsonaro win the 2026 Brazilian presidential election?",
+      "event_title": "Brazil Presidential Election",
+      "slug": "will-flvio-bolsonaro-win-the-2026-brazilian-presidential-election",
+      "url": "https://polymarket.com/market/will-flvio-bolsonaro-win-the-2026-brazilian-presidential-election",
+      "outcome": "No",
+      "entry_price": 0.1805,
+      "current_price": 0.1515,
+      "shares": 11080.3324099723,
+      "invested_usd": 2000.0,
+      "current_value": 1678.6703601108034,
+      "unrealized_pnl": -321.32963988919664,
+      "unrealized_pnl_pct": -16.06648199445983,
+      "catalyst": {
+        "category": "Análisis Gemini",
+        "headline": "La probabilidad de mercado de 0.8195 es una anomalía extrema. Flávio Bolsonaro enfrenta barreras legales significativas, incluyendo la inhabilitación política de su padre (Jair Bol",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 9
+      },
+      "opened_at": "2026-10-05T10:01:27.289008+00:00",
+      "exit_price": 0.1515,
+      "final_value": 1678.6703601108034,
+      "realized_pnl": -321.32963988919664,
+      "realized_pnl_pct": -16.06648199445983,
+      "close_reason": "🛑 STOP LOSS (-16.1%)",
+      "closed_at": "2026-10-06T18:32:24.780274+00:00"
     }
   ],
-  "total_realized_pnl": -3020.3941320941967,
+  "total_realized_pnl": -3341.7237719833934,
   "win_count": 3,
-  "loss_count": 5,
+  "loss_count": 6,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
