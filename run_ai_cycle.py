@@ -130,9 +130,12 @@ def run_cycle():
     unheld_markets = [m for m in markets if m.get("id") not in active_poly_ids][:8]
     
     poly_trades_executed = 0
+    available_poly_cash = float(poly_summary.get("cash_usdc", 0.0))
+
     for m in unheld_markets:
-        # Si ya alcanzamos el límite de posiciones o no hay saldo suficiente
-        if not poly_paper.can_open_position(config.POLYMARKET_MAX_BET_USDC):
+        # Si ya alcanzamos el límite de posiciones o no hay saldo suficiente (mínimo $50 USDC)
+        if available_poly_cash < 50.0 or not poly_paper.can_open_position(50.0):
+            logger.info("Saldo en Polymarket inferior al mínimo de $50 USDC o límite de posiciones alcanzado.")
             break
 
         m_id = m.get("id")
@@ -171,7 +174,7 @@ def run_cycle():
         if decision in ["BUY_YES", "BUY_NO"] and conviction >= 7:
             chosen_outcome = "Yes" if decision == "BUY_YES" else "No"
             entry_price = yes_p if decision == "BUY_YES" else no_p
-            bet_amount = min(config.POLYMARKET_MAX_BET_USDC, poly_summary["cash_usdc"])
+            bet_amount = min(config.POLYMARKET_MAX_BET_USDC, available_poly_cash)
 
             if bet_amount >= 10.0 and entry_price > 0:
                 pos = poly_paper.open_position(m, chosen_outcome, bet_amount, {
@@ -182,6 +185,7 @@ def run_cycle():
                 })
                 if pos:
                     poly_trades_executed += 1
+                    available_poly_cash = max(0.0, available_poly_cash - bet_amount)
                     updated_summary = poly_paper.get_summary()
                     notifier.notify_polymarket_bet(
                         question=q,
@@ -208,10 +212,18 @@ def run_cycle():
     alpaca_cash = float(alpaca_summary.get("cash", 0.0))
     logger.info(f"Saldo disponible en Alpaca: ${alpaca_cash:,.2f} USD")
 
-    # Lista de activos candidatos para evaluar (Cripto 24/7 y Acciones de Wall Street)
-    candidates = ["BTC/USD", "ETH/USD", "SOL/USD", "AAPL", "NVDA", "TSLA", "MSFT", "GOOGL"]
+    # Lista ampliada de activos candidatos para evaluar (Cripto 24/7 y Acciones líderes de Wall Street)
+    candidates = [
+        # Criptomonedas de alta liquidez y momentum
+        "BTC/USD", "ETH/USD", "SOL/USD", "DOGE/USD", "AVAX/USD", "LINK/USD",
+        # Megacaps y semiconductores
+        "NVDA", "TSLA", "AAPL", "MSFT", "GOOGL", "AMZN", "META", "AMD",
+        # Acciones con momentum y volumen institucional
+        "PLTR", "COIN", "NFLX", "AVGO", "ARM", "SMCI", "UBER"
+    ]
     
     alpaca_trades_executed = 0
+    ai_insights: List[str] = []
     for sym in candidates:
         clean_sym = sym.replace("/", "").upper()
         # Omitir activos de cartera a largo plazo (Buy & Hold)
@@ -306,6 +318,8 @@ def run_cycle():
         pattern_detected = crypto_analysis.get("pattern_detected", "Patrón Cuantitativo")
         profitability = crypto_analysis.get("profitability_assessment", "")
 
+        ai_insights.append(f"• <b>{sym}:</b> {c_decision} (Convicción {c_conviction}/10) | {pattern_detected}")
+
         if c_decision == "BUY" and c_conviction >= 7 and r_r >= 1.8:
             # Calcular cantidad (decimal para cripto, entero para acciones)
             is_crypto = "/" in sym
@@ -347,28 +361,76 @@ def run_cycle():
                         reason=c_rationale
                     )
                     logger.info(f"¡Orden ejecutada con éxito en Alpaca para {sym}! TP={tp_price}, SL={sl_price}")
-                    break
+                    if alpaca_trades_executed >= 2:
+                        break
 
-    # 5. Reporte consolidado de cartera
-    logger.info("4/4. Generando balance global consolidado...")
+    # 5. Reporte consolidado de cartera con radar de riesgo y análisis de IA
+    logger.info("4/4. Generando balance global consolidado y radar de riesgo...")
     final_poly = poly_paper.get_summary()
     final_alpaca = alpaca.get_account_summary()
-    
+    alpaca_open_pos = alpaca.get_open_positions()
+
+    # Construir Radar en vivo de Stop Loss y Take Profit
+    risk_radar_lines = []
+    seen_radar_syms = set()
+    for sym, pos_data in alpaca_open_pos.items():
+        cs = sym.replace("/", "").upper()
+        if cs in seen_radar_syms:
+            continue
+        seen_radar_syms.add(cs)
+
+        cur_p = float(pos_data.get("current_price", 0.0))
+        entry_p = float(pos_data.get("avg_entry_price", cur_p))
+        pnl = float(pos_data.get("unrealized_pl", 0.0))
+        pnl_pct = float(pos_data.get("unrealized_plpc", 0.0)) * 100.0
+
+        if cs in config.LONG_TERM_SYMBOLS:
+            risk_radar_lines.append(f"• <b>{sym}:</b> {pnl_pct:+.2f}% 🛡️ <i>(Inversión Largo Plazo blindada sin SL)</i>")
+        else:
+            is_crypto = "/" in sym or (sym.endswith("USD") and len(sym) > 4)
+            tp_thresh = 3.0 if is_crypto else 2.5
+            sl_thresh = -1.5 if is_crypto else -1.0
+            tp_price_val = entry_p * (1.0 + tp_thresh / 100.0)
+            sl_price_val = entry_p * (1.0 + sl_thresh / 100.0)
+            emoji = "🟢" if pnl >= 0 else "🔴"
+            risk_radar_lines.append(
+                f"• <b>{sym}:</b> {pnl_pct:+.2f}% {emoji} (a ${cur_p:,.2f})\n"
+                f"   🎯 TP: ${tp_price_val:,.2f} (+{tp_thresh:.1f}%) | 🛑 SL: ${sl_price_val:,.2f} ({sl_thresh:.1f}%)"
+            )
+
+    # Posición destacada de Polymarket en el radar
+    poly_radar_lines = []
+    for mid, p_data in poly_paper.data.get("active_positions", {}).items():
+        if p_data.get("no_stop_loss"):
+            pnl_pct = float(p_data.get("unrealized_pnl_pct", 0.0))
+            poly_radar_lines.append(f"• <b>Pedro Sánchez (YES):</b> {pnl_pct:+.1f}% 🛡️ <i>(Blindado sin SL hasta elecciones)</i>")
+
+    risk_radar_block = "\n".join(risk_radar_lines[:8])
+    poly_radar_block = "\n".join(poly_radar_lines)
+    ai_block = "\n".join(ai_insights[:4]) if ai_insights else "• Vigilancia técnica de posiciones abiertas dentro de parámetros normales."
+
+    total_combined_eq = float(final_alpaca.get("portfolio_value", 0)) + float(final_poly.get("total_equity_usdc", 0))
+
+    action_summary = "💤 Sin operaciones nuevas (posiciones en rango normal)."
+    if poly_trades_executed > 0 or alpaca_trades_executed > 0:
+        action_summary = f"🚀 <b>Nuevas operaciones ejecutadas:</b> Polymarket: {poly_trades_executed} | Alpaca: {alpaca_trades_executed}"
+
     status_msg = (
-        f"🤖 <b>REPORTE DE CICLO DE INTELIGENCIA (GOOGLE GEMINI)</b>\n"
-        f"━━━━━━━━━━━━━━━━━━━━\n"
-        f"🧠 <b>Modelo IA Activo:</b> Google Gemini Flash (Contexto 1M tokens)\n"
-        f"⚡ <b>Operaciones ejecutadas:</b> Polymarket: {poly_trades_executed} | Alpaca: {alpaca_trades_executed}\n\n"
-        f"💼 <b>POLYMARKET (Paper):</b>\n"
-        f"• Saldo Total: <b>${final_poly['total_equity_usdc']:,.2f} USDC</b>\n"
-        f"• Efectivo Libre: ${final_poly['cash_usdc']:,.2f} USDC\n"
-        f"• En Apuestas: ${final_poly['invested_usdc']:,.2f} USDC ({final_poly['active_positions_count']} activas)\n\n"
-        f"📈 <b>ALPACA (Paper):</b>\n"
-        f"• Saldo Total: <b>${float(final_alpaca.get('portfolio_value', 0)):,.2f} USD</b>\n"
-        f"• Efectivo Libre: ${float(final_alpaca.get('cash', 0)):,.2f} USD\n"
-        f"• En Inversión: ${float(final_alpaca.get('long_market_value', 0)):,.2f} USD\n"
-        f"━━━━━━━━━━━━━━━━━━━━\n"
-        f"✅ <i>Monitores de riesgo activos 24/7 vigilando Take Profit y Stop Loss.</i>"
+        f"🤖 <b>REPORTE DE CICLO IA (GOOGLE GEMINI 24/7)</b>\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"💰 <b>CAPITAL COMBINADO:</b> <code>${total_combined_eq:,.2f} USD</code>\n"
+        f"{action_summary}\n\n"
+        f"🎯 <b>RADAR DE SALIDAS (STOP LOSS Y TAKE PROFIT):</b>\n"
+        f"{risk_radar_block}\n"
+        f"{poly_radar_block}\n\n"
+        f"🧠 <b>ANÁLISIS DE LA IA ESTE CICLO:</b>\n"
+        f"{ai_block}\n"
+        f"📰 <i>Catalizadores macro: {len(all_news)} noticias y tuits analizados.</i>\n\n"
+        f"💼 <b>SALDOS EN TIEMPO REAL:</b>\n"
+        f"• <b>Alpaca:</b> ${float(final_alpaca.get('portfolio_value', 0)):,.2f} USD (Libre: ${float(final_alpaca.get('cash', 0)):,.2f})\n"
+        f"• <b>Polymarket:</b> ${final_poly['total_equity_usdc']:,.2f} USDC (Libre: ${final_poly['cash_usdc']:,.2f})\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"💡 <i>Escribe /estado o 'como va' para el desglose completo.</i>"
     )
     notifier.send_telegram_message(status_msg)
     logger.info("Ciclo de inteligencia completado y reporte enviado a Telegram.")
