@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 844.8753462603881,
+  "cash_usdc": 0.0,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -9,12 +9,12 @@
       "url": "https://polymarket.com/market/will-david-lisnard-win-the-2027-french-presidential-election",
       "outcome": "No",
       "entry_price": 0.895,
-      "current_price": 0.8745,
+      "current_price": 0.8755,
       "shares": 2234.63687150838,
       "invested_usd": 2000.0,
-      "current_value": 1954.1899441340784,
-      "unrealized_pnl": -45.81005586592164,
-      "unrealized_pnl_pct": -2.2905027932960853,
+      "current_value": 1956.4245810055866,
+      "unrealized_pnl": -43.57541899441344,
+      "unrealized_pnl_pct": -2.1787709497206786,
       "catalyst": {
         "category": "Análisis Gemini",
         "headline": "David Lisnard, aunque es una figura respetada dentro de la derecha tradicional francesa (LR/Nouvelle Énergie), carece de la proyección nacional y el apoyo masivo necesario para sup",
@@ -97,12 +97,12 @@
       "url": "https://polymarket.com/market/will-flvio-bolsonaro-win-the-2026-brazilian-presidential-election",
       "outcome": "No",
       "entry_price": 0.1805,
-      "current_price": 0.159,
+      "current_price": 0.1585,
       "shares": 11080.3324099723,
       "invested_usd": 2000.0,
-      "current_value": 1761.7728531855957,
-      "unrealized_pnl": -238.22714681440425,
-      "unrealized_pnl_pct": -11.911357340720217,
+      "current_value": 1756.2326869806095,
+      "unrealized_pnl": -243.76731301939049,
+      "unrealized_pnl_pct": -12.188365650969525,
       "catalyst": {
         "category": "Análisis Gemini",
         "headline": "La probabilidad de mercado de 0.8195 es una anomalía extrema. Flávio Bolsonaro enfrenta barreras legales significativas, incluyendo la inhabilitación política de su padre (Jair Bol",
@@ -200,6 +200,31 @@
       "hold_until_resolution": true,
       "target_exit_date": "2026-11-29T23:59:59Z",
       "opened_at": "2026-10-05T12:25:54.611135+00:00"
+    },
+    "4877193": {
+      "market_id": "4877193",
+      "question": "Will Spain win on 2026-10-06?",
+      "event_title": "Croatia vs. Spain",
+      "slug": "unl-hrv-esp-2026-10-06-esp",
+      "url": "https://polymarket.com/market/unl-hrv-esp-2026-10-06-esp",
+      "outcome": "No",
+      "entry_price": 0.215,
+      "current_price": 0.215,
+      "shares": 3929.6527733041307,
+      "invested_usd": 844.8753462603881,
+      "current_value": 844.8753462603881,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Análisis Gemini",
+        "headline": "The market is pricing a Spain victory at 78.5% (YES), which is extremely high for a 3-way football outcome (90 minutes plus stoppage time) where a draw or loss resolves to NO. Hist",
+        "source": "Google gemini-3.5-flash",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-06T17:52:42.437451+00:00"
     }
   },
   "closed_trades": [
