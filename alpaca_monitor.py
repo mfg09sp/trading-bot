@@ -53,6 +53,10 @@ def main():
                 if "/" in sym and sym.replace("/", "") in positions:
                     continue
 
+                # Proteger activos de convicción a largo plazo (sin Stop Loss ni Take Profit)
+                if sym in getattr(config, "LONG_TERM_SYMBOLS", ["SPY", "VOO", "IVV"]):
+                    continue
+
                 cur_p = pos.get("current_price", 0.0)
                 entry_p = pos.get("avg_entry_price", cur_p)
                 qty = pos.get("qty", 0.0)

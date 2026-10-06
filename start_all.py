@@ -46,7 +46,7 @@ def alpaca_monitor_thread():
         logger.error(f"Error en hilo de Alpaca: {e}")
 
 
-def ai_cycle_scheduler(interval_minutes: int = 30):
+def ai_cycle_scheduler(interval_minutes: int = 10):
     logger.info(f"-> Hilo: Programador de IA Gemini arrancado (ciclo cada {interval_minutes} minutos).")
     while True:
         try:
@@ -70,7 +70,7 @@ def main():
         "📡 <b>Monitores activos:</b>\n"
         "  • Polymarket Monitor (60s)\n"
         "  • Alpaca Cripto & Acciones (60s)\n"
-        "  • Radar IA Gemini (Ciclo cada 30m)\n"
+        "  • Radar IA Gemini (Ciclo cada 10m)\n"
         "━━━━━━━━━━━━━━━━━━━━\n"
         "💡 <i>Operando en modo Paper Trading con posiciones de \$2,000+.</i>"
     )
@@ -79,7 +79,7 @@ def main():
     # Lanzar hilos de monitoreo continuo
     t1 = threading.Thread(target=poly_monitor_thread, daemon=True)
     t2 = threading.Thread(target=alpaca_monitor_thread, daemon=True)
-    t3 = threading.Thread(target=ai_cycle_scheduler, args=(30,), daemon=True)
+    t3 = threading.Thread(target=ai_cycle_scheduler, args=(10,), daemon=True)
 
     t1.start()
     t2.start()
