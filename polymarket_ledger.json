@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 1622.601728863588,
+  "cash_usdc": 0.0,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -228,6 +228,31 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-10-06T23:25:16.285907+00:00"
+    },
+    "2772169": {
+      "market_id": "2772169",
+      "question": "Will Manchester City win the 2026-27 UEFA Champions League Championship?",
+      "event_title": "UEFA Champions League: 2027 Champion",
+      "slug": "will-manchester-city-win-the-2026-27-uefa-champions-league-championship-20260701202025553",
+      "url": "https://polymarket.com/market/will-manchester-city-win-the-2026-27-uefa-champions-league-championship-20260701202025553",
+      "outcome": "No",
+      "entry_price": 0.945,
+      "current_price": 0.945,
+      "shares": 1717.0388665223154,
+      "invested_usd": 1622.601728863588,
+      "current_value": 1622.601728863588,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Análisis Gemini",
+        "headline": "The market is currently pricing Manchester City at 5.5% probability. However, the confluence of severe financial breach findings by the Premier League and subsequent 'fresh blows' ",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 9
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-07T03:02:03.699056+00:00"
     }
   },
   "closed_trades": [
