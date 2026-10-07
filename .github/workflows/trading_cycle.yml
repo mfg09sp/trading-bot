@@ -34,8 +34,8 @@ jobs:
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       RISK_PER_TRADE_USD: "2500.0"
-      TAKE_PROFIT_PCT: "0.025"
-      STOP_LOSS_PCT: "0.010"
+      TAKE_PROFIT_PCT: "0.055"
+      STOP_LOSS_PCT: "0.028"
 
     steps:
       - name: Descargar repositorio

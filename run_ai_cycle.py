@@ -78,8 +78,8 @@ def run_cycle():
             pnl_pct = pos.get("unrealized_plpc", 0.0)
 
             is_crypto = "/" in sym or (sym.endswith("USD") and len(sym) > 4)
-            tp_pct_thresh = 0.030 if is_crypto else 0.025
-            sl_pct_thresh = -0.015 if is_crypto else -0.010
+            tp_pct_thresh = 0.060 if is_crypto else 0.055  # +6.0% cripto, +5.5% acciones
+            sl_pct_thresh = -0.035 if is_crypto else -0.028 # -3.5% cripto, -2.8% acciones (margen profesional para swing trading)
 
             should_close = False
             is_tp = False
@@ -333,8 +333,8 @@ def run_cycle():
                 target_tp_price = crypto_analysis.get("predicted_target_price")
                 target_sl_price = crypto_analysis.get("predicted_stop_loss_price")
                 chart_pred = crypto_analysis.get("chart_prediction", "")
-                tp_pct = float(crypto_analysis.get("target_take_profit_pct", 3.0)) / 100.0
-                sl_pct = float(crypto_analysis.get("target_stop_loss_pct", 1.5)) / 100.0
+                tp_pct = float(crypto_analysis.get("target_take_profit_pct", 6.0 if is_crypto else 5.5)) / 100.0
+                sl_pct = float(crypto_analysis.get("target_stop_loss_pct", 3.5 if is_crypto else 2.8)) / 100.0
                 
                 order, tp_price, sl_price = alpaca.place_bracket_order(
                     symbol=sym,
@@ -388,8 +388,8 @@ def run_cycle():
             risk_radar_lines.append(f"• <b>{sym}:</b> {pnl_pct:+.2f}% 🛡️ <i>(Inversión Largo Plazo blindada sin SL)</i>")
         else:
             is_crypto = "/" in sym or (sym.endswith("USD") and len(sym) > 4)
-            tp_thresh = 3.0 if is_crypto else 2.5
-            sl_thresh = -1.5 if is_crypto else -1.0
+            tp_thresh = 6.0 if is_crypto else 5.5
+            sl_thresh = -3.5 if is_crypto else -2.8
             tp_price_val = entry_p * (1.0 + tp_thresh / 100.0)
             sl_price_val = entry_p * (1.0 + sl_thresh / 100.0)
             emoji = "🟢" if pnl >= 0 else "🔴"

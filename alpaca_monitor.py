@@ -65,9 +65,9 @@ def main():
 
                 is_crypto = "/" in sym or (sym.endswith("USD") and len(sym) > 4)
                 
-                # Umbrales de salida
-                tp_threshold = 0.030 if is_crypto else 0.025  # +3% cripto, +2.5% acciones
-                sl_threshold = -0.015 if is_crypto else -0.010 # -1.5% cripto, -1% acciones
+                # Umbrales de salida ampliados (Swing trading con margen anti-barridos)
+                tp_threshold = 0.060 if is_crypto else 0.055  # +6.0% cripto, +5.5% acciones
+                sl_threshold = -0.035 if is_crypto else -0.028 # -3.5% cripto, -2.8% acciones
 
                 should_close = False
                 is_tp = False

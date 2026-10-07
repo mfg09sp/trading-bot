@@ -24,8 +24,8 @@ _symbols_raw: str = os.getenv("SYMBOLS", "AAPL,NVDA,TSLA,MSFT")
 SYMBOLS: List[str] = [s.strip().upper() for s in _symbols_raw.split(",") if s.strip()]
 
 RISK_PER_TRADE_USD: float = float(os.getenv("RISK_PER_TRADE_USD", "2500.0"))  # Aumentado 50x (de $50 a $2500 por trade)
-TAKE_PROFIT_PCT: float = float(os.getenv("TAKE_PROFIT_PCT", "0.015"))  # 1.5%
-STOP_LOSS_PCT: float = float(os.getenv("STOP_LOSS_PCT", "0.010"))      # 1.0%
+TAKE_PROFIT_PCT: float = float(os.getenv("TAKE_PROFIT_PCT", "0.055"))  # 5.5% (Objetivo de beneficio ampliado)
+STOP_LOSS_PCT: float = float(os.getenv("STOP_LOSS_PCT", "0.028"))      # 2.8% (Margen profesional para evitar barrido de stops)
 CHECK_INTERVAL_SECONDS: int = int(os.getenv("CHECK_INTERVAL_SECONDS", "60"))
 MAX_ACTIVE_POSITIONS: int = int(os.getenv("MAX_ACTIVE_POSITIONS", "10"))
 AUTO_DISCOVERY: bool = os.getenv("AUTO_DISCOVERY", "true").lower() in ("true", "1", "yes")
