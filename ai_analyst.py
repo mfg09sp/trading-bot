@@ -170,13 +170,24 @@ Reglas exactas de resolución oficial: {contract_rules or "Resolución oficial e
 --- CONTEXTO Y CATALIZADORES INFORMATIVOS (NOTICIAS, DATOS, DECLARACIONES) ---
 {context_news}
 
---- INSTRUCCIONES DE ANÁLISIS CUANTITATIVO Y MODELADO HISTÓRICO ---
-1. TASA BASE HISTÓRICA (Base Rate): Evalúa cómo se resuelven históricamente eventos del mismo tipo (elecciones intermedias, decisiones de la Fed, lanzamientos espaciales, aprobaciones regulatorias). No te dejes llevar por el sensacionalismo o la histeria mediática.
-2. SESGO DEL NO-FAVORITO (Longshot Bias): El público minorista suele inflar cuotas de eventos altamente improbables (ej. pagar 15% o 25% por algo que solo ocurre el 2% de las veces). Si detectas esta sobrevaloración, el 'BUY_NO' ofrece una asimetría matemática demoledora.
-3. ESPERANZA MATEMÁTICA Y VENTAJA (Edge): Compara la probabilidad implícita del precio actual con tu probabilidad real estimada (Bayesiana). Solo emite orden de compra si la ventaja matemática (Edge) es superior al +10% y el ratio riesgo/beneficio es claramente asimétrico.
-4. IMPACTO DE TUITS, REDES Y DECLARACIONES EN VIVO: Analiza rigurosamente los tuits en X/Twitter, publicaciones en Truth Social, discursos y filtraciones recientes proporcionadas en el contexto en vivo. Si Elon Musk, Trump, candidatos o líderes clave han posteado algo determinante en las últimas horas, úsalo como catalizador de primer orden.
-5. VERIFICACIÓN DE CLÁUSULAS: Revisa si los términos de la pregunta imponen restricciones estrictas (fechas, fuentes de verificación) que benefician indiscutiblemente a una de las opciones.
-6. Si el mercado está en precio justo o hay ambigüedad sin ventaja estadística demostrable, emite PASS.
+--- INSTRUCCIONES DE ANÁLISIS CUANTITATIVO, ANOMALÍAS PROFUNDAS Y MODELADO HISTÓRICO ---
+1. ANOMALÍA DE 3 VÍAS / REGLA 1X2 (DEPORTES Y COMPETICIONES):
+   - En fútbol o deportes oficiales a tiempo reglamentario, existen 3 desenlaces: Gana equipo A, Gana equipo B, o EMPATE.
+   - En preguntas tipo 'Will Team X win?', un EMPATE resuelve automáticamente como NO.
+   - Los aficionados minoristas suelen inflar el YES al 70-80% por pasión, ignorando que el empate (25-30%) más la derrota suman un 45-55% real de probabilidad para el NO.
+   - Si detectas esta sobrevaloración, el 'BUY_NO' ofrece una ventaja matemática descomunal.
+2. SESGO DEL NO-FAVORITO (Longshot Bias):
+   - El público minorista suele inflar cuotas de eventos altamente improbables (pagar 15% o 25% por algo que solo ocurre el 1-2% de las veces en la historia).
+   - El 'BUY_NO' a $0.75 - $0.90 en estos casos es dinero seguro con esperanza matemática muy positiva.
+3. CLÁUSULAS TEMPORALES Y PLAZOS ESTRICTOS:
+   - Si la fecha de resolución está cerca y los trámites legales, legislativos o fácticos necesarios no pueden materialmente completarse a tiempo, el 'BUY_NO' es una certeza matemática.
+4. TASA BASE HISTÓRICA (Base Rate):
+   - Evalúa tasas base reales (elecciones presidenciales, decisiones de la Fed, victorias electorales).
+5. ESPERANZA MATEMÁTICA Y VENTAJA (Edge):
+   - Compara la probabilidad implícita del precio actual con tu probabilidad real estimada (Bayesiana). Solo emite orden de compra si la ventaja matemática (Edge) es superior al +10% y el ratio riesgo/beneficio es claramente asimétrico.
+6. IMPACTO DE TUITS, REDES Y DECLARACIONES EN VIVO:
+   - Analiza rigurosamente los tuits en X/Twitter, declaraciones y noticias recientes proporcionadas en el contexto. Si hay noticias no asimiladas por el precio de Polymarket, explótalo de inmediato.
+7. Si el mercado está en precio justo o hay ambigüedad sin ventaja estadística demostrable, emite PASS.
 
 Responde ÚNICAMENTE con esta estructura JSON:
 {{
@@ -184,6 +195,7 @@ Responde ÚNICAMENTE con esta estructura JSON:
     "conviction": <número entero del 1 al 10>,
     "estimated_real_prob": <probabilidad estadística real calculada entre 0.01 y 0.99>,
     "edge_pct": <porcentaje de ventaja matemática calculada, ej. 18.5>,
+    "anomaly_type": "<nombre de la anomalía identificada: '3-Way / 1X2 Sports Trap' | 'Longshot Bias' | 'Time Expiration Impossibility' | 'Information Lag' | 'Base Rate Mispricing'>",
     "rationale": "<tesis cuantitativa concisa explicando el modelo, datos históricos y por qué el mercado está mal tasado>"
 }}
 """
@@ -213,11 +225,12 @@ Responde ÚNICAMENTE con esta estructura JSON:
         symbol: str,
         current_price: float,
         technical_data: Dict[str, Any],
-        context_news: str
+        context_news: str,
+        super_investor_data: Optional[Dict[str, Any]] = None
     ) -> Dict[str, Any]:
         """
         Analiza un activo de Alpaca (Cripto como BTC, ETH, SOL o Acción de Wall Street)
-        combinando datos técnicos y noticias macroeconómicas.
+        combinando datos técnicos, respaldo de Super Inversores (Pelosi, Buffett, Whales) y noticias.
         """
         if not self.is_available():
             return {
@@ -228,10 +241,23 @@ Responde ÚNICAMENTE con esta estructura JSON:
 
         sys_inst = (
             "Eres un gestor cuantitativo senior de fondos de cobertura y analista técnico de precisión. "
-            "Tu misión es evaluar activos en Alpaca (criptomonedas y acciones) combinando patrones chartistas rigurosos, "
+            "Tu misión es evaluar activos en Alpaca (criptomonedas y acciones) combinando el rastreo de Super Inversores "
+            "(Nancy Pelosi, Warren Buffett, Druckenmiller, Compras de Insiders), patrones chartistas rigurosos en el gráfico, "
             "tuits/noticias de última hora y rentabilidad matemática estricta (ratio riesgo/beneficio mínimo de 2:1). "
             "Responde SIEMPRE con un JSON válido estricto sin ningún texto fuera del bloque JSON."
         )
+
+        super_investor_text = ""
+        if super_investor_data:
+            inv_names = ", ".join(super_investor_data.get("investors", []))
+            inv_styles = ", ".join(super_investor_data.get("styles", []))
+            inv_news = "\n".join([f"- {n}" for n in super_investor_data.get("latest_news", [])])
+            super_investor_text = (
+                f"=== RESPALDO DE SUPER INVERSORES / WHALES INSTITUCIONALES ===\n"
+                f"• Inversores relevantes: {inv_names}\n"
+                f"• Tesis / Estilo: {inv_styles}\n"
+                f"• Titulares de compras recientes detectadas:\n{inv_news or 'Posición central histórica de alta convicción.'}\n"
+            )
 
         prompt = f"""
 --- ACTIVO FINANCIERO A ANALIZAR ---
@@ -239,21 +265,25 @@ Símbolo: {symbol}
 Precio Actual: {current_price} USD
 Métricas Técnicas y Patrones de Precio: {json.dumps(technical_data, indent=2)}
 
+{super_investor_text}
 --- INVESTIGACIÓN EN VIVO (NOTICIAS, TUITS EN X, CATALIZADORES Y REDES) ---
 {context_news}
 
---- INSTRUCCIONES DE ANÁLISIS DE GRÁFICA, PREDICCIÓN Y RENTABILIDAD ---
+--- INSTRUCCIONES DE ANÁLISIS DE GRÁFICA, SUPER INVERSORES Y CONVERGENCIA ---
 1. ANÁLISIS DE LA GRÁFICA Y VELAS:
    - Analiza la acción del precio: estructura de velas recientes (mechas de rechazo, velas envolventes, consolidación), soportes/resistencias clave y volumen.
    - Determina la tendencia predominante y si existe un patrón chartista claro (ej. ruptura de resistencia, doble suelo, retroceso a media móvil EMA9/EMA21, rebote en sobreventa RSI).
-2. PREDICCIÓN DE MOVIMIENTO FUTURO:
+2. CONVERGENCIA CON SUPER INVERSORES (SMART MONEY):
+   - Si este activo cuenta con respaldo de Super Inversores (Nancy Pelosi, Warren Buffett, Whales o Insiders), evalúa si el gráfico actual ofrece un punto de entrada óptimo para sumarse a su movimiento con ventaja.
+   - La combinación de acumulación por un Super Inversor + confirmación técnica en el gráfico es la configuración de mayor probabilidad de éxito.
+3. PREDICCIÓN DE MOVIMIENTO FUTURO:
    - Predice explícitamente qué va a hacer la gráfica en las próximas horas/sesiones (si romperá al alza, corregirá o seguirá lateral).
    - Calcula el VALOR ESPERADO DE SUBIDA (precio objetivo donde el precio encontrará resistencia o culminará el impulso).
-3. RIESGO Y CONTROL DE STOP LOSS:
+4. RIESGO Y CONTROL DE STOP LOSS:
    - Determina el nivel de Stop Loss técnico donde la hipótesis alcista queda invalidada.
    - Exige una relación Riesgo/Beneficio (R:R) de al menos 1.8 a 1 (lo ideal >= 2.0).
    - Si no hay una ventaja estadística clara, si el activo está en rango sucio o la relación riesgo/beneficio es desfavorable, emite HOLD.
-4. TOMA DE ACCIÓN:
+5. TOMA DE ACCIÓN:
    - Solo emite BUY si predices subida con convicción >= 7/10 y R:R >= 1.8. En caso contrario emite HOLD.
 
 Responde ÚNICAMENTE con esta estructura JSON:
@@ -263,12 +293,13 @@ Responde ÚNICAMENTE con esta estructura JSON:
     "chart_prediction": "<predicción clara de qué va a hacer la gráfica en el corto plazo>",
     "predicted_target_price": <precio esperado de subida exacto en USD, ej. 362.50>,
     "predicted_stop_loss_price": <precio exacto de stop loss técnico en USD, ej. 348.10>,
-    "target_take_profit_pct": <porcentaje esperado de subida ej. 3.2>,
-    "target_stop_loss_pct": <porcentaje de stop loss ej. 1.2>,
-    "risk_reward_ratio": <número decimal ej. 2.6>,
+    "target_take_profit_pct": <porcentaje esperado de subida ej. 5.5>,
+    "target_stop_loss_pct": <porcentaje de stop loss ej. 2.8>,
+    "risk_reward_ratio": <número decimal ej. 2.2>,
     "pattern_detected": "<nombre del patrón técnico o figura chartista identificada>",
+    "super_investor_alignment": "<evaluación concisa de cómo confluye el Super Inversor con el gráfico>",
     "profitability_assessment": "<evaluación cuantitativa de por qué esta operación es matemáticamente rentable>",
-    "rationale": "<análisis estratégico completo en español integrando velas, predicción, tuits y noticias>"
+    "rationale": "<análisis estratégico completo en español integrando velas, predicción, Super Inversores, tuits y noticias>"
 }}
 """
 

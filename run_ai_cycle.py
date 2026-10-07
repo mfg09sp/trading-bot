@@ -25,6 +25,7 @@ from news_service import NewsService
 from polymarket_service import PolymarketService
 from polymarket_paper import PolymarketPaperEngine
 from alpaca_service import AlpacaService
+from super_investor_service import SuperInvestorService
 import notifier
 
 logging.basicConfig(
@@ -116,18 +117,13 @@ def run_cycle():
     news_summary_text = "\n".join(all_news[:25])
     logger.info(f"Se recopilaron {len(all_news)} catalizadores informativos.")
 
-    # 3. Analizar Polymarket con mayor amplitud de categorías y algoritmos cuantitativos
-    logger.info("2/4. Escaneando mercados líquidos en Polymarket (Política, Macro, Cripto, IA, Tech, Deportes)...")
+    # 3. Analizar Polymarket con rastreo profundo de anomalías matemáticas (1X2 Deportes, Longshots, Desfase)
+    logger.info("2/4. Escaneando anomalías cuantitativas en Polymarket (Regla 1X2, Longshots, Ineficiencias)...")
     poly_summary = poly_paper.get_summary()
-    keywords = [
-        "Trump", "Elon", "Musk", "Fed", "Bitcoin", "Crypto", "Election", "President",
-        "Senate", "Economy", "Inflation", "AI", "OpenAI", "Nvidia", "Tariff",
-        "War", "SpaceX", "Champions", "World Cup", "Nobel"
-    ]
-    markets = poly_service.search_markets_by_keywords(keywords, limit_per_cat=10)
+    markets = poly_service.get_anomaly_candidate_markets(limit_total=30)
     active_poly_ids = set(poly_paper.data.get("active_positions", {}).keys())
-    # Evaluar solo hasta 8 candidatos no activos para mantener el ciclo ágil (< 2 min)
-    unheld_markets = [m for m in markets if m.get("id") not in active_poly_ids][:8]
+    # Evaluar hasta 12 candidatos con mayor puntuación de anomalía
+    unheld_markets = [m for m in markets if m.get("id") not in active_poly_ids][:12]
     
     poly_trades_executed = 0
     available_poly_cash = float(poly_summary.get("cash_usdc", 0.0))
@@ -145,16 +141,22 @@ def run_cycle():
         yes_p = prices.get("Yes", 0.0)
         no_p = prices.get("No", 0.0)
 
-        # Filtrar mercados con liquidez o precios con margen de beneficio
+        # Filtrar mercados ilíquidos
         if (yes_p < 0.05 or yes_p > 0.95) and (no_p < 0.05 or no_p > 0.95):
             continue
+
+        anomaly_tags_str = ", ".join(m.get("anomaly_tags", ["Análisis Cuantitativo"]))
 
         # Investigar tuits, declaraciones y noticias específicas en vivo para esta pregunta
         targeted_news = news_service.search_live_web_and_tweets(q, max_items=5)
         targeted_text = "\n".join([f"- [{item.get('source', 'Web')}] {item.get('title', '')} ({item.get('pub_date', '')})" for item in targeted_news])
-        combined_context = f"=== TUITS Y NOTICIAS EN VIVO PARA ESTA PREGUNTA ===\n{targeted_text or 'Sin menciones específicas en los últimos minutos.'}\n\n=== CONTEXTO GLOBAL Y REDES (TRUMP, ELON MUSK, MACRO, CRIPTO) ===\n{news_summary_text}"
+        combined_context = (
+            f"=== ANOMALÍAS DETECTADAS POR EL SCANNER ===\n{anomaly_tags_str}\n\n"
+            f"=== TUITS Y NOTICIAS EN VIVO PARA ESTA PREGUNTA ===\n{targeted_text or 'Sin menciones específicas en los últimos minutos.'}\n\n"
+            f"=== CONTEXTO GLOBAL Y REDES (TRUMP, ELON MUSK, MACRO, CRIPTO) ===\n{news_summary_text}"
+        )
 
-        logger.info(f"Consultando a Gemini para Polymarket: {q[:60]}... (Yes: ${yes_p:.3f}, No: ${no_p:.3f})")
+        logger.info(f"Consultando a Gemini para Polymarket: {q[:60]}... (Yes: ${yes_p:.3f}, No: ${no_p:.3f}) [Anomalía: {anomaly_tags_str}]")
         
         # Consultar Gemini con contexto enriquecido en vivo
         analysis = analyst.analyze_market_opportunity(
@@ -168,8 +170,9 @@ def run_cycle():
         conviction = analysis.get("conviction", 0)
         rationale = analysis.get("rationale", "")
         model_used = analysis.get("model_used", "gemini")
+        anomaly_detected = analysis.get("anomaly_type", anomaly_tags_str)
 
-        logger.info(f"-> Veredicto Gemini [{model_used}]: {decision} (Convicción: {conviction}/10)")
+        logger.info(f"-> Veredicto Gemini [{model_used}]: {decision} (Convicción: {conviction}/10 | Anomalía: {anomaly_detected})")
 
         if decision in ["BUY_YES", "BUY_NO"] and conviction >= 7:
             chosen_outcome = "Yes" if decision == "BUY_YES" else "No"
@@ -178,7 +181,7 @@ def run_cycle():
 
             if bet_amount >= 10.0 and entry_price > 0:
                 pos = poly_paper.open_position(m, chosen_outcome, bet_amount, {
-                    "category": "Análisis Gemini",
+                    "category": f"Anomalía: {anomaly_detected[:30]}",
                     "headline": rationale[:180],
                     "source": f"Google {model_used}",
                     "score": conviction
@@ -195,7 +198,7 @@ def run_cycle():
                         shares=pos["shares"],
                         url=pos["url"],
                         catalyst={
-                            "category": f"IA Gemini ({model_used})",
+                            "category": f"IA Gemini [{anomaly_detected}]",
                             "headline": rationale,
                             "source": f"Convicción {conviction}/10 | Ventaja: {analysis.get('edge_pct', 0)}%"
                         },
@@ -205,22 +208,28 @@ def run_cycle():
                     if poly_trades_executed >= 2:
                         break  # Hasta 2 posiciones de alta convicción por ciclo para diversificar gradualmente
 
-    # 4. Analizar Alpaca Cripto y Acciones
-    logger.info("3/4. Analizando activos en Alpaca (Cripto y Acciones)...")
+    # 4. Analizar Alpaca Cripto y Acciones con Radar de Super Inversores
+    logger.info("3/4. Analizando activos en Alpaca (Super Inversores + Cripto 24/7)...")
     alpaca_positions = alpaca.get_open_positions()
     alpaca_summary = alpaca.get_account_summary()
     alpaca_cash = float(alpaca_summary.get("cash", 0.0))
     logger.info(f"Saldo disponible en Alpaca: ${alpaca_cash:,.2f} USD")
 
-    # Lista ampliada de activos candidatos para evaluar (Cripto 24/7 y Acciones líderes de Wall Street)
-    candidates = [
-        # Criptomonedas de alta liquidez y momentum
-        "BTC/USD", "ETH/USD", "SOL/USD", "DOGE/USD", "AVAX/USD", "LINK/USD",
-        # Megacaps y semiconductores
-        "NVDA", "TSLA", "AAPL", "MSFT", "GOOGL", "AMZN", "META", "AMD",
-        # Acciones con momentum y volumen institucional
-        "PLTR", "COIN", "NFLX", "AVGO", "ARM", "SMCI", "UBER"
-    ]
+    super_investor_svc = SuperInvestorService(news_service=news_service)
+    super_inv_cands = super_investor_svc.get_super_investor_candidates()
+    super_inv_map = {c["symbol"]: c for c in super_inv_cands}
+
+    # Fusión de activos: Criptomonedas líquidas + Acciones de Super Inversores + Megacaps
+    crypto_candidates = ["BTC/USD", "ETH/USD", "SOL/USD", "DOGE/USD", "AVAX/USD", "LINK/USD"]
+    super_inv_symbols = [c["symbol"] for c in super_inv_cands[:12]]
+    core_megacaps = ["NVDA", "TSLA", "AAPL", "MSFT", "GOOGL", "AMZN", "META", "AMD", "PLTR", "COIN", "NFLX", "AVGO", "ARM", "SMCI", "UBER"]
+
+    candidates = []
+    seen_syms = set()
+    for s in crypto_candidates + super_inv_symbols + core_megacaps:
+        if s not in seen_syms:
+            seen_syms.add(s)
+            candidates.append(s)
     
     alpaca_trades_executed = 0
     ai_insights: List[str] = []
@@ -299,12 +308,15 @@ def run_cycle():
         asset_news_text = "\n".join([f"- [{item.get('source', 'Web')}] {item.get('title', '')} ({item.get('pub_date', '')})" for item in asset_news])
         alpaca_context = f"=== TUITS Y NOTICIAS EN VIVO DE {sym} ===\n{asset_news_text or 'Sin alertas de última hora.'}\n\n=== CONTEXTO MACRO Y REDES ===\n{news_summary_text}"
 
-        logger.info(f"Consultando a Gemini para {sym} (${cur_price:,.2f}) con análisis técnico algorítmico y tuits...")
+        super_inv_data = super_inv_map.get(clean_sym)
+        super_inv_tag = f" [Super Inversor: {', '.join(super_inv_data['investors'][:2])}]" if super_inv_data else ""
+        logger.info(f"Consultando a Gemini para {sym} (${cur_price:,.2f}){super_inv_tag} con análisis técnico algorítmico y tuits...")
         crypto_analysis = analyst.analyze_crypto_stock(
             symbol=sym,
             current_price=cur_price,
             technical_data=tech_data,
-            context_news=alpaca_context
+            context_news=alpaca_context,
+            super_investor_data=super_inv_data
         )
 
         c_decision = crypto_analysis.get("decision", "HOLD")
@@ -317,8 +329,9 @@ def run_cycle():
         r_r = float(crypto_analysis.get("risk_reward_ratio", 2.0) or 2.0)
         pattern_detected = crypto_analysis.get("pattern_detected", "Patrón Cuantitativo")
         profitability = crypto_analysis.get("profitability_assessment", "")
+        inv_label = f" (🐳 {', '.join(super_inv_data['investors'][:1])})" if super_inv_data else ""
 
-        ai_insights.append(f"• <b>{sym}:</b> {c_decision} (Convicción {c_conviction}/10) | {pattern_detected}")
+        ai_insights.append(f"• <b>{sym}{inv_label}:</b> {c_decision} (Convicción {c_conviction}/10) | {pattern_detected}")
 
         if c_decision == "BUY" and c_conviction >= 7 and r_r >= 1.8:
             # Calcular cantidad (decimal para cripto, entero para acciones)
@@ -405,9 +418,17 @@ def run_cycle():
             pnl_pct = float(p_data.get("unrealized_pnl_pct", 0.0))
             poly_radar_lines.append(f"• <b>Pedro Sánchez (YES):</b> {pnl_pct:+.1f}% 🛡️ <i>(Blindado sin SL hasta elecciones)</i>")
 
+    # Radar de Super Inversores (Pelosi, Buffett, Druckenmiller, Insiders)
+    super_radar_lines = []
+    for c in super_inv_cands[:4]:
+        s_sym = c["symbol"]
+        inv_names = ", ".join(c["investors"][:2])
+        super_radar_lines.append(f"• <b>{s_sym}:</b> 🐳 {inv_names}")
+    super_radar_block = "\n".join(super_radar_lines)
+
     risk_radar_block = "\n".join(risk_radar_lines[:8])
     poly_radar_block = "\n".join(poly_radar_lines)
-    ai_block = "\n".join(ai_insights[:4]) if ai_insights else "• Vigilancia técnica de posiciones abiertas dentro de parámetros normales."
+    ai_block = "\n".join(ai_insights[:5]) if ai_insights else "• Vigilancia técnica de posiciones abiertas dentro de parámetros normales."
 
     total_combined_eq = float(final_alpaca.get("portfolio_value", 0)) + float(final_poly.get("total_equity_usdc", 0))
 
@@ -420,6 +441,8 @@ def run_cycle():
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"💰 <b>CAPITAL COMBINADO:</b> <code>${total_combined_eq:,.2f} USD</code>\n"
         f"{action_summary}\n\n"
+        f"🐳 <b>RADAR DE SUPER INVERSORES (PELOSI, BUFFETT & WHALES):</b>\n"
+        f"{super_radar_block}\n\n"
         f"🎯 <b>RADAR DE SALIDAS (STOP LOSS Y TAKE PROFIT):</b>\n"
         f"{risk_radar_block}\n"
         f"{poly_radar_block}\n\n"

@@ -114,6 +114,19 @@ def generate_portfolio_report() -> str:
                 lines.append(f"  • <b>{sym}:</b> {pl:+,.2f} USD ({pl_pct:+.2f}%) {emoji_pl} (a ${cur_p:,.2f})")
             lines.append("")
 
+        # Radar de Super Inversores
+        try:
+            from super_investor_service import SuperInvestorService
+            super_svc = SuperInvestorService()
+            super_cands = super_svc.get_super_investor_candidates()[:4]
+            if super_cands:
+                lines.append("🐳 <b>Radar de Super Inversores (Pelosi, Buffett & Whales):</b>")
+                for sc in super_cands:
+                    lines.append(f"  • <b>{sc['symbol']}:</b> {', '.join(sc['investors'][:2])}")
+                lines.append("")
+        except Exception as e:
+            logger.debug(f"Error cargando super inversores para reporte: {e}")
+
     lines.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 
     # --- SECCIÓN POLYMARKET ---
