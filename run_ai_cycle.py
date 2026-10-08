@@ -416,7 +416,7 @@ def run_cycle():
     for mid, p_data in poly_paper.data.get("active_positions", {}).items():
         if p_data.get("no_stop_loss"):
             pnl_pct = float(p_data.get("unrealized_pnl_pct", 0.0))
-            poly_radar_lines.append(f"• <b>Pedro Sánchez (YES):</b> {pnl_pct:+.1f}% 🛡️ <i>(Blindado sin SL hasta elecciones)</i>")
+            poly_radar_lines.append(f"• <b>Pedro Sánchez (YES):</b> {pnl_pct:+.1f}% 🛡️ <i>(Sin SL | 🎯 TP al subir a $6,000 USD)</i>")
 
     # Radar de Super Inversores (Pelosi, Buffett, Druckenmiller, Insiders)
     super_radar_lines = []

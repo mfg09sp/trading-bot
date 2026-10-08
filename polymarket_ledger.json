@@ -175,7 +175,8 @@
         "source": "Google gemini-3.1-flash-lite (Convicción 7/10)"
       },
       "no_stop_loss": true,
-      "hold_until_resolution": true,
+      "hold_until_resolution": false,
+      "target_take_profit_usd": 6000.0,
       "target_exit_date": "2026-11-29T23:59:59Z",
       "opened_at": "2026-10-05T12:25:54.611135+00:00"
     },

@@ -163,7 +163,7 @@ def generate_portfolio_report() -> str:
             lines.append(f"  • Invertido: ${inv:,.2f} ➔ Valor Hoy: <code>${cur_val:,.2f} USDC</code>")
             lines.append(f"  • Cuota: ${entry_p:.3f} ➔ <b>${cur_p:.3f}</b>")
             lines.append(f"  • P&L: <b>{pl:+,.2f} USDC ({pl_pct:+.2f}%)</b> {emoji_pl}")
-            lines.append("  • <i>Blindado. Se mantiene hasta elecciones/resolución.</i>\n")
+            lines.append("  • <i>Sin Stop Loss. Take Profit automático fijado al subir a $6,000 USD (+20%).</i>\n")
 
         if other_poly:
             lines.append("🔮 <b>Otras Apuestas Activas:</b>")

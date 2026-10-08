@@ -205,12 +205,17 @@ class PolymarketPaperEngine:
                 should_close = True
                 close_reason = f"📅 RETIRADA PROGRAMADA TRAS ELECCIONES ({target_exit_date[:10]} - Cuota: ${current_price:.3f} / P&L: {pnl_pct*100:+.1f}%)"
 
-            # 3. Retirada por máxima cotización en posición de convicción (precio sube a cota de victoria >= 0.95)
+            # 3. Retirada por objetivo específico de Take Profit en USD (ej. si la posición alcanza $6,000 USD o más)
+            elif pos.get("target_take_profit_usd") and current_value >= float(pos["target_take_profit_usd"]):
+                should_close = True
+                close_reason = f"🎯 TAKE PROFIT OBJETIVO (${current_value:,.2f} USD / Cuota: ${current_price:.3f} / P&L: +${pnl:,.2f})"
+
+            # 4. Retirada por máxima cotización en posición de convicción (precio sube a cota de victoria >= 0.95)
             elif hold_until_resolution and current_price >= 0.95:
                 should_close = True
                 close_reason = f"🎯 RETIRADA MÁXIMA TRAS SALIDA/VICTORIA (${current_price:.3f} - +{pnl_pct*100:.1f}%)"
 
-            # 4. Take Profit estándar (solo para posiciones normales sin hold_until_resolution)
+            # 5. Take Profit estándar (solo para posiciones normales sin hold_until_resolution)
             elif not hold_until_resolution and pnl_pct >= config.POLYMARKET_TAKE_PROFIT_PCT:
                 should_close = True
                 close_reason = f"🎯 TAKE PROFIT (+{pnl_pct*100:.1f}%)"
