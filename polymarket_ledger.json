@@ -237,23 +237,23 @@
       "slug": "bun-dor-wer-2026-10-09-dor",
       "url": "https://polymarket.com/market/bun-dor-wer-2026-10-09-dor",
       "outcome": "No",
-      "entry_price": 0.285,
-      "current_price": 0.365,
+      "entry_price": 0.375,
+      "current_price": 0.375,
       "shares": 4614.565227149747,
-      "invested_usd": 1315.151089737678,
-      "current_value": 1684.3163079096578,
-      "unrealized_pnl": 369.16521817197986,
-      "unrealized_pnl_pct": 28.0701754385965,
+      "invested_usd": 1730.4619601811553,
+      "current_value": 1730.4619601811553,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
       "catalyst": {
         "category": "Anomalía: 3-Way / 1X2 Sports Trap",
-        "headline": "The market is pricing a win for Borussia Dortmund at 71.5% (0.715), which ignores the fundamental 3-way nature of football (1X2). Historically, even strong favorites in the Bundesl",
-        "source": "Google gemini-3.1-flash-lite",
-        "score": 9
+        "headline": "The market suffers from the classic '3-Way / 1X2 Sports Trap'. In football, a match has three outcomes: Win, Draw, or Loss. Since a Draw or Loss resolves this market to 'NO', the '",
+        "source": "Google gemini-3.5-flash",
+        "score": 8
       },
       "no_stop_loss": false,
       "hold_until_resolution": false,
       "target_exit_date": null,
-      "opened_at": "2026-10-09T18:11:23.628651+00:00"
+      "opened_at": "2026-10-09T19:15:50.191036+00:00"
     }
   },
   "closed_trades": [
@@ -721,10 +721,41 @@
       "realized_pnl_pct": 23.540372670807454,
       "close_reason": "🏁 RESOLUCIÓN GANADA ($1.00)",
       "closed_at": "2026-10-09T18:10:49.021321+00:00"
+    },
+    {
+      "market_id": "4970385",
+      "question": "Will BV Borussia 09 Dortmund win on 2026-10-09?",
+      "event_title": "BV Borussia 09 Dortmund vs. SV Werder Bremen",
+      "slug": "bun-dor-wer-2026-10-09-dor",
+      "url": "https://polymarket.com/market/bun-dor-wer-2026-10-09-dor",
+      "outcome": "No",
+      "entry_price": 0.285,
+      "current_price": 0.375,
+      "shares": 4614.565227149747,
+      "invested_usd": 1315.151089737678,
+      "current_value": 1730.4619601811553,
+      "unrealized_pnl": 415.31087044347737,
+      "unrealized_pnl_pct": 31.578947368421062,
+      "catalyst": {
+        "category": "Anomalía: 3-Way / 1X2 Sports Trap",
+        "headline": "The market is pricing a win for Borussia Dortmund at 71.5% (0.715), which ignores the fundamental 3-way nature of football (1X2). Historically, even strong favorites in the Bundesl",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 9
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-09T18:11:23.628651+00:00",
+      "exit_price": 0.375,
+      "final_value": 1730.4619601811553,
+      "realized_pnl": 415.31087044347737,
+      "realized_pnl_pct": 31.578947368421062,
+      "close_reason": "🎯 TAKE PROFIT (+31.6%)",
+      "closed_at": "2026-10-09T19:15:19.942889+00:00"
     }
   ],
-  "total_realized_pnl": -927.5166597533184,
-  "win_count": 7,
+  "total_realized_pnl": -512.2057893098411,
+  "win_count": 8,
   "loss_count": 9,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
