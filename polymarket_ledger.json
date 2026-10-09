@@ -230,30 +230,30 @@
       "target_exit_date": null,
       "opened_at": "2026-10-07T03:02:03.699056+00:00"
     },
-    "5224549": {
-      "market_id": "5224549",
-      "question": "Will Croatia win on 2026-10-09?",
-      "event_title": "Croatia vs. Iceland",
-      "slug": "wwcquefa-cro-ice-2026-10-09-cro",
-      "url": "https://polymarket.com/market/wwcquefa-cro-ice-2026-10-09-cro",
+    "4970385": {
+      "market_id": "4970385",
+      "question": "Will BV Borussia 09 Dortmund win on 2026-10-09?",
+      "event_title": "BV Borussia 09 Dortmund vs. SV Werder Bremen",
+      "slug": "bun-dor-wer-2026-10-09-dor",
+      "url": "https://polymarket.com/market/bun-dor-wer-2026-10-09-dor",
       "outcome": "No",
-      "entry_price": 0.805,
-      "current_price": 0.9575,
-      "shares": 1322.4244240700632,
-      "invested_usd": 1064.551661376401,
-      "current_value": 1266.2213860470856,
-      "unrealized_pnl": 201.66972467068467,
-      "unrealized_pnl_pct": 18.944099378881983,
+      "entry_price": 0.285,
+      "current_price": 0.285,
+      "shares": 4614.565227149747,
+      "invested_usd": 1315.151089737678,
+      "current_value": 1315.151089737678,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
       "catalyst": {
         "category": "Anomalía: 3-Way / 1X2 Sports Trap",
-        "headline": "The market asks if Croatia will win a match on October 9, 2026. According to sports databases and recent news, Croatia played Spain on October 6, 2026 (losing 1-2), and there is no",
-        "source": "Google gemini-3.5-flash",
-        "score": 10
+        "headline": "The market is pricing a win for Borussia Dortmund at 71.5% (0.715), which ignores the fundamental 3-way nature of football (1X2). Historically, even strong favorites in the Bundesl",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 9
       },
       "no_stop_loss": false,
       "hold_until_resolution": false,
       "target_exit_date": null,
-      "opened_at": "2026-10-09T16:55:02.414415+00:00"
+      "opened_at": "2026-10-09T18:11:23.628651+00:00"
     }
   },
   "closed_trades": [
@@ -690,10 +690,41 @@
       "realized_pnl_pct": -16.18122977346278,
       "close_reason": "🛑 STOP LOSS (-16.2%)",
       "closed_at": "2026-10-09T16:54:50.523796+00:00"
+    },
+    {
+      "market_id": "5224549",
+      "question": "Will Croatia win on 2026-10-09?",
+      "event_title": "Croatia vs. Iceland",
+      "slug": "wwcquefa-cro-ice-2026-10-09-cro",
+      "url": "https://polymarket.com/market/wwcquefa-cro-ice-2026-10-09-cro",
+      "outcome": "No",
+      "entry_price": 0.805,
+      "current_price": 0.9945,
+      "shares": 1322.4244240700632,
+      "invested_usd": 1064.551661376401,
+      "current_value": 1315.151089737678,
+      "unrealized_pnl": 250.59942836127698,
+      "unrealized_pnl_pct": 23.540372670807454,
+      "catalyst": {
+        "category": "Anomalía: 3-Way / 1X2 Sports Trap",
+        "headline": "The market asks if Croatia will win a match on October 9, 2026. According to sports databases and recent news, Croatia played Spain on October 6, 2026 (losing 1-2), and there is no",
+        "source": "Google gemini-3.5-flash",
+        "score": 10
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-09T16:55:02.414415+00:00",
+      "exit_price": 0.9945,
+      "final_value": 1315.151089737678,
+      "realized_pnl": 250.59942836127698,
+      "realized_pnl_pct": 23.540372670807454,
+      "close_reason": "🏁 RESOLUCIÓN GANADA ($1.00)",
+      "closed_at": "2026-10-09T18:10:49.021321+00:00"
     }
   ],
-  "total_realized_pnl": -1178.1160881145954,
-  "win_count": 6,
+  "total_realized_pnl": -927.5166597533184,
+  "win_count": 7,
   "loss_count": 9,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
