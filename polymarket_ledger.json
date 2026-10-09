@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 0.0,
+  "cash_usdc": 9.353193773483632,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -238,12 +238,12 @@
       "url": "https://polymarket.com/market/will-harry-kane-win-the-2026-ballon-dor",
       "outcome": "No",
       "entry_price": 0.3865,
-      "current_price": 0.362,
+      "current_price": 0.3585,
       "shares": 1690.4916057208393,
       "invested_usd": 653.3750056111044,
-      "current_value": 611.9579612709438,
-      "unrealized_pnl": -41.4170443401606,
-      "unrealized_pnl_pct": -6.338939197930148,
+      "current_value": 606.0412406509208,
+      "unrealized_pnl": -47.333764960183544,
+      "unrealized_pnl_pct": -7.244501940491597,
       "catalyst": {
         "category": "Anomalía: Base Rate Mispricing",
         "headline": "The market is heavily overvaluing Harry Kane at a 61.35% implied probability (YES) for the 2026 Ballon d'Or. In a World Cup year (2026), the Ballon d'Or historically correlates alm",
@@ -254,31 +254,6 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-10-09T20:09:51.698704+00:00"
-    },
-    "4970388": {
-      "market_id": "4970388",
-      "question": "Will West Ham United FC win on 2026-10-09?",
-      "event_title": "West Ham United FC vs. Queens Park Rangers FC",
-      "slug": "elc-whu-qpr-2026-10-09-whu",
-      "url": "https://polymarket.com/market/elc-whu-qpr-2026-10-09-whu",
-      "outcome": "Yes",
-      "entry_price": 0.24,
-      "current_price": 0.24,
-      "shares": 1870.6387546967262,
-      "invested_usd": 448.9533011272143,
-      "current_value": 448.9533011272143,
-      "unrealized_pnl": 0.0,
-      "unrealized_pnl_pct": 0.0,
-      "catalyst": {
-        "category": "Anomalía: Base Rate Mispricing",
-        "headline": "The market is pricing West Ham's win probability at just 24% (YES at $0.24) for their match against QPR. Historically, a team of West Ham's caliber playing a derby at home against ",
-        "source": "Google gemini-3.5-flash",
-        "score": 8
-      },
-      "no_stop_loss": false,
-      "hold_until_resolution": false,
-      "target_exit_date": null,
-      "opened_at": "2026-10-09T20:53:13.813329+00:00"
     }
   },
   "closed_trades": [
@@ -932,10 +907,41 @@
       "realized_pnl_pct": -48.484848484848484,
       "close_reason": "🛑 STOP LOSS (-48.5%)",
       "closed_at": "2026-10-09T20:52:59.840055+00:00"
+    },
+    {
+      "market_id": "4970388",
+      "question": "Will West Ham United FC win on 2026-10-09?",
+      "event_title": "West Ham United FC vs. Queens Park Rangers FC",
+      "slug": "elc-whu-qpr-2026-10-09-whu",
+      "url": "https://polymarket.com/market/elc-whu-qpr-2026-10-09-whu",
+      "outcome": "Yes",
+      "entry_price": 0.24,
+      "current_price": 0.005,
+      "shares": 1870.6387546967262,
+      "invested_usd": 448.9533011272143,
+      "current_value": 9.353193773483632,
+      "unrealized_pnl": -439.60010735373066,
+      "unrealized_pnl_pct": -97.91666666666666,
+      "catalyst": {
+        "category": "Anomalía: Base Rate Mispricing",
+        "headline": "The market is pricing West Ham's win probability at just 24% (YES at $0.24) for their match against QPR. Historically, a team of West Ham's caliber playing a derby at home against ",
+        "source": "Google gemini-3.5-flash",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-09T20:53:13.813329+00:00",
+      "exit_price": 0.005,
+      "final_value": 9.353193773483632,
+      "realized_pnl": -439.60010735373066,
+      "realized_pnl_pct": -97.91666666666666,
+      "close_reason": "❌ RESOLUCIÓN PERDIDA ($0.00)",
+      "closed_at": "2026-10-09T21:03:51.385049+00:00"
     }
   ],
-  "total_realized_pnl": -1140.3394427526778,
+  "total_realized_pnl": -1579.9395501064084,
   "win_count": 9,
-  "loss_count": 13,
+  "loss_count": 14,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
