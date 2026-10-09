@@ -238,12 +238,12 @@
       "url": "https://polymarket.com/market/will-harry-kane-win-the-2026-ballon-dor",
       "outcome": "No",
       "entry_price": 0.3865,
-      "current_price": 0.365,
+      "current_price": 0.362,
       "shares": 1690.4916057208393,
       "invested_usd": 653.3750056111044,
-      "current_value": 617.0294360881063,
-      "unrealized_pnl": -36.34556952299806,
-      "unrealized_pnl_pct": -5.562742561448905,
+      "current_value": 611.9579612709438,
+      "unrealized_pnl": -41.4170443401606,
+      "unrealized_pnl_pct": -6.338939197930148,
       "catalyst": {
         "category": "Anomalía: Base Rate Mispricing",
         "headline": "The market is heavily overvaluing Harry Kane at a 61.35% implied probability (YES) for the 2026 Ballon d'Or. In a World Cup year (2026), the Ballon d'Or historically correlates alm",
@@ -255,30 +255,30 @@
       "target_exit_date": null,
       "opened_at": "2026-10-09T20:09:51.698704+00:00"
     },
-    "4973406": {
-      "market_id": "4973406",
-      "question": "Will RCD Espanyol de Barcelona win on 2026-10-09?",
-      "event_title": "Málaga CF vs. RCD Espanyol de Barcelona",
-      "slug": "lal-mala-esp-2026-10-09-esp",
-      "url": "https://polymarket.com/market/lal-mala-esp-2026-10-09-esp",
-      "outcome": "No",
-      "entry_price": 0.165,
-      "current_price": 0.165,
-      "shares": 5281.8035426731085,
-      "invested_usd": 871.4975845410629,
-      "current_value": 871.4975845410629,
+    "4970388": {
+      "market_id": "4970388",
+      "question": "Will West Ham United FC win on 2026-10-09?",
+      "event_title": "West Ham United FC vs. Queens Park Rangers FC",
+      "slug": "elc-whu-qpr-2026-10-09-whu",
+      "url": "https://polymarket.com/market/elc-whu-qpr-2026-10-09-whu",
+      "outcome": "Yes",
+      "entry_price": 0.24,
+      "current_price": 0.24,
+      "shares": 1870.6387546967262,
+      "invested_usd": 448.9533011272143,
+      "current_value": 448.9533011272143,
       "unrealized_pnl": 0.0,
       "unrealized_pnl_pct": 0.0,
       "catalyst": {
-        "category": "Anomalía: 3-Way / 1X2 Sports Trap",
-        "headline": "The market has heavily mispriced the 3-way outcome of a standard La Liga football match. RCD Espanyol is priced at an 83.5% implied probability to win against Málaga CF. In profess",
+        "category": "Anomalía: Base Rate Mispricing",
+        "headline": "The market is pricing West Ham's win probability at just 24% (YES at $0.24) for their match against QPR. Historically, a team of West Ham's caliber playing a derby at home against ",
         "source": "Google gemini-3.5-flash",
-        "score": 10
+        "score": 8
       },
       "no_stop_loss": false,
       "hold_until_resolution": false,
       "target_exit_date": null,
-      "opened_at": "2026-10-09T20:42:23.776608+00:00"
+      "opened_at": "2026-10-09T20:53:13.813329+00:00"
     }
   },
   "closed_trades": [
@@ -901,10 +901,41 @@
       "realized_pnl_pct": -26.785714285714295,
       "close_reason": "🛑 STOP LOSS (-26.8%)",
       "closed_at": "2026-10-09T20:42:10.275493+00:00"
+    },
+    {
+      "market_id": "4973406",
+      "question": "Will RCD Espanyol de Barcelona win on 2026-10-09?",
+      "event_title": "Málaga CF vs. RCD Espanyol de Barcelona",
+      "slug": "lal-mala-esp-2026-10-09-esp",
+      "url": "https://polymarket.com/market/lal-mala-esp-2026-10-09-esp",
+      "outcome": "No",
+      "entry_price": 0.165,
+      "current_price": 0.085,
+      "shares": 5281.8035426731085,
+      "invested_usd": 871.4975845410629,
+      "current_value": 448.9533011272143,
+      "unrealized_pnl": -422.54428341384863,
+      "unrealized_pnl_pct": -48.484848484848484,
+      "catalyst": {
+        "category": "Anomalía: 3-Way / 1X2 Sports Trap",
+        "headline": "The market has heavily mispriced the 3-way outcome of a standard La Liga football match. RCD Espanyol is priced at an 83.5% implied probability to win against Málaga CF. In profess",
+        "source": "Google gemini-3.5-flash",
+        "score": 10
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-09T20:42:23.776608+00:00",
+      "exit_price": 0.085,
+      "final_value": 448.9533011272143,
+      "realized_pnl": -422.54428341384863,
+      "realized_pnl_pct": -48.484848484848484,
+      "close_reason": "🛑 STOP LOSS (-48.5%)",
+      "closed_at": "2026-10-09T20:52:59.840055+00:00"
     }
   ],
-  "total_realized_pnl": -717.7951593388291,
+  "total_realized_pnl": -1140.3394427526778,
   "win_count": 9,
-  "loss_count": 12,
+  "loss_count": 13,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
