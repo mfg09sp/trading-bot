@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 2448.880680151583,
+  "cash_usdc": 3080.459627520004,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -216,12 +216,12 @@
       "url": "https://polymarket.com/market/will-harry-kane-win-the-2026-ballon-dor",
       "outcome": "No",
       "entry_price": 0.3865,
-      "current_price": 0.391,
+      "current_price": 0.3875,
       "shares": 1690.4916057208393,
       "invested_usd": 653.3750056111044,
-      "current_value": 660.9822178368482,
-      "unrealized_pnl": 7.607212225743865,
-      "unrealized_pnl_pct": 1.1642949547218637,
+      "current_value": 655.0654972168253,
+      "unrealized_pnl": 1.690491605720922,
+      "unrealized_pnl_pct": 0.2587322121604142,
       "catalyst": {
         "category": "Anomalía: Base Rate Mispricing",
         "headline": "The market is heavily overvaluing Harry Kane at a 61.35% implied probability (YES) for the 2026 Ballon d'Or. In a World Cup year (2026), the Ballon d'Or historically correlates alm",
@@ -233,30 +233,30 @@
       "target_exit_date": null,
       "opened_at": "2026-10-09T20:09:51.698704+00:00"
     },
-    "5009057": {
-      "market_id": "5009057",
-      "question": "Will FC Bayern München win on 2026-10-10?",
-      "event_title": "FC Augsburg vs. FC Bayern München",
-      "slug": "bun-aug-bay-2026-10-10-bay",
-      "url": "https://polymarket.com/market/bun-aug-bay-2026-10-10-bay",
+    "5015038": {
+      "market_id": "5015038",
+      "question": "Will FC Barcelona win on 2026-10-10?",
+      "event_title": "FC Barcelona vs. Getafe CF",
+      "slug": "lal-bar-get-2026-10-10-bar",
+      "url": "https://polymarket.com/market/lal-bar-get-2026-10-10-bar",
       "outcome": "No",
-      "entry_price": 0.285,
-      "current_price": 0.285,
-      "shares": 1754.3859649122808,
+      "entry_price": 0.105,
+      "current_price": 0.105,
+      "shares": 4761.904761904762,
       "invested_usd": 500.0,
       "current_value": 500.0,
       "unrealized_pnl": 0.0,
       "unrealized_pnl_pct": 0.0,
       "catalyst": {
         "category": "Anomalía: 3-Way / 1X2 Sports Trap",
-        "headline": "The market is pricing a win for Bayern Munich at 71.5% (0.715). In a standard 1X2 football match, the probability of a draw is typically between 20-25%. By ignoring the draw outcom",
+        "headline": "The market is pricing FC Barcelona at 89.5% to win. In professional football, even for elite teams against mid-table opposition like Getafe, the historical win rate rarely exceeds ",
         "source": "Google gemini-3.1-flash-lite",
-        "score": 8
+        "score": 9
       },
       "no_stop_loss": false,
       "hold_until_resolution": false,
       "target_exit_date": null,
-      "opened_at": "2026-10-10T14:49:04.052562+00:00"
+      "opened_at": "2026-10-10T15:00:47.765268+00:00"
     }
   },
   "closed_trades": [
@@ -1093,10 +1093,41 @@
       "realized_pnl_pct": -19.047619047619037,
       "close_reason": "🛑 STOP LOSS (-19.0%)",
       "closed_at": "2026-10-10T14:48:54.375049+00:00"
+    },
+    {
+      "market_id": "5009057",
+      "question": "Will FC Bayern München win on 2026-10-10?",
+      "event_title": "FC Augsburg vs. FC Bayern München",
+      "slug": "bun-aug-bay-2026-10-10-bay",
+      "url": "https://polymarket.com/market/bun-aug-bay-2026-10-10-bay",
+      "outcome": "No",
+      "entry_price": 0.285,
+      "current_price": 0.645,
+      "shares": 1754.3859649122808,
+      "invested_usd": 500.0,
+      "current_value": 1131.578947368421,
+      "unrealized_pnl": 631.578947368421,
+      "unrealized_pnl_pct": 126.31578947368422,
+      "catalyst": {
+        "category": "Anomalía: 3-Way / 1X2 Sports Trap",
+        "headline": "The market is pricing a win for Bayern Munich at 71.5% (0.715). In a standard 1X2 football match, the probability of a draw is typically between 20-25%. By ignoring the draw outcom",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-10T14:49:04.052562+00:00",
+      "exit_price": 0.645,
+      "final_value": 1131.578947368421,
+      "realized_pnl": 631.578947368421,
+      "realized_pnl_pct": 126.31578947368422,
+      "close_reason": "🎯 TAKE PROFIT (+126.3%)",
+      "closed_at": "2026-10-10T15:00:38.796906+00:00"
     }
   ],
-  "total_realized_pnl": -640.4120637283091,
-  "win_count": 12,
+  "total_realized_pnl": -8.833116359888095,
+  "win_count": 13,
   "loss_count": 16,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
