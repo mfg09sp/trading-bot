@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 2042.6865271068173,
+  "cash_usdc": 2616.457018910096,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -97,12 +97,12 @@
       "url": "https://polymarket.com/market/us-announces-end-of-iranian-blockade-by-october-15-2026",
       "outcome": "No",
       "entry_price": 0.895,
-      "current_price": 0.94,
+      "current_price": 0.945,
       "shares": 2234.63687150838,
       "invested_usd": 2000.0,
-      "current_value": 2100.558659217877,
-      "unrealized_pnl": 100.558659217877,
-      "unrealized_pnl_pct": 5.027932960893847,
+      "current_value": 2111.731843575419,
+      "unrealized_pnl": 111.73184357541913,
+      "unrealized_pnl_pct": 5.5865921787709425,
       "catalyst": {
         "category": "Análisis Gemini",
         "headline": "The market is currently pricing a 10.5% probability of a policy reversal (lifting the blockade) within a 15-month window. Historical base rates for the reversal of major geopolitic",
@@ -216,12 +216,12 @@
       "url": "https://polymarket.com/market/will-harry-kane-win-the-2026-ballon-dor",
       "outcome": "No",
       "entry_price": 0.3865,
-      "current_price": 0.4045,
+      "current_price": 0.3985,
       "shares": 1690.4916057208393,
       "invested_usd": 653.3750056111044,
-      "current_value": 683.8038545140795,
-      "unrealized_pnl": 30.42884890297512,
-      "unrealized_pnl_pct": 4.657179818887455,
+      "current_value": 673.6609048797545,
+      "unrealized_pnl": 20.285899268650155,
+      "unrealized_pnl_pct": 3.10478654592497,
       "catalyst": {
         "category": "Anomalía: Base Rate Mispricing",
         "headline": "The market is heavily overvaluing Harry Kane at a 61.35% implied probability (YES) for the 2026 Ballon d'Or. In a World Cup year (2026), the Ballon d'Or historically correlates alm",
@@ -233,30 +233,30 @@
       "target_exit_date": null,
       "opened_at": "2026-10-09T20:09:51.698704+00:00"
     },
-    "4986347": {
-      "market_id": "4986347",
-      "question": "Will Amed Sportif win on 2026-10-10?",
-      "event_title": "Gençlerbirliği SK vs. Amed Sportif",
-      "slug": "tur-gen-ame-2026-10-10-ame",
-      "url": "https://polymarket.com/market/tur-gen-ame-2026-10-10-ame",
+    "5009015": {
+      "market_id": "5009015",
+      "question": "Will Leeds United FC win on 2026-10-10?",
+      "event_title": "Arsenal FC vs. Leeds United FC",
+      "slug": "epl-ars-lee-2026-10-10-lee",
+      "url": "https://polymarket.com/market/epl-ars-lee-2026-10-10-lee",
       "outcome": "No",
-      "entry_price": 0.305,
-      "current_price": 0.265,
-      "shares": 1639.344262295082,
+      "entry_price": 0.865,
+      "current_price": 0.865,
+      "shares": 578.0346820809249,
       "invested_usd": 500.0,
-      "current_value": 434.42622950819674,
-      "unrealized_pnl": -65.57377049180326,
-      "unrealized_pnl_pct": -13.114754098360649,
+      "current_value": 500.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
       "catalyst": {
         "category": "Anomalía: 3-Way / 1X2 Sports Trap",
-        "headline": "El mercado sufre el sesgo clásico de apuestas deportivas 1X2. Para que YES gane, Amed Sportif debe ganar en los 90 minutos reglamentarios. Si hay empate o derrota, el mercado resue",
-        "source": "Google gemini-3.5-flash",
-        "score": 8
+        "headline": "The market is suffering from a classic 1X2 sports betting trap. Leeds United is playing away at the Emirates against Arsenal, the reigning Premier League champions. In a 3-way mark",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 9
       },
       "no_stop_loss": false,
       "hold_until_resolution": false,
       "target_exit_date": null,
-      "opened_at": "2026-10-10T11:14:24.568509+00:00"
+      "opened_at": "2026-10-10T11:53:16.077271+00:00"
     }
   },
   "closed_trades": [
@@ -969,10 +969,41 @@
       "realized_pnl_pct": 26.66666666666667,
       "close_reason": "🎯 TAKE PROFIT (+26.7%)",
       "closed_at": "2026-10-10T11:14:10.644102+00:00"
+    },
+    {
+      "market_id": "4986347",
+      "question": "Will Amed Sportif win on 2026-10-10?",
+      "event_title": "Gençlerbirliği SK vs. Amed Sportif",
+      "slug": "tur-gen-ame-2026-10-10-ame",
+      "url": "https://polymarket.com/market/tur-gen-ame-2026-10-10-ame",
+      "outcome": "No",
+      "entry_price": 0.305,
+      "current_price": 0.655,
+      "shares": 1639.344262295082,
+      "invested_usd": 500.0,
+      "current_value": 1073.7704918032787,
+      "unrealized_pnl": 573.7704918032787,
+      "unrealized_pnl_pct": 114.75409836065576,
+      "catalyst": {
+        "category": "Anomalía: 3-Way / 1X2 Sports Trap",
+        "headline": "El mercado sufre el sesgo clásico de apuestas deportivas 1X2. Para que YES gane, Amed Sportif debe ganar en los 90 minutos reglamentarios. Si hay empate o derrota, el mercado resue",
+        "source": "Google gemini-3.5-flash",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-10T11:14:24.568509+00:00",
+      "exit_price": 0.655,
+      "final_value": 1073.7704918032787,
+      "realized_pnl": 573.7704918032787,
+      "realized_pnl_pct": 114.75409836065576,
+      "close_reason": "🎯 TAKE PROFIT (+114.8%)",
+      "closed_at": "2026-10-10T11:52:52.062273+00:00"
     }
   ],
-  "total_realized_pnl": -1046.606216773075,
-  "win_count": 10,
+  "total_realized_pnl": -472.8357249697963,
+  "win_count": 11,
   "loss_count": 14,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
