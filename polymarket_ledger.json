@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 3080.459627520004,
+  "cash_usdc": 3223.316770377147,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -9,12 +9,12 @@
       "url": "https://polymarket.com/market/will-david-lisnard-win-the-2027-french-presidential-election",
       "outcome": "No",
       "entry_price": 0.895,
-      "current_price": 0.8635,
+      "current_price": 0.8645,
       "shares": 2234.63687150838,
       "invested_usd": 2000.0,
-      "current_value": 1929.608938547486,
-      "unrealized_pnl": -70.3910614525139,
-      "unrealized_pnl_pct": -3.5195530726256954,
+      "current_value": 1931.8435754189945,
+      "unrealized_pnl": -68.15642458100547,
+      "unrealized_pnl_pct": -3.4078212290502763,
       "catalyst": {
         "category": "Análisis Gemini",
         "headline": "David Lisnard, aunque es una figura respetada dentro de la derecha tradicional francesa (LR/Nouvelle Énergie), carece de la proyección nacional y el apoyo masivo necesario para sup",
@@ -233,30 +233,30 @@
       "target_exit_date": null,
       "opened_at": "2026-10-09T20:09:51.698704+00:00"
     },
-    "5015038": {
-      "market_id": "5015038",
-      "question": "Will FC Barcelona win on 2026-10-10?",
-      "event_title": "FC Barcelona vs. Getafe CF",
-      "slug": "lal-bar-get-2026-10-10-bar",
-      "url": "https://polymarket.com/market/lal-bar-get-2026-10-10-bar",
+    "2772181": {
+      "market_id": "2772181",
+      "question": "Will Bayern Munich win the 2026-27 UEFA Champions League Championship?",
+      "event_title": "UEFA Champions League: 2027 Champion",
+      "slug": "will-bayern-munich-win-the-2026-27-uefa-champions-league-championship-20260701202025565",
+      "url": "https://polymarket.com/market/will-bayern-munich-win-the-2026-27-uefa-champions-league-championship-20260701202025565",
       "outcome": "No",
-      "entry_price": 0.105,
-      "current_price": 0.125,
-      "shares": 4761.904761904762,
+      "entry_price": 0.855,
+      "current_price": 0.855,
+      "shares": 584.7953216374269,
       "invested_usd": 500.0,
-      "current_value": 595.2380952380953,
-      "unrealized_pnl": 95.2380952380953,
-      "unrealized_pnl_pct": 19.04761904761905,
+      "current_value": 500.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
       "catalyst": {
-        "category": "Anomalía: 3-Way / 1X2 Sports Trap",
-        "headline": "The market is pricing FC Barcelona at 89.5% to win. In professional football, even for elite teams against mid-table opposition like Getafe, the historical win rate rarely exceeds ",
+        "category": "Anomalía: Longshot Bias",
+        "headline": "The market is pricing Bayern Munich at 14.5% probability to win the 2026-27 UCL. Historically, even elite clubs rarely exceed a 10-12% win probability in a tournament with high var",
         "source": "Google gemini-3.1-flash-lite",
-        "score": 9
+        "score": 8
       },
       "no_stop_loss": false,
       "hold_until_resolution": false,
       "target_exit_date": null,
-      "opened_at": "2026-10-10T15:00:47.765268+00:00"
+      "opened_at": "2026-10-10T16:38:35.456561+00:00"
     }
   },
   "closed_trades": [
@@ -1124,10 +1124,41 @@
       "realized_pnl_pct": 126.31578947368422,
       "close_reason": "🎯 TAKE PROFIT (+126.3%)",
       "closed_at": "2026-10-10T15:00:38.796906+00:00"
+    },
+    {
+      "market_id": "5015038",
+      "question": "Will FC Barcelona win on 2026-10-10?",
+      "event_title": "FC Barcelona vs. Getafe CF",
+      "slug": "lal-bar-get-2026-10-10-bar",
+      "url": "https://polymarket.com/market/lal-bar-get-2026-10-10-bar",
+      "outcome": "No",
+      "entry_price": 0.105,
+      "current_price": 0.135,
+      "shares": 4761.904761904762,
+      "invested_usd": 500.0,
+      "current_value": 642.857142857143,
+      "unrealized_pnl": 142.857142857143,
+      "unrealized_pnl_pct": 28.571428571428587,
+      "catalyst": {
+        "category": "Anomalía: 3-Way / 1X2 Sports Trap",
+        "headline": "The market is pricing FC Barcelona at 89.5% to win. In professional football, even for elite teams against mid-table opposition like Getafe, the historical win rate rarely exceeds ",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 9
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-10T15:00:47.765268+00:00",
+      "exit_price": 0.135,
+      "final_value": 642.857142857143,
+      "realized_pnl": 142.857142857143,
+      "realized_pnl_pct": 28.571428571428587,
+      "close_reason": "🎯 TAKE PROFIT (+28.6%)",
+      "closed_at": "2026-10-10T16:38:25.762276+00:00"
     }
   ],
-  "total_realized_pnl": -8.833116359888095,
-  "win_count": 13,
+  "total_realized_pnl": 134.0240264972549,
+  "win_count": 14,
   "loss_count": 16,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
