@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 3223.316770377147,
+  "cash_usdc": 1223.316770377147,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -216,12 +216,12 @@
       "url": "https://polymarket.com/market/will-harry-kane-win-the-2026-ballon-dor",
       "outcome": "No",
       "entry_price": 0.3865,
-      "current_price": 0.3905,
+      "current_price": 0.39,
       "shares": 1690.4916057208393,
       "invested_usd": 653.3750056111044,
-      "current_value": 660.1369720339877,
-      "unrealized_pnl": 6.761966422883347,
-      "unrealized_pnl_pct": 1.0349288486416568,
+      "current_value": 659.2917262311273,
+      "unrealized_pnl": 5.916720620022943,
+      "unrealized_pnl_pct": 0.9055627425614496,
       "catalyst": {
         "category": "Anomalía: Base Rate Mispricing",
         "headline": "The market is heavily overvaluing Harry Kane at a 61.35% implied probability (YES) for the 2026 Ballon d'Or. In a World Cup year (2026), the Ballon d'Or historically correlates alm",
@@ -257,6 +257,31 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-10-10T16:38:35.456561+00:00"
+    },
+    "2243320": {
+      "market_id": "2243320",
+      "question": "Will Oklahoma City Thunder win the 2027 NBA Finals?",
+      "event_title": "NBA: 2027 Champion",
+      "slug": "will-oklahoma-city-thunder-win-the-2027-nba-finals",
+      "url": "https://polymarket.com/market/will-oklahoma-city-thunder-win-the-2027-nba-finals",
+      "outcome": "No",
+      "entry_price": 0.815,
+      "current_price": 0.815,
+      "shares": 2453.98773006135,
+      "invested_usd": 2000.0,
+      "current_value": 2000.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: Longshot Bias",
+        "headline": "The market is pricing the Oklahoma City Thunder at an 18.5% implied probability to win the 2027 NBA Finals. Historically, even elite NBA contenders rarely exceed a 10-12% true win ",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-10T19:30:58.449602+00:00"
     }
   },
   "closed_trades": [
