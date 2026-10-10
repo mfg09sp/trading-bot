@@ -174,10 +174,25 @@ def run_cycle():
 
         logger.info(f"-> Veredicto Gemini [{model_used}]: {decision} (Convicción: {conviction}/10 | Anomalía: {anomaly_detected})")
 
+        # Detección de mercado deportivo (alta varianza en 90 minutos)
+        is_sports = any(w in q.lower() for w in ["win on", "vs", "champions", "league", "cup", "match", "game", "tournament", "ballon d'or", "uefa", "fc"])
+        active_sports_count = sum(1 for p in poly_paper.data.get("active_positions", {}).values() if any(w in p.get("question", "").lower() for w in ["win on", "vs", "champions", "league", "cup", "match", "game", "fc"]))
+        if is_sports and active_sports_count >= config.POLYMARKET_MAX_SPORTS_POSITIONS:
+            logger.info(f"Límite de posiciones deportivas alcanzado ({active_sports_count}/{config.POLYMARKET_MAX_SPORTS_POSITIONS}), omitiendo {q[:40]}.")
+            continue
+
+        # Cooldown: no re-entrar en el mismo evento si ya se cerró en los últimos trades
+        recently_closed = [t for t in poly_paper.data.get("closed_trades", [])[-15:] if str(t.get("market_id")) == str(m_id)]
+        if recently_closed:
+            logger.info(f"Mercado {m_id} ({q[:30]}) cerrado recientemente en el historial, omitiendo reentrada.")
+            continue
+
         if decision in ["BUY_YES", "BUY_NO"] and conviction >= 7:
             chosen_outcome = "Yes" if decision == "BUY_YES" else "No"
             entry_price = yes_p if decision == "BUY_YES" else no_p
-            bet_amount = min(config.POLYMARKET_MAX_BET_USDC, available_poly_cash)
+            # Tamaño de posición: $500 en deportes (control de varianza), $2,000 en política/macro
+            max_allowed = config.POLYMARKET_MAX_SPORTS_BET_USDC if is_sports else config.POLYMARKET_MAX_BET_USDC
+            bet_amount = min(max_allowed, available_poly_cash)
 
             if bet_amount >= 10.0 and entry_price > 0:
                 pos = poly_paper.open_position(m, chosen_outcome, bet_amount, {
