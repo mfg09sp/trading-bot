@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 9.353193773483632,
+  "cash_usdc": 2042.6865271068173,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -44,28 +44,6 @@
         "score": 9
       },
       "opened_at": "2026-10-04T19:30:34.099575+00:00"
-    },
-    "562802": {
-      "market_id": "562802",
-      "question": "Will the Democratic Party control the House after the 2026 Midterm elections?",
-      "event_title": "Which party will win the House in 2026?",
-      "slug": "will-the-democratic-party-control-the-house-after-the-2026-midterm-elections",
-      "url": "https://polymarket.com/market/will-the-democratic-party-control-the-house-after-the-2026-midterm-elections",
-      "outcome": "No",
-      "entry_price": 0.075,
-      "current_price": 0.095,
-      "shares": 26666.666666666668,
-      "invested_usd": 2000.0,
-      "current_value": 2533.3333333333335,
-      "unrealized_pnl": 533.3333333333335,
-      "unrealized_pnl_pct": 26.66666666666667,
-      "catalyst": {
-        "category": "Análisis Gemini",
-        "headline": "El mercado presenta una ineficiencia extrema. Una probabilidad del 92.5% para el Partido Demócrata en la Cámara de Representantes para 2026 es estadísticamente improbable dado el c",
-        "source": "Google gemini-3.1-flash-lite",
-        "score": 9
-      },
-      "opened_at": "2026-10-04T23:00:31.307178+00:00"
     },
     "562831": {
       "market_id": "562831",
@@ -119,12 +97,12 @@
       "url": "https://polymarket.com/market/us-announces-end-of-iranian-blockade-by-october-15-2026",
       "outcome": "No",
       "entry_price": 0.895,
-      "current_price": 0.945,
+      "current_price": 0.94,
       "shares": 2234.63687150838,
       "invested_usd": 2000.0,
-      "current_value": 2111.731843575419,
-      "unrealized_pnl": 111.73184357541913,
-      "unrealized_pnl_pct": 5.5865921787709425,
+      "current_value": 2100.558659217877,
+      "unrealized_pnl": 100.558659217877,
+      "unrealized_pnl_pct": 5.027932960893847,
       "catalyst": {
         "category": "Análisis Gemini",
         "headline": "The market is currently pricing a 10.5% probability of a policy reversal (lifting the blockade) within a 15-month window. Historical base rates for the reversal of major geopolitic",
@@ -238,12 +216,12 @@
       "url": "https://polymarket.com/market/will-harry-kane-win-the-2026-ballon-dor",
       "outcome": "No",
       "entry_price": 0.3865,
-      "current_price": 0.3985,
+      "current_price": 0.396,
       "shares": 1690.4916057208393,
       "invested_usd": 653.3750056111044,
-      "current_value": 673.6609048797545,
-      "unrealized_pnl": 20.285899268650155,
-      "unrealized_pnl_pct": 3.10478654592497,
+      "current_value": 669.4346758654524,
+      "unrealized_pnl": 16.05967025434802,
+      "unrealized_pnl_pct": 2.457956015523935,
       "catalyst": {
         "category": "Anomalía: Base Rate Mispricing",
         "headline": "The market is heavily overvaluing Harry Kane at a 61.35% implied probability (YES) for the 2026 Ballon d'Or. In a World Cup year (2026), the Ballon d'Or historically correlates alm",
@@ -254,6 +232,31 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-10-09T20:09:51.698704+00:00"
+    },
+    "4986347": {
+      "market_id": "4986347",
+      "question": "Will Amed Sportif win on 2026-10-10?",
+      "event_title": "Gençlerbirliği SK vs. Amed Sportif",
+      "slug": "tur-gen-ame-2026-10-10-ame",
+      "url": "https://polymarket.com/market/tur-gen-ame-2026-10-10-ame",
+      "outcome": "No",
+      "entry_price": 0.305,
+      "current_price": 0.305,
+      "shares": 1639.344262295082,
+      "invested_usd": 500.0,
+      "current_value": 500.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: 3-Way / 1X2 Sports Trap",
+        "headline": "El mercado sufre el sesgo clásico de apuestas deportivas 1X2. Para que YES gane, Amed Sportif debe ganar en los 90 minutos reglamentarios. Si hay empate o derrota, el mercado resue",
+        "source": "Google gemini-3.5-flash",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-10T11:14:24.568509+00:00"
     }
   },
   "closed_trades": [
@@ -938,10 +941,38 @@
       "realized_pnl_pct": -97.91666666666666,
       "close_reason": "❌ RESOLUCIÓN PERDIDA ($0.00)",
       "closed_at": "2026-10-09T21:03:51.385049+00:00"
+    },
+    {
+      "market_id": "562802",
+      "question": "Will the Democratic Party control the House after the 2026 Midterm elections?",
+      "event_title": "Which party will win the House in 2026?",
+      "slug": "will-the-democratic-party-control-the-house-after-the-2026-midterm-elections",
+      "url": "https://polymarket.com/market/will-the-democratic-party-control-the-house-after-the-2026-midterm-elections",
+      "outcome": "No",
+      "entry_price": 0.075,
+      "current_price": 0.095,
+      "shares": 26666.666666666668,
+      "invested_usd": 2000.0,
+      "current_value": 2533.3333333333335,
+      "unrealized_pnl": 533.3333333333335,
+      "unrealized_pnl_pct": 26.66666666666667,
+      "catalyst": {
+        "category": "Análisis Gemini",
+        "headline": "El mercado presenta una ineficiencia extrema. Una probabilidad del 92.5% para el Partido Demócrata en la Cámara de Representantes para 2026 es estadísticamente improbable dado el c",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 9
+      },
+      "opened_at": "2026-10-04T23:00:31.307178+00:00",
+      "exit_price": 0.095,
+      "final_value": 2533.3333333333335,
+      "realized_pnl": 533.3333333333335,
+      "realized_pnl_pct": 26.66666666666667,
+      "close_reason": "🎯 TAKE PROFIT (+26.7%)",
+      "closed_at": "2026-10-10T11:14:10.644102+00:00"
     }
   ],
-  "total_realized_pnl": -1579.9395501064084,
-  "win_count": 9,
+  "total_realized_pnl": -1046.606216773075,
+  "win_count": 10,
   "loss_count": 14,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
