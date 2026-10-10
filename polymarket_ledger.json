@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 1223.316770377147,
+  "cash_usdc": 0.0,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -9,12 +9,12 @@
       "url": "https://polymarket.com/market/will-david-lisnard-win-the-2027-french-presidential-election",
       "outcome": "No",
       "entry_price": 0.895,
-      "current_price": 0.849,
+      "current_price": 0.861,
       "shares": 2234.63687150838,
       "invested_usd": 2000.0,
-      "current_value": 1897.2067039106146,
-      "unrealized_pnl": -102.79329608938542,
-      "unrealized_pnl_pct": -5.139664804469278,
+      "current_value": 1924.022346368715,
+      "unrealized_pnl": -75.97765363128497,
+      "unrealized_pnl_pct": -3.7988826815642494,
       "catalyst": {
         "category": "Análisis Gemini",
         "headline": "David Lisnard, aunque es una figura respetada dentro de la derecha tradicional francesa (LR/Nouvelle Énergie), carece de la proyección nacional y el apoyo masivo necesario para sup",
@@ -97,12 +97,12 @@
       "url": "https://polymarket.com/market/us-announces-end-of-iranian-blockade-by-october-15-2026",
       "outcome": "No",
       "entry_price": 0.895,
-      "current_price": 0.945,
+      "current_price": 0.955,
       "shares": 2234.63687150838,
       "invested_usd": 2000.0,
-      "current_value": 2111.731843575419,
-      "unrealized_pnl": 111.73184357541913,
-      "unrealized_pnl_pct": 5.5865921787709425,
+      "current_value": 2134.078212290503,
+      "unrealized_pnl": 134.07821229050296,
+      "unrealized_pnl_pct": 6.703910614525133,
       "catalyst": {
         "category": "Análisis Gemini",
         "headline": "The market is currently pricing a 10.5% probability of a policy reversal (lifting the blockade) within a 15-month window. Historical base rates for the reversal of major geopolitic",
@@ -282,6 +282,31 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-10-10T19:30:58.449602+00:00"
+    },
+    "2243306": {
+      "market_id": "2243306",
+      "question": "Will New York Knicks win the 2027 NBA Finals?",
+      "event_title": "NBA: 2027 Champion",
+      "slug": "will-new-york-knicks-win-the-2027-nba-finals",
+      "url": "https://polymarket.com/market/will-new-york-knicks-win-the-2027-nba-finals",
+      "outcome": "No",
+      "entry_price": 0.875,
+      "current_price": 0.875,
+      "shares": 1398.0763090024536,
+      "invested_usd": 1223.316770377147,
+      "current_value": 1223.316770377147,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: Longshot Bias",
+        "headline": "The market implies a 12.5% probability for the Knicks to win the 2027 NBA Finals. Historically, even top-tier contenders rarely exceed a 7-9% true win probability in a 30-team leag",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-10T20:42:43.650269+00:00"
     }
   },
   "closed_trades": [
