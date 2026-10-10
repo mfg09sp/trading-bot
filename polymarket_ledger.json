@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 2419.9252270025813,
+  "cash_usdc": 2544.118775389678,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -216,12 +216,12 @@
       "url": "https://polymarket.com/market/will-harry-kane-win-the-2026-ballon-dor",
       "outcome": "No",
       "entry_price": 0.3865,
-      "current_price": 0.389,
+      "current_price": 0.39,
       "shares": 1690.4916057208393,
       "invested_usd": 653.3750056111044,
-      "current_value": 657.6012346254065,
-      "unrealized_pnl": 4.226229014302135,
-      "unrealized_pnl_pct": 0.6468305304010354,
+      "current_value": 659.2917262311273,
+      "unrealized_pnl": 5.916720620022943,
+      "unrealized_pnl_pct": 0.9055627425614496,
       "catalyst": {
         "category": "Anomalía: Base Rate Mispricing",
         "headline": "The market is heavily overvaluing Harry Kane at a 61.35% implied probability (YES) for the 2026 Ballon d'Or. In a World Cup year (2026), the Ballon d'Or historically correlates alm",
@@ -233,30 +233,30 @@
       "target_exit_date": null,
       "opened_at": "2026-10-09T20:09:51.698704+00:00"
     },
-    "5009102": {
-      "market_id": "5009102",
-      "question": "Will AFC Bournemouth win on 2026-10-10?",
+    "5009094": {
+      "market_id": "5009094",
+      "question": "Will Chelsea FC win on 2026-10-10?",
       "event_title": "Chelsea FC vs. AFC Bournemouth",
-      "slug": "epl-che-bou-2026-10-10-bou",
-      "url": "https://polymarket.com/market/epl-che-bou-2026-10-10-bou",
+      "slug": "epl-che-bou-2026-10-10-che",
+      "url": "https://polymarket.com/market/epl-che-bou-2026-10-10-che",
       "outcome": "No",
-      "entry_price": 0.775,
-      "current_price": 0.765,
-      "shares": 645.1612903225806,
+      "entry_price": 0.105,
+      "current_price": 0.105,
+      "shares": 4761.904761904762,
       "invested_usd": 500.0,
-      "current_value": 493.54838709677415,
-      "unrealized_pnl": -6.4516129032258505,
-      "unrealized_pnl_pct": -1.2903225806451624,
+      "current_value": 500.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
       "catalyst": {
         "category": "Anomalía: 3-Way / 1X2 Sports Trap",
-        "headline": "The market is mispricing the 'Win' outcome by ignoring the 3-way nature of football (1X2). AFC Bournemouth is playing away against Chelsea, a superior side. Even if Bournemouth wer",
+        "headline": "The market is pricing Chelsea FC at 89.5% to win. In professional football, even for strong favorites, the win probability rarely exceeds 60-65% due to the inherent 3-way outcome s",
         "source": "Google gemini-3.1-flash-lite",
         "score": 9
       },
       "no_stop_loss": false,
       "hold_until_resolution": false,
       "target_exit_date": null,
-      "opened_at": "2026-10-10T12:53:50.554474+00:00"
+      "opened_at": "2026-10-10T14:14:26.966142+00:00"
     }
   },
   "closed_trades": [
@@ -1031,10 +1031,41 @@
       "realized_pnl_pct": -39.30635838150289,
       "close_reason": "🛑 STOP LOSS (-39.3%)",
       "closed_at": "2026-10-10T12:53:31.876116+00:00"
+    },
+    {
+      "market_id": "5009102",
+      "question": "Will AFC Bournemouth win on 2026-10-10?",
+      "event_title": "Chelsea FC vs. AFC Bournemouth",
+      "slug": "epl-che-bou-2026-10-10-bou",
+      "url": "https://polymarket.com/market/epl-che-bou-2026-10-10-bou",
+      "outcome": "No",
+      "entry_price": 0.775,
+      "current_price": 0.9675,
+      "shares": 645.1612903225806,
+      "invested_usd": 500.0,
+      "current_value": 624.1935483870967,
+      "unrealized_pnl": 124.19354838709671,
+      "unrealized_pnl_pct": 24.838709677419356,
+      "catalyst": {
+        "category": "Anomalía: 3-Way / 1X2 Sports Trap",
+        "headline": "The market is mispricing the 'Win' outcome by ignoring the 3-way nature of football (1X2). AFC Bournemouth is playing away against Chelsea, a superior side. Even if Bournemouth wer",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 9
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-10T12:53:50.554474+00:00",
+      "exit_price": 0.9675,
+      "final_value": 624.1935483870967,
+      "realized_pnl": 124.19354838709671,
+      "realized_pnl_pct": 24.838709677419356,
+      "close_reason": "🎯 TAKE PROFIT (+24.8%)",
+      "closed_at": "2026-10-10T14:14:18.312300+00:00"
     }
   ],
-  "total_realized_pnl": -669.3675168773107,
-  "win_count": 11,
+  "total_realized_pnl": -545.173968490214,
+  "win_count": 12,
   "loss_count": 15,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
