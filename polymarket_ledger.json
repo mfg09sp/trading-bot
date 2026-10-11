@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 553.6360008735749,
+  "cash_usdc": 0.0,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -282,6 +282,31 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-10-10T20:42:43.650269+00:00"
+    },
+    "1235552": {
+      "market_id": "1235552",
+      "question": "Will the Cleveland Guardians win the 2026 World Series?",
+      "event_title": "MLB World Series Champion 2026",
+      "slug": "will-the-cleveland-guardians-win-the-2026-world-series",
+      "url": "https://polymarket.com/market/will-the-cleveland-guardians-win-the-2026-world-series",
+      "outcome": "No",
+      "entry_price": 0.9055,
+      "current_price": 0.9055,
+      "shares": 611.4146889824129,
+      "invested_usd": 553.6360008735749,
+      "current_value": 553.6360008735749,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: Base Rate Mispricing",
+        "headline": "The Cleveland Guardians are currently in the ALCS (Final 4). In a 4-team field, the fair probability of winning the World Series is approximately 25% assuming parity. However, the ",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-11T22:05:02.303967+00:00"
     }
   },
   "closed_trades": [
