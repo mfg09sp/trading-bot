@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 0.0,
+  "cash_usdc": 553.6360008735749,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -9,12 +9,12 @@
       "url": "https://polymarket.com/market/will-david-lisnard-win-the-2027-french-presidential-election",
       "outcome": "No",
       "entry_price": 0.895,
-      "current_price": 0.8645,
+      "current_price": 0.856,
       "shares": 2234.63687150838,
       "invested_usd": 2000.0,
-      "current_value": 1931.8435754189945,
-      "unrealized_pnl": -68.15642458100547,
-      "unrealized_pnl_pct": -3.4078212290502763,
+      "current_value": 1912.8491620111731,
+      "unrealized_pnl": -87.15083798882688,
+      "unrealized_pnl_pct": -4.357541899441345,
       "catalyst": {
         "category": "Análisis Gemini",
         "headline": "David Lisnard, aunque es una figura respetada dentro de la derecha tradicional francesa (LR/Nouvelle Énergie), carece de la proyección nacional y el apoyo masivo necesario para sup",
@@ -97,12 +97,12 @@
       "url": "https://polymarket.com/market/us-announces-end-of-iranian-blockade-by-october-15-2026",
       "outcome": "No",
       "entry_price": 0.895,
-      "current_price": 0.9665,
+      "current_price": 0.967,
       "shares": 2234.63687150838,
       "invested_usd": 2000.0,
-      "current_value": 2159.776536312849,
-      "unrealized_pnl": 159.7765363128492,
-      "unrealized_pnl_pct": 7.98882681564246,
+      "current_value": 2160.893854748603,
+      "unrealized_pnl": 160.8938547486032,
+      "unrealized_pnl_pct": 8.044692737430163,
       "catalyst": {
         "category": "Análisis Gemini",
         "headline": "The market is currently pricing a 10.5% probability of a policy reversal (lifting the blockade) within a 15-month window. Historical base rates for the reversal of major geopolitic",
@@ -207,31 +207,6 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-10-07T03:02:03.699056+00:00"
-    },
-    "608547": {
-      "market_id": "608547",
-      "question": "Will Harry Kane win the 2026 Ballon d'Or?",
-      "event_title": "Ballon d'Or Winner 2026",
-      "slug": "will-harry-kane-win-the-2026-ballon-dor",
-      "url": "https://polymarket.com/market/will-harry-kane-win-the-2026-ballon-dor",
-      "outcome": "No",
-      "entry_price": 0.3865,
-      "current_price": 0.3385,
-      "shares": 1690.4916057208393,
-      "invested_usd": 653.3750056111044,
-      "current_value": 572.2314085365041,
-      "unrealized_pnl": -81.14359707460028,
-      "unrealized_pnl_pct": -12.419146183699867,
-      "catalyst": {
-        "category": "Anomalía: Base Rate Mispricing",
-        "headline": "The market is heavily overvaluing Harry Kane at a 61.35% implied probability (YES) for the 2026 Ballon d'Or. In a World Cup year (2026), the Ballon d'Or historically correlates alm",
-        "source": "Google gemini-3.5-flash",
-        "score": 9
-      },
-      "no_stop_loss": false,
-      "hold_until_resolution": false,
-      "target_exit_date": null,
-      "opened_at": "2026-10-09T20:09:51.698704+00:00"
     },
     "2772181": {
       "market_id": "2772181",
@@ -1205,10 +1180,41 @@
       "realized_pnl_pct": 28.571428571428587,
       "close_reason": "🎯 TAKE PROFIT (+28.6%)",
       "closed_at": "2026-10-10T16:38:25.762276+00:00"
+    },
+    {
+      "market_id": "608547",
+      "question": "Will Harry Kane win the 2026 Ballon d'Or?",
+      "event_title": "Ballon d'Or Winner 2026",
+      "slug": "will-harry-kane-win-the-2026-ballon-dor",
+      "url": "https://polymarket.com/market/will-harry-kane-win-the-2026-ballon-dor",
+      "outcome": "No",
+      "entry_price": 0.3865,
+      "current_price": 0.3275,
+      "shares": 1690.4916057208393,
+      "invested_usd": 653.3750056111044,
+      "current_value": 553.6360008735749,
+      "unrealized_pnl": -99.73900473752951,
+      "unrealized_pnl_pct": -15.265200517464422,
+      "catalyst": {
+        "category": "Anomalía: Base Rate Mispricing",
+        "headline": "The market is heavily overvaluing Harry Kane at a 61.35% implied probability (YES) for the 2026 Ballon d'Or. In a World Cup year (2026), the Ballon d'Or historically correlates alm",
+        "source": "Google gemini-3.5-flash",
+        "score": 9
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-09T20:09:51.698704+00:00",
+      "exit_price": 0.3275,
+      "final_value": 553.6360008735749,
+      "realized_pnl": -99.73900473752951,
+      "realized_pnl_pct": -15.265200517464422,
+      "close_reason": "🛑 STOP LOSS (-15.3%)",
+      "closed_at": "2026-10-11T14:28:08.078218+00:00"
     }
   ],
-  "total_realized_pnl": 134.0240264972549,
+  "total_realized_pnl": 34.285021759725396,
   "win_count": 14,
-  "loss_count": 16,
+  "loss_count": 17,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
