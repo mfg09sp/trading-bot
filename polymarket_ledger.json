@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 0.0,
+  "cash_usdc": 2533.3333333333335,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -44,28 +44,6 @@
         "score": 9
       },
       "opened_at": "2026-10-04T19:30:34.099575+00:00"
-    },
-    "562831": {
-      "market_id": "562831",
-      "question": "2026 Balance of Power: R Senate, R House",
-      "event_title": "Balance of Power: 2026 Midterms",
-      "slug": "2026-balance-of-power-r-senate-r-house-537",
-      "url": "https://polymarket.com/market/2026-balance-of-power-r-senate-r-house-537",
-      "outcome": "Yes",
-      "entry_price": 0.075,
-      "current_price": 0.085,
-      "shares": 26666.666666666668,
-      "invested_usd": 2000.0,
-      "current_value": 2266.666666666667,
-      "unrealized_pnl": 266.66666666666697,
-      "unrealized_pnl_pct": 13.333333333333346,
-      "catalyst": {
-        "category": "Análisis Gemini",
-        "headline": "El mercado subestima drásticamente la probabilidad de una victoria republicana en ambas cámaras para 2026. Históricamente, el partido del presidente en ejercicio suele sufrir en la",
-        "source": "Google gemini-3.1-flash-lite",
-        "score": 7
-      },
-      "opened_at": "2026-10-05T01:47:29.877672+00:00"
     },
     "682705": {
       "market_id": "682705",
@@ -1236,10 +1214,38 @@
       "realized_pnl_pct": -15.265200517464422,
       "close_reason": "🛑 STOP LOSS (-15.3%)",
       "closed_at": "2026-10-11T14:28:08.078218+00:00"
+    },
+    {
+      "market_id": "562831",
+      "question": "2026 Balance of Power: R Senate, R House",
+      "event_title": "Balance of Power: 2026 Midterms",
+      "slug": "2026-balance-of-power-r-senate-r-house-537",
+      "url": "https://polymarket.com/market/2026-balance-of-power-r-senate-r-house-537",
+      "outcome": "Yes",
+      "entry_price": 0.075,
+      "current_price": 0.095,
+      "shares": 26666.666666666668,
+      "invested_usd": 2000.0,
+      "current_value": 2533.3333333333335,
+      "unrealized_pnl": 533.3333333333335,
+      "unrealized_pnl_pct": 26.66666666666667,
+      "catalyst": {
+        "category": "Análisis Gemini",
+        "headline": "El mercado subestima drásticamente la probabilidad de una victoria republicana en ambas cámaras para 2026. Históricamente, el partido del presidente en ejercicio suele sufrir en la",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 7
+      },
+      "opened_at": "2026-10-05T01:47:29.877672+00:00",
+      "exit_price": 0.095,
+      "final_value": 2533.3333333333335,
+      "realized_pnl": 533.3333333333335,
+      "realized_pnl_pct": 26.66666666666667,
+      "close_reason": "🎯 TAKE PROFIT (+26.7%)",
+      "closed_at": "2026-10-12T17:33:55.683050+00:00"
     }
   ],
-  "total_realized_pnl": 34.285021759725396,
-  "win_count": 14,
+  "total_realized_pnl": 567.6183550930589,
+  "win_count": 15,
   "loss_count": 17,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
