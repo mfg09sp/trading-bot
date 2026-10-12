@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 533.3333333333335,
+  "cash_usdc": 0.0,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -269,12 +269,12 @@
       "url": "https://polymarket.com/market/will-the-cleveland-guardians-win-the-2026-world-series",
       "outcome": "No",
       "entry_price": 0.9055,
-      "current_price": 0.914,
+      "current_price": 0.913,
       "shares": 611.4146889824129,
       "invested_usd": 553.6360008735749,
-      "current_value": 558.8330257299255,
-      "unrealized_pnl": 5.197024856350595,
-      "unrealized_pnl_pct": 0.9387078961899572,
+      "current_value": 558.221611040943,
+      "unrealized_pnl": 4.585610167368145,
+      "unrealized_pnl_pct": 0.8282716731087867,
       "catalyst": {
         "category": "Anomalía: Base Rate Mispricing",
         "headline": "The Cleveland Guardians are currently in the ALCS (Final 4). In a 4-team field, the fair probability of winning the World Series is approximately 25% assuming parity. However, the ",
@@ -294,12 +294,12 @@
       "url": "https://polymarket.com/market/will-the-tampa-bay-rays-win-the-2026-world-series",
       "outcome": "No",
       "entry_price": 0.758,
-      "current_price": 0.7565,
+      "current_price": 0.7555,
       "shares": 2638.5224274406332,
       "invested_usd": 2000.0,
-      "current_value": 1996.042216358839,
-      "unrealized_pnl": -3.957783641161086,
-      "unrealized_pnl_pct": -0.197889182058055,
+      "current_value": 1993.4036939313983,
+      "unrealized_pnl": -6.596306068601734,
+      "unrealized_pnl_pct": -0.32981530343008675,
       "catalyst": {
         "category": "Anomalía: Base Rate Mispricing",
         "headline": "The Rays are currently in the ALCS (Final 4 teams). Winning the World Series requires winning the ALCS (best of 7) and then the World Series (best of 7). Even assuming a 50/50 win ",
@@ -310,6 +310,31 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-10-12T21:24:43.147266+00:00"
+    },
+    "2243308": {
+      "market_id": "2243308",
+      "question": "Will Philadelphia 76ers win the 2027 NBA Finals?",
+      "event_title": "NBA: 2027 Champion",
+      "slug": "will-philadelphia-76ers-win-the-2027-nba-finals",
+      "url": "https://polymarket.com/market/will-philadelphia-76ers-win-the-2027-nba-finals",
+      "outcome": "No",
+      "entry_price": 0.8895,
+      "current_price": 0.8895,
+      "shares": 599.5877833989134,
+      "invested_usd": 533.3333333333335,
+      "current_value": 533.3333333333335,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: Longshot Bias",
+        "headline": "The market is overvaluing the Philadelphia 76ers due to the 'LeBron effect' news cycle. Historically, NBA championship odds for teams with new high-profile acquisitions often suffe",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-12T23:29:20.305299+00:00"
     }
   },
   "closed_trades": [
