@@ -67,28 +67,6 @@
       },
       "opened_at": "2026-10-05T10:02:53.214394+00:00"
     },
-    "4906127": {
-      "market_id": "4906127",
-      "question": "US announces end of Iranian blockade by October 15, 2026?",
-      "event_title": "US announces end of Iranian blockade by...?",
-      "slug": "us-announces-end-of-iranian-blockade-by-october-15-2026",
-      "url": "https://polymarket.com/market/us-announces-end-of-iranian-blockade-by-october-15-2026",
-      "outcome": "No",
-      "entry_price": 0.895,
-      "current_price": 0.9885,
-      "shares": 2234.63687150838,
-      "invested_usd": 2000.0,
-      "current_value": 2208.9385474860337,
-      "unrealized_pnl": 208.9385474860337,
-      "unrealized_pnl_pct": 10.446927374301678,
-      "catalyst": {
-        "category": "Análisis Gemini",
-        "headline": "The market is currently pricing a 10.5% probability of a policy reversal (lifting the blockade) within a 15-month window. Historical base rates for the reversal of major geopolitic",
-        "source": "Google gemini-3.1-flash-lite",
-        "score": 9
-      },
-      "opened_at": "2026-10-05T10:02:59.349474+00:00"
-    },
     "601819": {
       "market_id": "601819",
       "question": "Will Luiz Inácio Lula da Silva win the 2026 Brazilian presidential election?",
@@ -294,12 +272,12 @@
       "url": "https://polymarket.com/market/will-the-tampa-bay-rays-win-the-2026-world-series",
       "outcome": "No",
       "entry_price": 0.758,
-      "current_price": 0.78,
+      "current_price": 0.7865,
       "shares": 2638.5224274406332,
       "invested_usd": 2000.0,
-      "current_value": 2058.047493403694,
-      "unrealized_pnl": 58.04749340369381,
-      "unrealized_pnl_pct": 2.902374670184699,
+      "current_value": 2075.197889182058,
+      "unrealized_pnl": 75.19788918205813,
+      "unrealized_pnl_pct": 3.7598944591028984,
       "catalyst": {
         "category": "Anomalía: Base Rate Mispricing",
         "headline": "The Rays are currently in the ALCS (Final 4 teams). Winning the World Series requires winning the ALCS (best of 7) and then the World Series (best of 7). Even assuming a 50/50 win ",
@@ -335,6 +313,56 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-10-12T23:29:20.305299+00:00"
+    },
+    "4397033": {
+      "market_id": "4397033",
+      "question": "Will Bilibili Gaming win Worlds 2026?",
+      "event_title": "Worlds 2026: Winner",
+      "slug": "will-bilibili-gaming-win-worlds-2026",
+      "url": "https://polymarket.com/market/will-bilibili-gaming-win-worlds-2026",
+      "outcome": "No",
+      "entry_price": 0.815,
+      "current_price": 0.815,
+      "shares": 2453.98773006135,
+      "invested_usd": 2000.0,
+      "current_value": 2000.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: Longshot Bias",
+        "headline": "The market is overestimating BLG's win probability at 18.5%. Historically, even top-tier LPL teams face a highly competitive field in Worlds, with a base rate of winning the tourna",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-14T17:58:53.910088+00:00"
+    },
+    "4397027": {
+      "market_id": "4397027",
+      "question": "Will Hanwha Life Esports win Worlds 2026?",
+      "event_title": "Worlds 2026: Winner",
+      "slug": "will-hanwha-life-esports-win-worlds-2026",
+      "url": "https://polymarket.com/market/will-hanwha-life-esports-win-worlds-2026",
+      "outcome": "No",
+      "entry_price": 0.835,
+      "current_price": 0.835,
+      "shares": 260.9306526611586,
+      "invested_usd": 217.87709497206743,
+      "current_value": 217.87709497206743,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: Longshot Bias",
+        "headline": "Hanwha Life Esports (HLE) is currently priced at 16.5% (0.165). In a 32-team tournament format like Worlds, even for a top-tier team, a win probability exceeding 10-12% is statisti",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-14T17:59:09.811181+00:00"
     }
   },
   "closed_trades": [
@@ -1292,10 +1320,38 @@
       "realized_pnl_pct": 26.66666666666667,
       "close_reason": "🎯 TAKE PROFIT (+26.7%)",
       "closed_at": "2026-10-12T17:33:55.683050+00:00"
+    },
+    {
+      "market_id": "4906127",
+      "question": "US announces end of Iranian blockade by October 15, 2026?",
+      "event_title": "US announces end of Iranian blockade by...?",
+      "slug": "us-announces-end-of-iranian-blockade-by-october-15-2026",
+      "url": "https://polymarket.com/market/us-announces-end-of-iranian-blockade-by-october-15-2026",
+      "outcome": "No",
+      "entry_price": 0.895,
+      "current_price": 0.9925,
+      "shares": 2234.63687150838,
+      "invested_usd": 2000.0,
+      "current_value": 2217.8770949720674,
+      "unrealized_pnl": 217.87709497206743,
+      "unrealized_pnl_pct": 10.893854748603356,
+      "catalyst": {
+        "category": "Análisis Gemini",
+        "headline": "The market is currently pricing a 10.5% probability of a policy reversal (lifting the blockade) within a 15-month window. Historical base rates for the reversal of major geopolitic",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 9
+      },
+      "opened_at": "2026-10-05T10:02:59.349474+00:00",
+      "exit_price": 0.9925,
+      "final_value": 2217.8770949720674,
+      "realized_pnl": 217.87709497206743,
+      "realized_pnl_pct": 10.893854748603356,
+      "close_reason": "🏁 RESOLUCIÓN GANADA ($1.00)",
+      "closed_at": "2026-10-14T17:57:38.149983+00:00"
     }
   ],
-  "total_realized_pnl": 567.6183550930589,
-  "win_count": 15,
+  "total_realized_pnl": 785.4954500651263,
+  "win_count": 16,
   "loss_count": 17,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
