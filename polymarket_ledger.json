@@ -75,12 +75,12 @@
       "url": "https://polymarket.com/market/will-luiz-incio-lula-da-silva-win-the-2026-brazilian-presidential-election",
       "outcome": "No",
       "entry_price": 0.825,
-      "current_price": 0.775,
+      "current_price": 0.765,
       "shares": 2424.2424242424245,
       "invested_usd": 2000.0,
-      "current_value": 1878.787878787879,
-      "unrealized_pnl": -121.21212121212102,
-      "unrealized_pnl_pct": -6.0606060606060534,
+      "current_value": 1854.5454545454547,
+      "unrealized_pnl": -145.45454545454527,
+      "unrealized_pnl_pct": -7.272727272727265,
       "catalyst": {
         "category": "Análisis Gemini",
         "headline": "The market is currently pricing Lula's victory at 17.5%. Historical base rates for incumbent re-election in Brazil, combined with current political polarization, economic headwinds",
@@ -239,31 +239,6 @@
       "target_exit_date": null,
       "opened_at": "2026-10-10T20:42:43.650269+00:00"
     },
-    "1235552": {
-      "market_id": "1235552",
-      "question": "Will the Cleveland Guardians win the 2026 World Series?",
-      "event_title": "MLB World Series Champion 2026",
-      "slug": "will-the-cleveland-guardians-win-the-2026-world-series",
-      "url": "https://polymarket.com/market/will-the-cleveland-guardians-win-the-2026-world-series",
-      "outcome": "No",
-      "entry_price": 0.9055,
-      "current_price": 0.9895,
-      "shares": 611.4146889824129,
-      "invested_usd": 553.6360008735749,
-      "current_value": 604.9948347480977,
-      "unrealized_pnl": 51.358833874522816,
-      "unrealized_pnl_pct": 9.276642738818342,
-      "catalyst": {
-        "category": "Anomalía: Base Rate Mispricing",
-        "headline": "The Cleveland Guardians are currently in the ALCS (Final 4). In a 4-team field, the fair probability of winning the World Series is approximately 25% assuming parity. However, the ",
-        "source": "Google gemini-3.1-flash-lite",
-        "score": 8
-      },
-      "no_stop_loss": false,
-      "hold_until_resolution": false,
-      "target_exit_date": null,
-      "opened_at": "2026-10-11T22:05:02.303967+00:00"
-    },
     "2243308": {
       "market_id": "2243308",
       "question": "Will Philadelphia 76ers win the 2027 NBA Finals?",
@@ -363,6 +338,31 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-10-20T01:39:16.182804+00:00"
+    },
+    "5716219": {
+      "market_id": "5716219",
+      "question": "Rachaad White: Anytime Touchdown",
+      "event_title": "Commanders vs. 49ers - Player Props",
+      "slug": "nfl-was-sf-2026-10-20-anytime-td-rachaad-white",
+      "url": "https://polymarket.com/market/nfl-was-sf-2026-10-20-anytime-td-rachaad-white",
+      "outcome": "No",
+      "entry_price": 0.915,
+      "current_price": 0.915,
+      "shares": 666.2081365196346,
+      "invested_usd": 609.5804449154657,
+      "current_value": 609.5804449154657,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: Longshot Bias",
+        "headline": "Rachaad White is a running back for the Tampa Bay Buccaneers, not the Commanders or 49ers. The market is pricing in a non-zero probability for a player who is not participating in ",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 9
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-20T02:33:10.654954+00:00"
     }
   },
   "closed_trades": [
@@ -1379,10 +1379,41 @@
       "realized_pnl_pct": -16.55672823218998,
       "close_reason": "🛑 STOP LOSS (-16.6%)",
       "closed_at": "2026-10-20T01:38:36.580954+00:00"
+    },
+    {
+      "market_id": "1235552",
+      "question": "Will the Cleveland Guardians win the 2026 World Series?",
+      "event_title": "MLB World Series Champion 2026",
+      "slug": "will-the-cleveland-guardians-win-the-2026-world-series",
+      "url": "https://polymarket.com/market/will-the-cleveland-guardians-win-the-2026-world-series",
+      "outcome": "No",
+      "entry_price": 0.9055,
+      "current_price": 0.997,
+      "shares": 611.4146889824129,
+      "invested_usd": 553.6360008735749,
+      "current_value": 609.5804449154657,
+      "unrealized_pnl": 55.94444404189085,
+      "unrealized_pnl_pct": 10.104914411927115,
+      "catalyst": {
+        "category": "Anomalía: Base Rate Mispricing",
+        "headline": "The Cleveland Guardians are currently in the ALCS (Final 4). In a 4-team field, the fair probability of winning the World Series is approximately 25% assuming parity. However, the ",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-11T22:05:02.303967+00:00",
+      "exit_price": 0.997,
+      "final_value": 609.5804449154657,
+      "realized_pnl": 55.94444404189085,
+      "realized_pnl_pct": 10.104914411927115,
+      "close_reason": "🏁 RESOLUCIÓN GANADA ($1.00)",
+      "closed_at": "2026-10-20T02:32:20.166246+00:00"
     }
   ],
-  "total_realized_pnl": 454.36088542132666,
-  "win_count": 16,
+  "total_realized_pnl": 510.3053294632175,
+  "win_count": 17,
   "loss_count": 18,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
