@@ -247,12 +247,12 @@
       "url": "https://polymarket.com/market/will-the-cleveland-guardians-win-the-2026-world-series",
       "outcome": "No",
       "entry_price": 0.9055,
-      "current_price": 0.9735,
+      "current_price": 0.9845,
       "shares": 611.4146889824129,
       "invested_usd": 553.6360008735749,
-      "current_value": 595.212199724379,
-      "unrealized_pnl": 41.57619885080419,
-      "unrealized_pnl_pct": 7.509663169519609,
+      "current_value": 601.9377613031855,
+      "unrealized_pnl": 48.30176042961068,
+      "unrealized_pnl_pct": 8.724461623412488,
       "catalyst": {
         "category": "Anomalía: Base Rate Mispricing",
         "headline": "The Cleveland Guardians are currently in the ALCS (Final 4). In a 4-team field, the fair probability of winning the World Series is approximately 25% assuming parity. However, the ",
@@ -263,31 +263,6 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-10-11T22:05:02.303967+00:00"
-    },
-    "1235549": {
-      "market_id": "1235549",
-      "question": "Will the Tampa Bay Rays win the 2026 World Series?",
-      "event_title": "MLB World Series Champion 2026",
-      "slug": "will-the-tampa-bay-rays-win-the-2026-world-series",
-      "url": "https://polymarket.com/market/will-the-tampa-bay-rays-win-the-2026-world-series",
-      "outcome": "No",
-      "entry_price": 0.758,
-      "current_price": 0.646,
-      "shares": 2638.5224274406332,
-      "invested_usd": 2000.0,
-      "current_value": 1704.4854881266492,
-      "unrealized_pnl": -295.5145118733508,
-      "unrealized_pnl_pct": -14.775725593667543,
-      "catalyst": {
-        "category": "Anomalía: Base Rate Mispricing",
-        "headline": "The Rays are currently in the ALCS (Final 4 teams). Winning the World Series requires winning the ALCS (best of 7) and then the World Series (best of 7). Even assuming a 50/50 win ",
-        "source": "Google gemini-3.1-flash-lite",
-        "score": 9
-      },
-      "no_stop_loss": false,
-      "hold_until_resolution": false,
-      "target_exit_date": null,
-      "opened_at": "2026-10-12T21:24:43.147266+00:00"
     },
     "2243308": {
       "market_id": "2243308",
@@ -363,6 +338,31 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-10-14T17:59:09.811181+00:00"
+    },
+    "1235568": {
+      "market_id": "1235568",
+      "question": "Will the Milwaukee Brewers win the 2026 World Series?",
+      "event_title": "MLB World Series Champion 2026",
+      "slug": "will-the-milwaukee-brewers-win-the-2026-world-series",
+      "url": "https://polymarket.com/market/will-the-milwaukee-brewers-win-the-2026-world-series",
+      "outcome": "Yes",
+      "entry_price": 0.6265,
+      "current_price": 0.6265,
+      "shares": 2663.7915967377503,
+      "invested_usd": 1668.8654353562004,
+      "current_value": 1668.8654353562004,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: Information Lag",
+        "headline": "The market is currently mispriced because it reflects a pre-event probability. Official news confirms the Milwaukee Brewers have already swept the Dodgers and advanced to the 2026 ",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 10
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-20T01:39:16.182804+00:00"
     }
   },
   "closed_trades": [
@@ -1348,10 +1348,41 @@
       "realized_pnl_pct": 10.893854748603356,
       "close_reason": "🏁 RESOLUCIÓN GANADA ($1.00)",
       "closed_at": "2026-10-14T17:57:38.149983+00:00"
+    },
+    {
+      "market_id": "1235549",
+      "question": "Will the Tampa Bay Rays win the 2026 World Series?",
+      "event_title": "MLB World Series Champion 2026",
+      "slug": "will-the-tampa-bay-rays-win-the-2026-world-series",
+      "url": "https://polymarket.com/market/will-the-tampa-bay-rays-win-the-2026-world-series",
+      "outcome": "No",
+      "entry_price": 0.758,
+      "current_price": 0.6325,
+      "shares": 2638.5224274406332,
+      "invested_usd": 2000.0,
+      "current_value": 1668.8654353562004,
+      "unrealized_pnl": -331.13456464379965,
+      "unrealized_pnl_pct": -16.55672823218998,
+      "catalyst": {
+        "category": "Anomalía: Base Rate Mispricing",
+        "headline": "The Rays are currently in the ALCS (Final 4 teams). Winning the World Series requires winning the ALCS (best of 7) and then the World Series (best of 7). Even assuming a 50/50 win ",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 9
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-12T21:24:43.147266+00:00",
+      "exit_price": 0.6325,
+      "final_value": 1668.8654353562004,
+      "realized_pnl": -331.13456464379965,
+      "realized_pnl_pct": -16.55672823218998,
+      "close_reason": "🛑 STOP LOSS (-16.6%)",
+      "closed_at": "2026-10-20T01:38:36.580954+00:00"
     }
   ],
-  "total_realized_pnl": 785.4954500651263,
+  "total_realized_pnl": 454.36088542132666,
   "win_count": 16,
-  "loss_count": 17,
+  "loss_count": 18,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
