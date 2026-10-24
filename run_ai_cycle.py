@@ -226,9 +226,16 @@ def run_cycle():
     # 4. Analizar Alpaca Cripto y Acciones con Radar de Super Inversores
     logger.info("3/4. Analizando activos en Alpaca (Super Inversores + Cripto 24/7)...")
     alpaca_positions = alpaca.get_open_positions()
+    try:
+        open_orders = alpaca.get_open_orders()
+        pending_symbols = {getattr(o, "symbol", "").replace("/", "").upper() for o in open_orders}
+    except Exception as e:
+        logger.warning(f"Error consultando órdenes abiertas en Alpaca: {e}")
+        pending_symbols = set()
+
     alpaca_summary = alpaca.get_account_summary()
     alpaca_cash = float(alpaca_summary.get("cash", 0.0))
-    logger.info(f"Saldo disponible en Alpaca: ${alpaca_cash:,.2f} USD")
+    logger.info(f"Saldo disponible en Alpaca: ${alpaca_cash:,.2f} USD | Órdenes pendientes: {len(pending_symbols)}")
 
     super_investor_svc = SuperInvestorService(news_service=news_service)
     super_inv_cands = super_investor_svc.get_super_investor_candidates()
@@ -254,13 +261,18 @@ def run_cycle():
         if clean_sym in config.LONG_TERM_SYMBOLS:
             continue
 
-        # Si ya tenemos posición abierta en este activo, no sobreoperar
-        if sym in alpaca_positions or clean_sym in alpaca_positions:
-            logger.info(f"Posición ya existente para {sym}, se mantiene monitorización.")
+        # Si ya tenemos posición abierta o una orden pendiente en este activo, no sobreoperar
+        if (
+            sym in alpaca_positions
+            or clean_sym in alpaca_positions
+            or sym in pending_symbols
+            or clean_sym in pending_symbols
+        ):
+            logger.info(f"Posición u orden pendiente ya existente para {sym}, se mantiene monitorización.")
             continue
 
-        if alpaca_cash < config.RISK_PER_TRADE_USD:
-            logger.info("Saldo de efectivo insuficiente para nueva posición en Alpaca.")
+        if alpaca_cash < 50.0:
+            logger.info(f"Saldo de efectivo (${alpaca_cash:,.2f} USD) insuficiente para nuevas posiciones.")
             break
 
         # Obtener precio actual y datos técnicos
@@ -349,14 +361,20 @@ def run_cycle():
         ai_insights.append(f"• <b>{sym}{inv_label}:</b> {c_decision} (Convicción {c_conviction}/10) | {pattern_detected}")
 
         if c_decision == "BUY" and c_conviction >= 7 and r_r >= 1.8:
-            # Calcular cantidad (decimal para cripto, entero para acciones)
             is_crypto = "/" in sym
-            if is_crypto:
-                qty = round(config.RISK_PER_TRADE_USD / cur_price, 4)
-            else:
-                qty = float(max(1, int(config.RISK_PER_TRADE_USD / cur_price)))
+            # Presupuesto estricto limitado al efectivo real disponible para NUNCA incurrir en apalancamiento/margen
+            available_budget = min(config.RISK_PER_TRADE_USD, alpaca_cash)
+            if not is_crypto and available_budget < cur_price:
+                logger.info(f"Efectivo insuficiente (${alpaca_cash:,.2f}) para comprar 1 acción de {sym} a ${cur_price:,.2f}")
+                continue
 
-            if qty > 0:
+            # Calcular cantidad (decimal para cripto, entero para acciones)
+            if is_crypto:
+                qty = round(available_budget / cur_price, 4)
+            else:
+                qty = float(int(available_budget / cur_price))
+
+            if qty > 0 and (qty * cur_price) <= alpaca_cash:
                 logger.info(f"Ejecutando orden de compra en Alpaca para {qty} {sym} (Patrón: {pattern_detected}, R:R: {r_r}:1)...")
                 target_tp_price = crypto_analysis.get("predicted_target_price")
                 target_sl_price = crypto_analysis.get("predicted_stop_loss_price")
@@ -375,6 +393,10 @@ def run_cycle():
                 )
                 if order:
                     alpaca_trades_executed += 1
+                    trade_cost = qty * cur_price
+                    alpaca_cash -= trade_cost
+                    pending_symbols.add(clean_sym)
+                    pending_symbols.add(sym)
                     notifier.notify_order_placed(
                         symbol=sym,
                         qty=qty,
