@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 622.2222222222222,
+  "cash_usdc": 2294.9494949494947,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -66,28 +66,6 @@
         "score": 8
       },
       "opened_at": "2026-10-05T10:02:53.214394+00:00"
-    },
-    "601819": {
-      "market_id": "601819",
-      "question": "Will Luiz Inácio Lula da Silva win the 2026 Brazilian presidential election?",
-      "event_title": "Brazil Presidential Election",
-      "slug": "will-luiz-incio-lula-da-silva-win-the-2026-brazilian-presidential-election",
-      "url": "https://polymarket.com/market/will-luiz-incio-lula-da-silva-win-the-2026-brazilian-presidential-election",
-      "outcome": "No",
-      "entry_price": 0.825,
-      "current_price": 0.755,
-      "shares": 2424.2424242424245,
-      "invested_usd": 2000.0,
-      "current_value": 1830.3030303030305,
-      "unrealized_pnl": -169.69696969696952,
-      "unrealized_pnl_pct": -8.484848484848479,
-      "catalyst": {
-        "category": "Análisis Gemini",
-        "headline": "The market is currently pricing Lula's victory at 17.5%. Historical base rates for incumbent re-election in Brazil, combined with current political polarization, economic headwinds",
-        "source": "Google gemini-3.1-flash-lite",
-        "score": 8
-      },
-      "opened_at": "2026-10-05T10:04:40.918712+00:00"
     },
     "802374": {
       "market_id": "802374",
@@ -247,12 +225,12 @@
       "url": "https://polymarket.com/market/will-philadelphia-76ers-win-the-2027-nba-finals",
       "outcome": "No",
       "entry_price": 0.8895,
-      "current_price": 0.876,
+      "current_price": 0.8765,
       "shares": 599.5877833989134,
       "invested_usd": 533.3333333333335,
-      "current_value": 525.2388982574481,
-      "unrealized_pnl": -8.094435075885372,
-      "unrealized_pnl_pct": -1.5177065767284943,
+      "current_value": 525.5386921491476,
+      "unrealized_pnl": -7.794641184185934,
+      "unrealized_pnl_pct": -1.4614952220348525,
       "catalyst": {
         "category": "Anomalía: Longshot Bias",
         "headline": "The market is overvaluing the Philadelphia 76ers due to the 'LeBron effect' news cycle. Historically, NBA championship odds for teams with new high-profile acquisitions often suffe",
@@ -1503,10 +1481,38 @@
       "realized_pnl_pct": 31.1111111111111,
       "close_reason": "🎯 TAKE PROFIT (+31.1%)",
       "closed_at": "2026-10-25T03:52:12.441841+00:00"
+    },
+    {
+      "market_id": "601819",
+      "question": "Will Luiz Inácio Lula da Silva win the 2026 Brazilian presidential election?",
+      "event_title": "Brazil Presidential Election",
+      "slug": "will-luiz-incio-lula-da-silva-win-the-2026-brazilian-presidential-election",
+      "url": "https://polymarket.com/market/will-luiz-incio-lula-da-silva-win-the-2026-brazilian-presidential-election",
+      "outcome": "No",
+      "entry_price": 0.825,
+      "current_price": 0.69,
+      "shares": 2424.2424242424245,
+      "invested_usd": 2000.0,
+      "current_value": 1672.7272727272727,
+      "unrealized_pnl": -327.27272727272725,
+      "unrealized_pnl_pct": -16.363636363636367,
+      "catalyst": {
+        "category": "Análisis Gemini",
+        "headline": "The market is currently pricing Lula's victory at 17.5%. Historical base rates for incumbent re-election in Brazil, combined with current political polarization, economic headwinds",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 8
+      },
+      "opened_at": "2026-10-05T10:04:40.918712+00:00",
+      "exit_price": 0.69,
+      "final_value": 1672.7272727272727,
+      "realized_pnl": -327.27272727272725,
+      "realized_pnl_pct": -16.363636363636367,
+      "close_reason": "🛑 STOP LOSS (-16.4%)",
+      "closed_at": "2026-10-25T20:18:47.687901+00:00"
     }
   ],
-  "total_realized_pnl": 1080.3598114407841,
+  "total_realized_pnl": 753.0870841680569,
   "win_count": 19,
-  "loss_count": 19,
+  "loss_count": 20,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
