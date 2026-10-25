@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 36.64144750857991,
+  "cash_usdc": 0.0,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -9,12 +9,12 @@
       "url": "https://polymarket.com/market/will-david-lisnard-win-the-2027-french-presidential-election",
       "outcome": "No",
       "entry_price": 0.895,
-      "current_price": 0.8725,
+      "current_price": 0.8605,
       "shares": 2234.63687150838,
       "invested_usd": 2000.0,
-      "current_value": 1949.7206703910617,
-      "unrealized_pnl": -50.27932960893827,
-      "unrealized_pnl_pct": -2.5139664804469235,
+      "current_value": 1922.905027932961,
+      "unrealized_pnl": -77.09497206703895,
+      "unrealized_pnl_pct": -3.8547486033519527,
       "catalyst": {
         "category": "Análisis Gemini",
         "headline": "David Lisnard, aunque es una figura respetada dentro de la derecha tradicional francesa (LR/Nouvelle Énergie), carece de la proyección nacional y el apoyo masivo necesario para sup",
@@ -314,30 +314,55 @@
       "target_exit_date": null,
       "opened_at": "2026-10-14T17:59:09.811181+00:00"
     },
-    "1235568": {
-      "market_id": "1235568",
-      "question": "Will the Milwaukee Brewers win the 2026 World Series?",
-      "event_title": "MLB World Series Champion 2026",
-      "slug": "will-the-milwaukee-brewers-win-the-2026-world-series",
-      "url": "https://polymarket.com/market/will-the-milwaukee-brewers-win-the-2026-world-series",
+    "4397030": {
+      "market_id": "4397030",
+      "question": "Will Dplus KIA win Worlds 2026?",
+      "event_title": "Worlds 2026: Winner",
+      "slug": "will-dplus-kia-win-worlds-2026",
+      "url": "https://polymarket.com/market/will-dplus-kia-win-worlds-2026",
       "outcome": "Yes",
-      "entry_price": 0.6265,
-      "current_price": 0.7345,
-      "shares": 2663.7915967377503,
-      "invested_usd": 1668.8654353562004,
-      "current_value": 1956.5549278038777,
-      "unrealized_pnl": 287.68949244767737,
-      "unrealized_pnl_pct": 17.238627294493234,
+      "entry_price": 0.1125,
+      "current_price": 0.1125,
+      "shares": 17777.777777777777,
+      "invested_usd": 2000.0,
+      "current_value": 2000.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
       "catalyst": {
         "category": "Anomalía: Information Lag",
-        "headline": "The market is currently mispriced because it reflects a pre-event probability. Official news confirms the Milwaukee Brewers have already swept the Dodgers and advanced to the 2026 ",
+        "headline": "The market is currently pricing Dplus KIA at 11.25% despite a dominant 2-0 start in the Swiss Stage and a recent victory at the Esports World Cup. Given their current momentum and ",
         "source": "Google gemini-3.1-flash-lite",
-        "score": 10
+        "score": 8
       },
       "no_stop_loss": false,
       "hold_until_resolution": false,
       "target_exit_date": null,
-      "opened_at": "2026-10-20T01:39:16.182804+00:00"
+      "opened_at": "2026-10-25T03:09:14.586718+00:00"
+    },
+    "4397025": {
+      "market_id": "4397025",
+      "question": "Will T1 win Worlds 2026?",
+      "event_title": "Worlds 2026: Winner",
+      "slug": "will-t1-win-worlds-2026",
+      "url": "https://polymarket.com/market/will-t1-win-worlds-2026",
+      "outcome": "No",
+      "entry_price": 0.835,
+      "current_price": 0.835,
+      "shares": 270.99178446348566,
+      "invested_usd": 226.27814002701052,
+      "current_value": 226.27814002701052,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: Longshot Bias",
+        "headline": "Existe un claro sesgo de popularidad (Fan Tax) que infla el valor de T1 al 16.5% debido a su historial y la figura de Faker. Sin embargo, en un torneo internacional de máximo nivel",
+        "source": "Google gemini-3.5-flash",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-25T03:09:25.842318+00:00"
     }
   },
   "closed_trades": [
@@ -1416,10 +1441,41 @@
       "realized_pnl_pct": -93.98907103825135,
       "close_reason": "🛑 STOP LOSS (-94.0%)",
       "closed_at": "2026-10-20T02:54:32.265320+00:00"
+    },
+    {
+      "market_id": "1235568",
+      "question": "Will the Milwaukee Brewers win the 2026 World Series?",
+      "event_title": "MLB World Series Champion 2026",
+      "slug": "will-the-milwaukee-brewers-win-the-2026-world-series",
+      "url": "https://polymarket.com/market/will-the-milwaukee-brewers-win-the-2026-world-series",
+      "outcome": "Yes",
+      "entry_price": 0.6265,
+      "current_price": 0.822,
+      "shares": 2663.7915967377503,
+      "invested_usd": 1668.8654353562004,
+      "current_value": 2189.6366925184307,
+      "unrealized_pnl": 520.7712571622303,
+      "unrealized_pnl_pct": 31.205107741420594,
+      "catalyst": {
+        "category": "Anomalía: Information Lag",
+        "headline": "The market is currently mispriced because it reflects a pre-event probability. Official news confirms the Milwaukee Brewers have already swept the Dodgers and advanced to the 2026 ",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 10
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-20T01:39:16.182804+00:00",
+      "exit_price": 0.822,
+      "final_value": 2189.6366925184307,
+      "realized_pnl": 520.7712571622303,
+      "realized_pnl_pct": 31.205107741420594,
+      "close_reason": "🎯 TAKE PROFIT (+31.2%)",
+      "closed_at": "2026-10-25T03:08:22.801175+00:00"
     }
   ],
-  "total_realized_pnl": -62.63366794366834,
-  "win_count": 17,
+  "total_realized_pnl": 458.13758921856197,
+  "win_count": 18,
   "loss_count": 19,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
