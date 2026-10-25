@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 2294.9494949494947,
+  "cash_usdc": 294.9494949494947,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -225,12 +225,12 @@
       "url": "https://polymarket.com/market/will-philadelphia-76ers-win-the-2027-nba-finals",
       "outcome": "No",
       "entry_price": 0.8895,
-      "current_price": 0.8785,
+      "current_price": 0.88,
       "shares": 599.5877833989134,
       "invested_usd": 533.3333333333335,
-      "current_value": 526.7378677159454,
-      "unrealized_pnl": -6.595465617388072,
-      "unrealized_pnl_pct": -1.2366498032602598,
+      "current_value": 527.6372493910438,
+      "unrealized_pnl": -5.696083942289647,
+      "unrealized_pnl_pct": -1.068015739179309,
       "catalyst": {
         "category": "Anomalía: Longshot Bias",
         "headline": "The market is overvaluing the Philadelphia 76ers due to the 'LeBron effect' news cycle. Historically, NBA championship odds for teams with new high-profile acquisitions often suffe",
@@ -341,6 +341,31 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-10-25T03:54:14.570338+00:00"
+    },
+    "6171036": {
+      "market_id": "6171036",
+      "question": "Ausar Thompson: Rebounds O/U 7.5",
+      "event_title": "Pistons vs. 76ers",
+      "slug": "nba-det-phi-2026-10-25-rebounds-ausar-thompson-7pt5",
+      "url": "https://polymarket.com/market/nba-det-phi-2026-10-25-rebounds-ausar-thompson-7pt5",
+      "outcome": "No",
+      "entry_price": 0.8545,
+      "current_price": 0.8545,
+      "shares": 2340.5500292568754,
+      "invested_usd": 2000.0,
+      "current_value": 2000.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: Information Lag",
+        "headline": "The market is currently pricing Ausar Thompson's rebounding performance based on his recent high-output games (11 rebounds). However, the critical catalyst is the official report f",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 10
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-25T21:01:22.324259+00:00"
     }
   },
   "closed_trades": [
