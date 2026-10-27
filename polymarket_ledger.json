@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 3034.4158679723523,
+  "cash_usdc": 1034.4158679723523,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -344,6 +344,31 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-10-26T03:13:52.779691+00:00"
+    },
+    "2243314": {
+      "market_id": "2243314",
+      "question": "Will Houston Rockets win the 2027 NBA Finals?",
+      "event_title": "NBA: 2027 Champion",
+      "slug": "will-houston-rockets-win-the-2027-nba-finals",
+      "url": "https://polymarket.com/market/will-houston-rockets-win-the-2027-nba-finals",
+      "outcome": "No",
+      "entry_price": 0.9275,
+      "current_price": 0.9275,
+      "shares": 2156.33423180593,
+      "invested_usd": 2000.0,
+      "current_value": 2000.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: Longshot Bias",
+        "headline": "The market is pricing the Houston Rockets at a 7.25% implied probability to win the 2027 NBA Finals. Historically, non-contender teams in the NBA have a base rate of winning the ch",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 9
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-27T13:24:19.096924+00:00"
     }
   },
   "closed_trades": [
