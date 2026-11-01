@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 0.0,
+  "cash_usdc": 543.1060261629318,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -347,31 +347,6 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-10-30T18:25:21.235943+00:00"
-    },
-    "6448716": {
-      "market_id": "6448716",
-      "question": "Zion Williamson: Assists O/U 3.5",
-      "event_title": "Hawks vs. Pelicans",
-      "slug": "nba-atl-nop-2026-10-31-assists-zion-williamson-3pt5",
-      "url": "https://polymarket.com/market/nba-atl-nop-2026-10-31-assists-zion-williamson-3pt5",
-      "outcome": "No",
-      "entry_price": 0.785,
-      "current_price": 0.82,
-      "shares": 1193.6396179405094,
-      "invested_usd": 937.0071000833,
-      "current_value": 978.7844867112177,
-      "unrealized_pnl": 41.777386627917735,
-      "unrealized_pnl_pct": 4.458598726114639,
-      "catalyst": {
-        "category": "Anomalía: Information Lag",
-        "headline": "The market is significantly overestimating Zion Williamson's assist potential given his recent injury history and current status. Multiple reports from March 2026 confirm recurring",
-        "source": "Google gemini-3.1-flash-lite",
-        "score": 9
-      },
-      "no_stop_loss": false,
-      "hold_until_resolution": false,
-      "target_exit_date": null,
-      "opened_at": "2026-10-31T23:57:35.245208+00:00"
     }
   },
   "closed_trades": [
@@ -1658,10 +1633,41 @@
       "realized_pnl_pct": 19.700598802395223,
       "close_reason": "🏁 RESOLUCIÓN GANADA ($1.00)",
       "closed_at": "2026-10-31T23:43:05.588331+00:00"
+    },
+    {
+      "market_id": "6448716",
+      "question": "Zion Williamson: Assists O/U 3.5",
+      "event_title": "Hawks vs. Pelicans",
+      "slug": "nba-atl-nop-2026-10-31-assists-zion-williamson-3pt5",
+      "url": "https://polymarket.com/market/nba-atl-nop-2026-10-31-assists-zion-williamson-3pt5",
+      "outcome": "No",
+      "entry_price": 0.785,
+      "current_price": 0.455,
+      "shares": 1193.6396179405094,
+      "invested_usd": 937.0071000833,
+      "current_value": 543.1060261629318,
+      "unrealized_pnl": -393.90107392036816,
+      "unrealized_pnl_pct": -42.038216560509554,
+      "catalyst": {
+        "category": "Anomalía: Information Lag",
+        "headline": "The market is significantly overestimating Zion Williamson's assist potential given his recent injury history and current status. Multiple reports from March 2026 confirm recurring",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 9
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-31T23:57:35.245208+00:00",
+      "exit_price": 0.455,
+      "final_value": 543.1060261629318,
+      "realized_pnl": -393.90107392036816,
+      "realized_pnl_pct": -42.038216560509554,
+      "close_reason": "🛑 STOP LOSS (-42.0%)",
+      "closed_at": "2026-11-01T01:22:59.543663+00:00"
     }
   ],
-  "total_realized_pnl": 1177.2675943297947,
+  "total_realized_pnl": 783.3665204094266,
   "win_count": 22,
-  "loss_count": 21,
+  "loss_count": 22,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
