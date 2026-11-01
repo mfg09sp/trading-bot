@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 0.0,
+  "cash_usdc": 2410.25641025641,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -9,12 +9,12 @@
       "url": "https://polymarket.com/market/will-david-lisnard-win-the-2027-french-presidential-election",
       "outcome": "No",
       "entry_price": 0.895,
-      "current_price": 0.801,
+      "current_price": 0.8025,
       "shares": 2234.63687150838,
       "invested_usd": 2000.0,
-      "current_value": 1789.9441340782125,
-      "unrealized_pnl": -210.05586592178747,
-      "unrealized_pnl_pct": -10.502793296089383,
+      "current_value": 1793.296089385475,
+      "unrealized_pnl": -206.70391061452506,
+      "unrealized_pnl_pct": -10.33519553072626,
       "catalyst": {
         "category": "Análisis Gemini",
         "headline": "David Lisnard, aunque es una figura respetada dentro de la derecha tradicional francesa (LR/Nouvelle Énergie), carece de la proyección nacional y el apoyo masivo necesario para sup",
@@ -248,31 +248,6 @@
       "target_exit_date": null,
       "opened_at": "2026-10-25T03:09:25.842318+00:00"
     },
-    "2243324": {
-      "market_id": "2243324",
-      "question": "Will San Antonio Spurs win the 2027 NBA Finals?",
-      "event_title": "NBA: 2027 Champion",
-      "slug": "will-san-antonio-spurs-win-the-2027-nba-finals",
-      "url": "https://polymarket.com/market/will-san-antonio-spurs-win-the-2027-nba-finals",
-      "outcome": "Yes",
-      "entry_price": 0.195,
-      "current_price": 0.225,
-      "shares": 10256.410256410256,
-      "invested_usd": 2000.0,
-      "current_value": 2307.6923076923076,
-      "unrealized_pnl": 307.6923076923076,
-      "unrealized_pnl_pct": 15.384615384615383,
-      "catalyst": {
-        "category": "Anomalía: Information Lag",
-        "headline": "The market is currently pricing the Spurs at 19.5% (implied), which significantly undervalues the consensus among NBA general managers who have identified the Spurs as the title fa",
-        "source": "Google gemini-3.1-flash-lite",
-        "score": 7
-      },
-      "no_stop_loss": false,
-      "hold_until_resolution": false,
-      "target_exit_date": null,
-      "opened_at": "2026-10-25T03:54:14.570338+00:00"
-    },
     "2243318": {
       "market_id": "2243318",
       "question": "Will Minnesota Timberwolves win the 2027 NBA Finals?",
@@ -331,12 +306,12 @@
       "url": "https://polymarket.com/market/will-invictus-gaming-win-worlds-2026",
       "outcome": "No",
       "entry_price": 0.9275,
-      "current_price": 0.9405,
+      "current_price": 0.94,
       "shares": 2156.33423180593,
       "invested_usd": 2000.0,
-      "current_value": 2028.032345013477,
-      "unrealized_pnl": 28.03234501347697,
-      "unrealized_pnl_pct": 1.4016172506738558,
+      "current_value": 2026.954177897574,
+      "unrealized_pnl": 26.954177897574027,
+      "unrealized_pnl_pct": 1.3477088948787015,
       "catalyst": {
         "category": "Anomalía: Longshot Bias",
         "headline": "Invictus Gaming has advanced to the Knockout Stage, but the field of elite LPL and LCK teams remains highly competitive. In a single-elimination bracket format, the probability of ",
@@ -1751,10 +1726,41 @@
       "realized_pnl_pct": 11.67597765363129,
       "close_reason": "🏁 RESOLUCIÓN GANADA ($1.00)",
       "closed_at": "2026-11-01T02:45:38.848206+00:00"
+    },
+    {
+      "market_id": "2243324",
+      "question": "Will San Antonio Spurs win the 2027 NBA Finals?",
+      "event_title": "NBA: 2027 Champion",
+      "slug": "will-san-antonio-spurs-win-the-2027-nba-finals",
+      "url": "https://polymarket.com/market/will-san-antonio-spurs-win-the-2027-nba-finals",
+      "outcome": "Yes",
+      "entry_price": 0.195,
+      "current_price": 0.235,
+      "shares": 10256.410256410256,
+      "invested_usd": 2000.0,
+      "current_value": 2410.25641025641,
+      "unrealized_pnl": 410.25641025641016,
+      "unrealized_pnl_pct": 20.5128205128205,
+      "catalyst": {
+        "category": "Anomalía: Information Lag",
+        "headline": "The market is currently pricing the Spurs at 19.5% (implied), which significantly undervalues the consensus among NBA general managers who have identified the Spurs as the title fa",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 7
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-25T03:54:14.570338+00:00",
+      "exit_price": 0.235,
+      "final_value": 2410.25641025641,
+      "realized_pnl": 410.25641025641016,
+      "realized_pnl_pct": 20.5128205128205,
+      "close_reason": "🎯 TAKE PROFIT (+20.5%)",
+      "closed_at": "2026-11-01T11:53:26.094279+00:00"
     }
   ],
-  "total_realized_pnl": 641.9286825996342,
-  "win_count": 23,
+  "total_realized_pnl": 1052.1850928560443,
+  "win_count": 24,
   "loss_count": 23,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
