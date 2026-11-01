@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 410.25641025641016,
+  "cash_usdc": 2559.718775847808,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -9,12 +9,12 @@
       "url": "https://polymarket.com/market/will-david-lisnard-win-the-2027-french-presidential-election",
       "outcome": "No",
       "entry_price": 0.895,
-      "current_price": 0.848,
+      "current_price": 0.847,
       "shares": 2234.63687150838,
       "invested_usd": 2000.0,
-      "current_value": 1894.9720670391062,
-      "unrealized_pnl": -105.02793296089385,
-      "unrealized_pnl_pct": -5.251396648044698,
+      "current_value": 1892.7374301675977,
+      "unrealized_pnl": -107.26256983240228,
+      "unrealized_pnl_pct": -5.363128491620117,
       "catalyst": {
         "category": "Análisis Gemini",
         "headline": "David Lisnard, aunque es una figura respetada dentro de la derecha tradicional francesa (LR/Nouvelle Énergie), carece de la proyección nacional y el apoyo masivo necesario para sup",
@@ -131,12 +131,12 @@
       "url": "https://polymarket.com/market/will-oklahoma-city-thunder-win-the-2027-nba-finals",
       "outcome": "No",
       "entry_price": 0.815,
-      "current_price": 0.87,
+      "current_price": 0.865,
       "shares": 2453.98773006135,
       "invested_usd": 2000.0,
-      "current_value": 2134.9693251533745,
-      "unrealized_pnl": 134.96932515337448,
-      "unrealized_pnl_pct": 6.748466257668719,
+      "current_value": 2122.6993865030677,
+      "unrealized_pnl": 122.69938650306767,
+      "unrealized_pnl_pct": 6.13496932515338,
       "catalyst": {
         "category": "Anomalía: Longshot Bias",
         "headline": "The market is pricing the Oklahoma City Thunder at an 18.5% implied probability to win the 2027 NBA Finals. Historically, even elite NBA contenders rarely exceed a 10-12% true win ",
@@ -347,31 +347,6 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-11-01T02:57:41.283671+00:00"
-    },
-    "5229904": {
-      "market_id": "5229904",
-      "question": "Will Lewis Hamilton win the 2026 F1 Mexican Grand Prix?",
-      "event_title": "Mexican Grand Prix: Driver Winner",
-      "slug": "f1-mexican-grand-prix-winner-hamilton-2026-11-01",
-      "url": "https://polymarket.com/market/f1-mexican-grand-prix-winner-hamilton-2026-11-01",
-      "outcome": "No",
-      "entry_price": 0.93,
-      "current_price": 0.935,
-      "shares": 2150.537634408602,
-      "invested_usd": 2000.0,
-      "current_value": 2010.752688172043,
-      "unrealized_pnl": 10.752688172043008,
-      "unrealized_pnl_pct": 0.5376344086021511,
-      "catalyst": {
-        "category": "Anomalía: Information Lag",
-        "headline": "The market is currently pricing Hamilton at 7% (0.07) despite live reports of a 'chaotic start' and an active FIA investigation into his race conduct. In F1, starting from pole pos",
-        "source": "Google gemini-3.1-flash-lite",
-        "score": 9
-      },
-      "no_stop_loss": false,
-      "hold_until_resolution": false,
-      "target_exit_date": null,
-      "opened_at": "2026-11-01T20:45:35.455959+00:00"
     }
   },
   "closed_trades": [
@@ -1782,10 +1757,41 @@
       "realized_pnl_pct": 20.5128205128205,
       "close_reason": "🎯 TAKE PROFIT (+20.5%)",
       "closed_at": "2026-11-01T11:53:26.094279+00:00"
+    },
+    {
+      "market_id": "5229904",
+      "question": "Will Lewis Hamilton win the 2026 F1 Mexican Grand Prix?",
+      "event_title": "Mexican Grand Prix: Driver Winner",
+      "slug": "f1-mexican-grand-prix-winner-hamilton-2026-11-01",
+      "url": "https://polymarket.com/market/f1-mexican-grand-prix-winner-hamilton-2026-11-01",
+      "outcome": "No",
+      "entry_price": 0.93,
+      "current_price": 0.9995,
+      "shares": 2150.537634408602,
+      "invested_usd": 2000.0,
+      "current_value": 2149.462365591398,
+      "unrealized_pnl": 149.46236559139788,
+      "unrealized_pnl_pct": 7.473118279569893,
+      "catalyst": {
+        "category": "Anomalía: Information Lag",
+        "headline": "The market is currently pricing Hamilton at 7% (0.07) despite live reports of a 'chaotic start' and an active FIA investigation into his race conduct. In F1, starting from pole pos",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 9
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-01T20:45:35.455959+00:00",
+      "exit_price": 0.9995,
+      "final_value": 2149.462365591398,
+      "realized_pnl": 149.46236559139788,
+      "realized_pnl_pct": 7.473118279569893,
+      "close_reason": "🏁 RESOLUCIÓN GANADA ($1.00)",
+      "closed_at": "2026-11-01T22:32:00.757342+00:00"
     }
   ],
-  "total_realized_pnl": 1052.1850928560443,
-  "win_count": 24,
+  "total_realized_pnl": 1201.6474584474422,
+  "win_count": 25,
   "loss_count": 23,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
