@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 2559.718775847808,
+  "cash_usdc": 559.718775847808,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -347,6 +347,31 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-11-01T02:57:41.283671+00:00"
+    },
+    "6509088": {
+      "market_id": "6509088",
+      "question": "Jarace Walker: Rebounds O/U 5.5",
+      "event_title": "Nets vs. Pacers",
+      "slug": "nba-bkn-ind-2026-11-01-rebounds-jarace-walker-5pt5",
+      "url": "https://polymarket.com/market/nba-bkn-ind-2026-11-01-rebounds-jarace-walker-5pt5",
+      "outcome": "No",
+      "entry_price": 0.36,
+      "current_price": 0.36,
+      "shares": 5555.555555555556,
+      "invested_usd": 2000.0,
+      "current_value": 2000.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: Base Rate Mispricing",
+        "headline": "Jarace Walker's role as a rotation player with limited minutes (approx. 20 mins) makes a 5.5 rebound threshold statistically aggressive. Historical data for players with similar us",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-01T22:44:24.791959+00:00"
     }
   },
   "closed_trades": [
