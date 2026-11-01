@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 543.1060261629318,
+  "cash_usdc": 0.0,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -206,12 +206,12 @@
       "url": "https://polymarket.com/market/will-bilibili-gaming-win-worlds-2026",
       "outcome": "No",
       "entry_price": 0.815,
-      "current_price": 0.8485,
+      "current_price": 0.8475,
       "shares": 2453.98773006135,
       "invested_usd": 2000.0,
-      "current_value": 2082.2085889570553,
-      "unrealized_pnl": 82.20858895705533,
-      "unrealized_pnl_pct": 4.110429447852772,
+      "current_value": 2079.754601226994,
+      "unrealized_pnl": 79.75460122699405,
+      "unrealized_pnl_pct": 3.9877300613497035,
       "catalyst": {
         "category": "Anomalía: Longshot Bias",
         "headline": "The market is overestimating BLG's win probability at 18.5%. Historically, even top-tier LPL teams face a highly competitive field in Worlds, with a base rate of winning the tourna",
@@ -306,12 +306,12 @@
       "url": "https://polymarket.com/market/will-houston-rockets-win-the-2027-nba-finals",
       "outcome": "No",
       "entry_price": 0.9275,
-      "current_price": 0.9285,
+      "current_price": 0.929,
       "shares": 2156.33423180593,
       "invested_usd": 2000.0,
-      "current_value": 2002.1563342318059,
-      "unrealized_pnl": 2.156334231805886,
-      "unrealized_pnl_pct": 0.1078167115902966,
+      "current_value": 2003.234501347709,
+      "unrealized_pnl": 3.234501347709056,
+      "unrealized_pnl_pct": 0.1617250673854509,
       "catalyst": {
         "category": "Anomalía: Longshot Bias",
         "headline": "The market is pricing the Houston Rockets at a 7.25% implied probability to win the 2027 NBA Finals. Historically, non-contender teams in the NBA have a base rate of winning the ch",
@@ -331,12 +331,12 @@
       "url": "https://polymarket.com/market/will-invictus-gaming-win-worlds-2026",
       "outcome": "No",
       "entry_price": 0.9275,
-      "current_price": 0.9325,
+      "current_price": 0.9405,
       "shares": 2156.33423180593,
       "invested_usd": 2000.0,
-      "current_value": 2010.7816711590297,
-      "unrealized_pnl": 10.781671159029656,
-      "unrealized_pnl_pct": 0.539083557951483,
+      "current_value": 2028.032345013477,
+      "unrealized_pnl": 28.03234501347697,
+      "unrealized_pnl_pct": 1.4016172506738558,
       "catalyst": {
         "category": "Anomalía: Longshot Bias",
         "headline": "Invictus Gaming has advanced to the Knockout Stage, but the field of elite LPL and LCK teams remains highly competitive. In a single-elimination bracket format, the probability of ",
@@ -347,6 +347,31 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-10-30T18:25:21.235943+00:00"
+    },
+    "6451749": {
+      "market_id": "6451749",
+      "question": "Zach Edey: Rebounds O/U 9.5",
+      "event_title": "Kings vs. Grizzlies",
+      "slug": "nba-sac-mem-2026-10-31-rebounds-zach-edey-9pt5",
+      "url": "https://polymarket.com/market/nba-sac-mem-2026-10-31-rebounds-zach-edey-9pt5",
+      "outcome": "No",
+      "entry_price": 0.755,
+      "current_price": 0.755,
+      "shares": 719.3457300171282,
+      "invested_usd": 543.1060261629318,
+      "current_value": 543.1060261629318,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: Base Rate Mispricing",
+        "headline": "Zach Edey's recent performance (9 rebounds in 21 minutes) indicates he is currently operating below the 9.5 threshold. Given his historical usage and the physical toll of the NBA, ",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 9
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-01T02:23:42.842556+00:00"
     }
   },
   "closed_trades": [
