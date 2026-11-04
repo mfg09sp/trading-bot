@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 4255.802564554548,
+  "cash_usdc": 255.80256455454764,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -281,12 +281,12 @@
       "url": "https://polymarket.com/market/will-invictus-gaming-win-worlds-2026",
       "outcome": "No",
       "entry_price": 0.9275,
-      "current_price": 0.904,
+      "current_price": 0.905,
       "shares": 2156.33423180593,
       "invested_usd": 2000.0,
-      "current_value": 1949.3261455525608,
-      "unrealized_pnl": -50.673854447439226,
-      "unrealized_pnl_pct": -2.533692722371964,
+      "current_value": 1951.4824797843667,
+      "unrealized_pnl": -48.51752021563334,
+      "unrealized_pnl_pct": -2.4258760107816673,
       "catalyst": {
         "category": "Anomalía: Longshot Bias",
         "headline": "Invictus Gaming has advanced to the Knockout Stage, but the field of elite LPL and LCK teams remains highly competitive. In a single-elimination bracket format, the probability of ",
@@ -322,6 +322,56 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-11-01T02:57:41.283671+00:00"
+    },
+    "1059067": {
+      "market_id": "1059067",
+      "question": "Will a team from LPL (China) win LoL Worlds 2026?",
+      "event_title": "Worlds 2026 Winning Region",
+      "slug": "will-a-team-from-lpl-china-win-lol-worlds-2026-779",
+      "url": "https://polymarket.com/market/will-a-team-from-lpl-china-win-lol-worlds-2026-779",
+      "outcome": "No",
+      "entry_price": 0.76,
+      "current_price": 0.76,
+      "shares": 2631.578947368421,
+      "invested_usd": 2000.0,
+      "current_value": 2000.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: 3-Way / 1X2 Sports Trap",
+        "headline": "The market is pricing the LPL at 24% (implied probability). Historically, LCK (Korea) dominates Worlds, and the LPL faces structural headwinds (reduction to 14 teams, loss of key o",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-04T22:50:50.498343+00:00"
+    },
+    "1059066": {
+      "market_id": "1059066",
+      "question": "Will a team from LCK (South Korea) win LoL Worlds 2026?",
+      "event_title": "Worlds 2026 Winning Region",
+      "slug": "will-a-team-from-lck-south-korea-win-lol-worlds-2026-115",
+      "url": "https://polymarket.com/market/will-a-team-from-lck-south-korea-win-lol-worlds-2026-115",
+      "outcome": "No",
+      "entry_price": 0.26,
+      "current_price": 0.26,
+      "shares": 7692.307692307692,
+      "invested_usd": 2000.0,
+      "current_value": 2000.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: 3-Way / 1X2 Sports Trap",
+        "headline": "The market is suffering from a classic 'favorite-longshot bias' and a failure to account for the 1X2 nature of tournament outcomes. While LCK is a dominant region, the field includ",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-04T22:51:10.140338+00:00"
     }
   },
   "closed_trades": [
