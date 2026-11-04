@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 2087.496553625586,
+  "cash_usdc": 4255.802564554548,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -47,31 +47,6 @@
       "target_take_profit_usd": 6000.0,
       "target_exit_date": "2026-11-29T23:59:59Z",
       "opened_at": "2026-10-05T12:25:54.611135+00:00"
-    },
-    "562803": {
-      "market_id": "562803",
-      "question": "Will the Republican Party control the House after the 2026 Midterm elections?",
-      "event_title": "Which party will win the House in 2026?",
-      "slug": "will-the-republican-party-control-the-house-after-the-2026-midterm-elections",
-      "url": "https://polymarket.com/market/will-the-republican-party-control-the-house-after-the-2026-midterm-elections",
-      "outcome": "No",
-      "entry_price": 0.915,
-      "current_price": 0.9865,
-      "shares": 2185.7923497267757,
-      "invested_usd": 2000.0,
-      "current_value": 2156.2841530054643,
-      "unrealized_pnl": 156.2841530054643,
-      "unrealized_pnl_pct": 7.814207650273225,
-      "catalyst": {
-        "category": "Análisis Gemini",
-        "headline": "The current market price of 0.085 for a Republican House majority reflects an extreme longshot bias. Historically, midterm elections rarely result in such lopsided outcomes, but th",
-        "source": "Google gemini-3.1-flash-lite",
-        "score": 8
-      },
-      "no_stop_loss": false,
-      "hold_until_resolution": false,
-      "target_exit_date": null,
-      "opened_at": "2026-10-06T23:25:16.285907+00:00"
     },
     "2772169": {
       "market_id": "2772169",
@@ -1819,10 +1794,41 @@
       "realized_pnl_pct": -23.611111111111104,
       "close_reason": "🛑 STOP LOSS (-23.6%)",
       "closed_at": "2026-11-01T23:05:37.722125+00:00"
+    },
+    {
+      "market_id": "562803",
+      "question": "Will the Republican Party control the House after the 2026 Midterm elections?",
+      "event_title": "Which party will win the House in 2026?",
+      "slug": "will-the-republican-party-control-the-house-after-the-2026-midterm-elections",
+      "url": "https://polymarket.com/market/will-the-republican-party-control-the-house-after-the-2026-midterm-elections",
+      "outcome": "No",
+      "entry_price": 0.915,
+      "current_price": 0.992,
+      "shares": 2185.7923497267757,
+      "invested_usd": 2000.0,
+      "current_value": 2168.3060109289613,
+      "unrealized_pnl": 168.3060109289613,
+      "unrealized_pnl_pct": 8.415300546448082,
+      "catalyst": {
+        "category": "Análisis Gemini",
+        "headline": "The current market price of 0.085 for a Republican House majority reflects an extreme longshot bias. Historically, midterm elections rarely result in such lopsided outcomes, but th",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-06T23:25:16.285907+00:00",
+      "exit_price": 0.992,
+      "final_value": 2168.3060109289613,
+      "realized_pnl": 168.3060109289613,
+      "realized_pnl_pct": 8.415300546448082,
+      "close_reason": "🏁 RESOLUCIÓN GANADA ($1.00)",
+      "closed_at": "2026-11-04T01:12:17.085577+00:00"
     }
   ],
-  "total_realized_pnl": 729.42523622522,
-  "win_count": 25,
+  "total_realized_pnl": 897.7312471541813,
+  "win_count": 26,
   "loss_count": 24,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
