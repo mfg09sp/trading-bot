@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 1948.11025686224,
+  "cash_usdc": 0.0,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -281,12 +281,12 @@
       "url": "https://polymarket.com/market/will-invictus-gaming-win-worlds-2026",
       "outcome": "No",
       "entry_price": 0.9275,
-      "current_price": 0.9315,
+      "current_price": 0.931,
       "shares": 2156.33423180593,
       "invested_usd": 2000.0,
-      "current_value": 2008.6253369272238,
-      "unrealized_pnl": 8.62533692722377,
-      "unrealized_pnl_pct": 0.4312668463611864,
+      "current_value": 2007.5471698113208,
+      "unrealized_pnl": 7.547169811320828,
+      "unrealized_pnl_pct": 0.3773584905660441,
       "catalyst": {
         "category": "Anomalía: Longshot Bias",
         "headline": "Invictus Gaming has advanced to the Knockout Stage, but the field of elite LPL and LCK teams remains highly competitive. In a single-elimination bracket format, the probability of ",
@@ -347,6 +347,31 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-11-04T22:50:50.498343+00:00"
+    },
+    "6706016": {
+      "market_id": "6706016",
+      "question": "Anthony Black: Points O/U 14.5",
+      "event_title": "Magic vs. Suns",
+      "slug": "nba-orl-phx-2026-11-05-points-anthony-black-14pt5",
+      "url": "https://polymarket.com/market/nba-orl-phx-2026-11-05-points-anthony-black-14pt5",
+      "outcome": "Yes",
+      "entry_price": 0.225,
+      "current_price": 0.225,
+      "shares": 8658.267808276622,
+      "invested_usd": 1948.11025686224,
+      "current_value": 1948.11025686224,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: Information Lag",
+        "headline": "The market is currently pricing Anthony Black at a 22.5% probability for over 14.5 points. However, recent performance data shows a significant breakout, with Black scoring a seaso",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-06T03:44:40.326393+00:00"
     }
   },
   "closed_trades": [
