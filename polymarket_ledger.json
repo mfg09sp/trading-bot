@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 0.0,
+  "cash_usdc": 1661.7800342383368,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -281,12 +281,12 @@
       "url": "https://polymarket.com/market/will-invictus-gaming-win-worlds-2026",
       "outcome": "No",
       "entry_price": 0.9275,
-      "current_price": 0.9245,
+      "current_price": 0.924,
       "shares": 2156.33423180593,
       "invested_usd": 2000.0,
-      "current_value": 1993.5309973045821,
-      "unrealized_pnl": -6.469002695417885,
-      "unrealized_pnl_pct": -0.32345013477088974,
+      "current_value": 1992.4528301886794,
+      "unrealized_pnl": -7.5471698113206,
+      "unrealized_pnl_pct": -0.3773584905660321,
       "catalyst": {
         "category": "Anomalía: Longshot Bias",
         "headline": "Invictus Gaming has advanced to the Knockout Stage, but the field of elite LPL and LCK teams remains highly competitive. In a single-elimination bracket format, the probability of ",
@@ -347,31 +347,6 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-11-04T22:50:50.498343+00:00"
-    },
-    "6163417": {
-      "market_id": "6163417",
-      "question": "Exact Score: Cagliari Calcio 2 - 1 Frosinone Calcio?",
-      "event_title": "Cagliari Calcio vs. Frosinone Calcio - Exact Score",
-      "slug": "sea-cag-fro-2026-11-07-exact-score-2-1",
-      "url": "https://polymarket.com/market/sea-cag-fro-2026-11-07-exact-score-2-1",
-      "outcome": "No",
-      "entry_price": 0.87,
-      "current_price": 0.9895,
-      "shares": 1662.6113399082908,
-      "invested_usd": 1446.471865720213,
-      "current_value": 1645.1539208392537,
-      "unrealized_pnl": 198.6820551190408,
-      "unrealized_pnl_pct": 13.735632183908052,
-      "catalyst": {
-        "category": "Anomalía: 3-Way / 1X2 Sports Trap",
-        "headline": "The market is pricing a specific exact score (2-1) at 13%. In Serie A, the historical frequency of any specific exact score is typically between 7% and 10%. By betting NO at 0.87, ",
-        "source": "Google gemini-3.1-flash-lite",
-        "score": 9
-      },
-      "no_stop_loss": false,
-      "hold_until_resolution": false,
-      "target_exit_date": null,
-      "opened_at": "2026-11-07T15:09:15.938825+00:00"
     }
   },
   "closed_trades": [
@@ -1968,10 +1943,41 @@
       "realized_pnl_pct": 23.749999999999993,
       "close_reason": "🏁 RESOLUCIÓN GANADA ($1.00)",
       "closed_at": "2026-11-07T02:24:35.557286+00:00"
+    },
+    {
+      "market_id": "6163417",
+      "question": "Exact Score: Cagliari Calcio 2 - 1 Frosinone Calcio?",
+      "event_title": "Cagliari Calcio vs. Frosinone Calcio - Exact Score",
+      "slug": "sea-cag-fro-2026-11-07-exact-score-2-1",
+      "url": "https://polymarket.com/market/sea-cag-fro-2026-11-07-exact-score-2-1",
+      "outcome": "No",
+      "entry_price": 0.87,
+      "current_price": 0.9995,
+      "shares": 1662.6113399082908,
+      "invested_usd": 1446.471865720213,
+      "current_value": 1661.7800342383368,
+      "unrealized_pnl": 215.30816851812392,
+      "unrealized_pnl_pct": 14.885057471264373,
+      "catalyst": {
+        "category": "Anomalía: 3-Way / 1X2 Sports Trap",
+        "headline": "The market is pricing a specific exact score (2-1) at 13%. In Serie A, the historical frequency of any specific exact score is typically between 7% and 10%. By betting NO at 0.87, ",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 9
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-07T15:09:15.938825+00:00",
+      "exit_price": 0.9995,
+      "final_value": 1661.7800342383368,
+      "realized_pnl": 215.30816851812392,
+      "realized_pnl_pct": 14.885057471264373,
+      "close_reason": "🏁 RESOLUCIÓN GANADA ($1.00)",
+      "closed_at": "2026-11-07T16:02:24.241874+00:00"
     }
   ],
-  "total_realized_pnl": 88.40054831984662,
-  "win_count": 27,
+  "total_realized_pnl": 303.70871683797054,
+  "win_count": 28,
   "loss_count": 26,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
