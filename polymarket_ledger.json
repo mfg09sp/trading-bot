@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 0.0,
+  "cash_usdc": 1446.471865720213,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -281,12 +281,12 @@
       "url": "https://polymarket.com/market/will-invictus-gaming-win-worlds-2026",
       "outcome": "No",
       "entry_price": 0.9275,
-      "current_price": 0.929,
+      "current_price": 0.928,
       "shares": 2156.33423180593,
       "invested_usd": 2000.0,
-      "current_value": 2003.234501347709,
-      "unrealized_pnl": 3.234501347709056,
-      "unrealized_pnl_pct": 0.1617250673854509,
+      "current_value": 2001.078167115903,
+      "unrealized_pnl": 1.078167115902943,
+      "unrealized_pnl_pct": 0.05390835579515428,
       "catalyst": {
         "category": "Anomalía: Longshot Bias",
         "headline": "Invictus Gaming has advanced to the Knockout Stage, but the field of elite LPL and LCK teams remains highly competitive. In a single-elimination bracket format, the probability of ",
@@ -347,31 +347,6 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-11-04T22:50:50.498343+00:00"
-    },
-    "6744297": {
-      "market_id": "6744297",
-      "question": "Onyeka Okongwu: Assists O/U 3.5",
-      "event_title": "Wizards vs. Hawks",
-      "slug": "nba-was-atl-2026-11-06-assists-onyeka-okongwu-3pt5",
-      "url": "https://polymarket.com/market/nba-was-atl-2026-11-06-assists-onyeka-okongwu-3pt5",
-      "outcome": "No",
-      "entry_price": 0.8,
-      "current_price": 0.725,
-      "shares": 1461.0826926466798,
-      "invested_usd": 1168.866154117344,
-      "current_value": 1059.284952168843,
-      "unrealized_pnl": -109.58120194850108,
-      "unrealized_pnl_pct": -9.375000000000009,
-      "catalyst": {
-        "category": "Anomalía: Base Rate Mispricing",
-        "headline": "Onyeka Okongwu is a rim-protecting center whose primary value is rebounding and interior scoring, not playmaking. His career average for assists is significantly below 2.0 per game",
-        "source": "Google gemini-3.1-flash-lite",
-        "score": 8
-      },
-      "no_stop_loss": false,
-      "hold_until_resolution": false,
-      "target_exit_date": null,
-      "opened_at": "2026-11-07T01:42:03.177067+00:00"
     }
   },
   "closed_trades": [
@@ -1937,10 +1912,41 @@
       "realized_pnl_pct": -40.0,
       "close_reason": "🛑 STOP LOSS (-40.0%)",
       "closed_at": "2026-11-06T03:55:22.133846+00:00"
+    },
+    {
+      "market_id": "6744297",
+      "question": "Onyeka Okongwu: Assists O/U 3.5",
+      "event_title": "Wizards vs. Hawks",
+      "slug": "nba-was-atl-2026-11-06-assists-onyeka-okongwu-3pt5",
+      "url": "https://polymarket.com/market/nba-was-atl-2026-11-06-assists-onyeka-okongwu-3pt5",
+      "outcome": "No",
+      "entry_price": 0.8,
+      "current_price": 0.99,
+      "shares": 1461.0826926466798,
+      "invested_usd": 1168.866154117344,
+      "current_value": 1446.471865720213,
+      "unrealized_pnl": 277.60571160286895,
+      "unrealized_pnl_pct": 23.749999999999993,
+      "catalyst": {
+        "category": "Anomalía: Base Rate Mispricing",
+        "headline": "Onyeka Okongwu is a rim-protecting center whose primary value is rebounding and interior scoring, not playmaking. His career average for assists is significantly below 2.0 per game",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-07T01:42:03.177067+00:00",
+      "exit_price": 0.99,
+      "final_value": 1446.471865720213,
+      "realized_pnl": 277.60571160286895,
+      "realized_pnl_pct": 23.749999999999993,
+      "close_reason": "🏁 RESOLUCIÓN GANADA ($1.00)",
+      "closed_at": "2026-11-07T02:24:35.557286+00:00"
     }
   ],
-  "total_realized_pnl": -189.20516328302233,
-  "win_count": 26,
+  "total_realized_pnl": 88.40054831984662,
+  "win_count": 27,
   "loss_count": 26,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
