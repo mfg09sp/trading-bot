@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 1661.7800342383368,
+  "cash_usdc": 3805.176260653431,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -181,12 +181,12 @@
       "url": "https://polymarket.com/market/will-bilibili-gaming-win-worlds-2026",
       "outcome": "No",
       "entry_price": 0.815,
-      "current_price": 0.7675,
+      "current_price": 0.773,
       "shares": 2453.98773006135,
       "invested_usd": 2000.0,
-      "current_value": 1883.435582822086,
-      "unrealized_pnl": -116.56441717791404,
-      "unrealized_pnl_pct": -5.828220858895705,
+      "current_value": 1896.9325153374234,
+      "unrealized_pnl": -103.06748466257659,
+      "unrealized_pnl_pct": -5.153374233128825,
       "catalyst": {
         "category": "Anomalía: Longshot Bias",
         "headline": "The market is overestimating BLG's win probability at 18.5%. Historically, even top-tier LPL teams face a highly competitive field in Worlds, with a base rate of winning the tourna",
@@ -273,31 +273,6 @@
       "target_exit_date": null,
       "opened_at": "2026-10-27T13:24:19.096924+00:00"
     },
-    "4397050": {
-      "market_id": "4397050",
-      "question": "Will Invictus Gaming win Worlds 2026?",
-      "event_title": "Worlds 2026: Winner",
-      "slug": "will-invictus-gaming-win-worlds-2026",
-      "url": "https://polymarket.com/market/will-invictus-gaming-win-worlds-2026",
-      "outcome": "No",
-      "entry_price": 0.9275,
-      "current_price": 0.9875,
-      "shares": 2156.33423180593,
-      "invested_usd": 2000.0,
-      "current_value": 2129.380053908356,
-      "unrealized_pnl": 129.38005390835588,
-      "unrealized_pnl_pct": 6.469002695417796,
-      "catalyst": {
-        "category": "Anomalía: Longshot Bias",
-        "headline": "Invictus Gaming has advanced to the Knockout Stage, but the field of elite LPL and LCK teams remains highly competitive. In a single-elimination bracket format, the probability of ",
-        "source": "Google gemini-3.1-flash-lite",
-        "score": 9
-      },
-      "no_stop_loss": false,
-      "hold_until_resolution": false,
-      "target_exit_date": null,
-      "opened_at": "2026-10-30T18:25:21.235943+00:00"
-    },
     "2243297": {
       "market_id": "2243297",
       "question": "Will Boston Celtics win the 2027 NBA Finals?",
@@ -331,12 +306,12 @@
       "url": "https://polymarket.com/market/will-a-team-from-lpl-china-win-lol-worlds-2026-779",
       "outcome": "No",
       "entry_price": 0.76,
-      "current_price": 0.75,
+      "current_price": 0.775,
       "shares": 2631.578947368421,
       "invested_usd": 2000.0,
-      "current_value": 1973.6842105263156,
-      "unrealized_pnl": -26.31578947368439,
-      "unrealized_pnl_pct": -1.3157894736842117,
+      "current_value": 2039.4736842105262,
+      "unrealized_pnl": 39.473684210526244,
+      "unrealized_pnl_pct": 1.9736842105263175,
       "catalyst": {
         "category": "Anomalía: 3-Way / 1X2 Sports Trap",
         "headline": "The market is pricing the LPL at 24% (implied probability). Historically, LCK (Korea) dominates Worlds, and the LPL faces structural headwinds (reduction to 14 teams, loss of key o",
@@ -1974,10 +1949,41 @@
       "realized_pnl_pct": 14.885057471264373,
       "close_reason": "🏁 RESOLUCIÓN GANADA ($1.00)",
       "closed_at": "2026-11-07T16:02:24.241874+00:00"
+    },
+    {
+      "market_id": "4397050",
+      "question": "Will Invictus Gaming win Worlds 2026?",
+      "event_title": "Worlds 2026: Winner",
+      "slug": "will-invictus-gaming-win-worlds-2026",
+      "url": "https://polymarket.com/market/will-invictus-gaming-win-worlds-2026",
+      "outcome": "No",
+      "entry_price": 0.9275,
+      "current_price": 0.994,
+      "shares": 2156.33423180593,
+      "invested_usd": 2000.0,
+      "current_value": 2143.396226415094,
+      "unrealized_pnl": 143.39622641509413,
+      "unrealized_pnl_pct": 7.169811320754717,
+      "catalyst": {
+        "category": "Anomalía: Longshot Bias",
+        "headline": "Invictus Gaming has advanced to the Knockout Stage, but the field of elite LPL and LCK teams remains highly competitive. In a single-elimination bracket format, the probability of ",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 9
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-30T18:25:21.235943+00:00",
+      "exit_price": 0.994,
+      "final_value": 2143.396226415094,
+      "realized_pnl": 143.39622641509413,
+      "realized_pnl_pct": 7.169811320754717,
+      "close_reason": "🏁 RESOLUCIÓN GANADA ($1.00)",
+      "closed_at": "2026-11-07T23:43:45.213636+00:00"
     }
   ],
-  "total_realized_pnl": 303.70871683797054,
-  "win_count": 28,
+  "total_realized_pnl": 447.1049432530647,
+  "win_count": 29,
   "loss_count": 26,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
