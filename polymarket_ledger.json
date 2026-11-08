@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 0.0,
+  "cash_usdc": 1106.4601046210853,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -181,12 +181,12 @@
       "url": "https://polymarket.com/market/will-bilibili-gaming-win-worlds-2026",
       "outcome": "No",
       "entry_price": 0.815,
-      "current_price": 0.798,
+      "current_price": 0.7995,
       "shares": 2453.98773006135,
       "invested_usd": 2000.0,
-      "current_value": 1958.2822085889572,
-      "unrealized_pnl": -41.717791411042754,
-      "unrealized_pnl_pct": -2.0858895705521356,
+      "current_value": 1961.9631901840492,
+      "unrealized_pnl": -38.036809815950846,
+      "unrealized_pnl_pct": -1.901840490797541,
       "catalyst": {
         "category": "Anomalía: Longshot Bias",
         "headline": "The market is overestimating BLG's win probability at 18.5%. Historically, even top-tier LPL teams face a highly competitive field in Worlds, with a base rate of winning the tourna",
@@ -206,12 +206,12 @@
       "url": "https://polymarket.com/market/will-t1-win-worlds-2026",
       "outcome": "No",
       "entry_price": 0.835,
-      "current_price": 0.845,
+      "current_price": 0.835,
       "shares": 270.99178446348566,
       "invested_usd": 226.27814002701052,
-      "current_value": 228.98805787164537,
-      "unrealized_pnl": 2.7099178446348446,
-      "unrealized_pnl_pct": 1.1976047904191627,
+      "current_value": 226.27814002701052,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
       "catalyst": {
         "category": "Anomalía: Longshot Bias",
         "headline": "Existe un claro sesgo de popularidad (Fan Tax) que infla el valor de T1 al 16.5% debido a su historial y la figura de Faker. Sin embargo, en un torneo internacional de máximo nivel",
@@ -347,31 +347,6 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-11-08T01:23:52.072603+00:00"
-    },
-    "5488327": {
-      "market_id": "5488327",
-      "question": "Will Lando Norris win the 2026 F1 Brazilian Grand Prix?",
-      "event_title": "Brazilian Grand Prix: Driver Winner",
-      "slug": "f1-brazilian-grand-prix-winner-norris-2026-11-08",
-      "url": "https://polymarket.com/market/f1-brazilian-grand-prix-winner-norris-2026-11-08",
-      "outcome": "No",
-      "entry_price": 0.345,
-      "current_price": 0.345,
-      "shares": 4339.059233808178,
-      "invested_usd": 1496.9754356638211,
-      "current_value": 1496.9754356638211,
-      "unrealized_pnl": 0.0,
-      "unrealized_pnl_pct": 0.0,
-      "catalyst": {
-        "category": "Anomalía: 3-Way / 1X2 Sports Trap",
-        "headline": "The market is pricing Lando Norris at 65.5% win probability based on pole position. However, F1 race outcomes are inherently 3-way (Win, Loss, or DNF/Other). Historical base rates ",
-        "source": "Google gemini-3.1-flash-lite",
-        "score": 8
-      },
-      "no_stop_loss": false,
-      "hold_until_resolution": false,
-      "target_exit_date": null,
-      "opened_at": "2026-11-08T17:57:43.276908+00:00"
     }
   },
   "closed_trades": [
@@ -2061,10 +2036,41 @@
       "realized_pnl_pct": -17.073170731707307,
       "close_reason": "🛑 STOP LOSS (-17.1%)",
       "closed_at": "2026-11-08T17:57:28.536726+00:00"
+    },
+    {
+      "market_id": "5488327",
+      "question": "Will Lando Norris win the 2026 F1 Brazilian Grand Prix?",
+      "event_title": "Brazilian Grand Prix: Driver Winner",
+      "slug": "f1-brazilian-grand-prix-winner-norris-2026-11-08",
+      "url": "https://polymarket.com/market/f1-brazilian-grand-prix-winner-norris-2026-11-08",
+      "outcome": "No",
+      "entry_price": 0.345,
+      "current_price": 0.255,
+      "shares": 4339.059233808178,
+      "invested_usd": 1496.9754356638211,
+      "current_value": 1106.4601046210853,
+      "unrealized_pnl": -390.51533104273585,
+      "unrealized_pnl_pct": -26.086956521739125,
+      "catalyst": {
+        "category": "Anomalía: 3-Way / 1X2 Sports Trap",
+        "headline": "The market is pricing Lando Norris at 65.5% win probability based on pole position. However, F1 race outcomes are inherently 3-way (Win, Loss, or DNF/Other). Historical base rates ",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-08T17:57:43.276908+00:00",
+      "exit_price": 0.255,
+      "final_value": 1106.4601046210853,
+      "realized_pnl": -390.51533104273585,
+      "realized_pnl_pct": -26.086956521739125,
+      "close_reason": "🛑 STOP LOSS (-26.1%)",
+      "closed_at": "2026-11-08T18:08:13.745825+00:00"
     }
   ],
-  "total_realized_pnl": 138.90411826345462,
+  "total_realized_pnl": -251.61121277928123,
   "win_count": 29,
-  "loss_count": 27,
+  "loss_count": 28,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
