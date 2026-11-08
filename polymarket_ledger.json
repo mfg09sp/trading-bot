@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 3805.176260653431,
+  "cash_usdc": 1805.1762606534312,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -306,12 +306,12 @@
       "url": "https://polymarket.com/market/will-a-team-from-lpl-china-win-lol-worlds-2026-779",
       "outcome": "No",
       "entry_price": 0.76,
-      "current_price": 0.795,
+      "current_price": 0.8,
       "shares": 2631.578947368421,
       "invested_usd": 2000.0,
-      "current_value": 2092.1052631578946,
-      "unrealized_pnl": 92.10526315789457,
-      "unrealized_pnl_pct": 4.605263157894741,
+      "current_value": 2105.2631578947367,
+      "unrealized_pnl": 105.26315789473665,
+      "unrealized_pnl_pct": 5.263157894736847,
       "catalyst": {
         "category": "Anomalía: 3-Way / 1X2 Sports Trap",
         "headline": "The market is pricing the LPL at 24% (implied probability). Historically, LCK (Korea) dominates Worlds, and the LPL faces structural headwinds (reduction to 14 teams, loss of key o",
@@ -322,6 +322,31 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-11-04T22:50:50.498343+00:00"
+    },
+    "4397022": {
+      "market_id": "4397022",
+      "question": "Will Gen.G win Worlds 2026?",
+      "event_title": "Worlds 2026: Winner",
+      "slug": "will-genptg-win-worlds-2026",
+      "url": "https://polymarket.com/market/will-genptg-win-worlds-2026",
+      "outcome": "No",
+      "entry_price": 0.345,
+      "current_price": 0.345,
+      "shares": 5797.101449275363,
+      "invested_usd": 2000.0,
+      "current_value": 2000.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: 3-Way / 1X2 Sports Trap",
+        "headline": "The market is currently pricing Gen.G at 65.5% to win the entire tournament. However, Gen.G is only in the semifinals and must defeat Invictus Gaming (a high-tier opponent) and the",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-08T01:23:52.072603+00:00"
     }
   },
   "closed_trades": [
