@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 4638.214036072546,
+  "cash_usdc": 638.2140360725462,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -272,6 +272,56 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-11-08T01:23:52.072603+00:00"
+    },
+    "6834597": {
+      "market_id": "6834597",
+      "question": "Exact Score: Any Other Score?",
+      "event_title": "AS Monaco FC vs. AJ Auxerre - Exact Score",
+      "slug": "fl1-asm-aja-2026-11-21-exact-score-any-other",
+      "url": "https://polymarket.com/market/fl1-asm-aja-2026-11-21-exact-score-any-other",
+      "outcome": "No",
+      "entry_price": 0.8,
+      "current_price": 0.8,
+      "shares": 2500.0,
+      "invested_usd": 2000.0,
+      "current_value": 2000.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: Longshot Bias",
+        "headline": "En las apuestas de marcador exacto en la Ligue 1, los 15 resultados estándar (desde 0-0 hasta 3-2 y empates habituales) representan históricamente entre el 88% y el 90% de todos lo",
+        "source": "Google gemini-3.5-flash",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-09T08:06:08.905818+00:00"
+    },
+    "6841360": {
+      "market_id": "6841360",
+      "question": "Exact Score: Any Other Score?",
+      "event_title": "CD Tenerife vs. RCD Mallorca - Exact Score",
+      "slug": "es2-cdt-rm-2026-11-21-exact-score-any-other",
+      "url": "https://polymarket.com/market/es2-cdt-rm-2026-11-21-exact-score-any-other",
+      "outcome": "No",
+      "entry_price": 0.84,
+      "current_price": 0.84,
+      "shares": 2380.952380952381,
+      "invested_usd": 2000.0,
+      "current_value": 2000.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: Longshot Bias",
+        "headline": "En la Liga 2 española (Segunda División), la tasa base histórica de partidos que finalizan con marcadores atípicos o no estándar ('Any Other Score', habitualmente marcadores con 4+",
+        "source": "Google gemini-3.5-flash",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-09T08:06:19.789457+00:00"
     }
   },
   "closed_trades": [
