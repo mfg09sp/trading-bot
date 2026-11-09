@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 1106.4601046210853,
+  "cash_usdc": 2683.1472211855025,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -31,12 +31,12 @@
       "url": "https://polymarket.com/market/pedro-snchez-out-as-pm-of-spain-by-december-31-2026",
       "outcome": "Yes",
       "entry_price": 0.335,
-      "current_price": 0.165,
+      "current_price": 0.16,
       "shares": 14925.373134328358,
       "invested_usd": 5000.0,
-      "current_value": 2462.686567164179,
-      "unrealized_pnl": -2537.313432835821,
-      "unrealized_pnl_pct": -50.74626865671642,
+      "current_value": 2388.0597014925374,
+      "unrealized_pnl": -2611.9402985074626,
+      "unrealized_pnl_pct": -52.23880597014926,
       "catalyst": {
         "category": "Política Española / Elecciones",
         "headline": "Orden de alta convicción: SÍ a que Pedro Sánchez sale antes del 31 dic 2026. Tesis IA: The market is currently pricing a 33.5% probability of resignation/removal. Historical base rates for Spanish Prime Ministers serving full terms or surviving mi...",
@@ -173,31 +173,6 @@
       "target_exit_date": null,
       "opened_at": "2026-10-12T23:29:20.305299+00:00"
     },
-    "4397033": {
-      "market_id": "4397033",
-      "question": "Will Bilibili Gaming win Worlds 2026?",
-      "event_title": "Worlds 2026: Winner",
-      "slug": "will-bilibili-gaming-win-worlds-2026",
-      "url": "https://polymarket.com/market/will-bilibili-gaming-win-worlds-2026",
-      "outcome": "No",
-      "entry_price": 0.815,
-      "current_price": 0.7255,
-      "shares": 2453.98773006135,
-      "invested_usd": 2000.0,
-      "current_value": 1780.3680981595094,
-      "unrealized_pnl": -219.63190184049063,
-      "unrealized_pnl_pct": -10.98159509202453,
-      "catalyst": {
-        "category": "Anomalía: Longshot Bias",
-        "headline": "The market is overestimating BLG's win probability at 18.5%. Historically, even top-tier LPL teams face a highly competitive field in Worlds, with a base rate of winning the tourna",
-        "source": "Google gemini-3.1-flash-lite",
-        "score": 8
-      },
-      "no_stop_loss": false,
-      "hold_until_resolution": false,
-      "target_exit_date": null,
-      "opened_at": "2026-10-14T17:58:53.910088+00:00"
-    },
     "4397025": {
       "market_id": "4397025",
       "question": "Will T1 win Worlds 2026?",
@@ -206,12 +181,12 @@
       "url": "https://polymarket.com/market/will-t1-win-worlds-2026",
       "outcome": "No",
       "entry_price": 0.835,
-      "current_price": 0.935,
+      "current_price": 0.982,
       "shares": 270.99178446348566,
       "invested_usd": 226.27814002701052,
-      "current_value": 253.3773184733591,
-      "unrealized_pnl": 27.09917844634859,
-      "unrealized_pnl_pct": 11.976047904191628,
+      "current_value": 266.1139323431429,
+      "unrealized_pnl": 39.83579231613237,
+      "unrealized_pnl_pct": 17.60479041916168,
       "catalyst": {
         "category": "Anomalía: Longshot Bias",
         "headline": "Existe un claro sesgo de popularidad (Fan Tax) que infla el valor de T1 al 16.5% debido a su historial y la figura de Faker. Sin embargo, en un torneo internacional de máximo nivel",
@@ -306,12 +281,12 @@
       "url": "https://polymarket.com/market/will-a-team-from-lpl-china-win-lol-worlds-2026-779",
       "outcome": "No",
       "entry_price": 0.76,
-      "current_price": 0.675,
+      "current_price": 0.66,
       "shares": 2631.578947368421,
       "invested_usd": 2000.0,
-      "current_value": 1776.3157894736842,
-      "unrealized_pnl": -223.68421052631584,
-      "unrealized_pnl_pct": -11.184210526315784,
+      "current_value": 1736.842105263158,
+      "unrealized_pnl": -263.1578947368421,
+      "unrealized_pnl_pct": -13.157894736842103,
       "catalyst": {
         "category": "Anomalía: 3-Way / 1X2 Sports Trap",
         "headline": "The market is pricing the LPL at 24% (implied probability). Historically, LCK (Korea) dominates Worlds, and the LPL faces structural headwinds (reduction to 14 teams, loss of key o",
@@ -2067,10 +2042,41 @@
       "realized_pnl_pct": -26.086956521739125,
       "close_reason": "🛑 STOP LOSS (-26.1%)",
       "closed_at": "2026-11-08T18:08:13.745825+00:00"
+    },
+    {
+      "market_id": "4397033",
+      "question": "Will Bilibili Gaming win Worlds 2026?",
+      "event_title": "Worlds 2026: Winner",
+      "slug": "will-bilibili-gaming-win-worlds-2026",
+      "url": "https://polymarket.com/market/will-bilibili-gaming-win-worlds-2026",
+      "outcome": "No",
+      "entry_price": 0.815,
+      "current_price": 0.6425,
+      "shares": 2453.98773006135,
+      "invested_usd": 2000.0,
+      "current_value": 1576.6871165644172,
+      "unrealized_pnl": -423.31288343558276,
+      "unrealized_pnl_pct": -21.165644171779142,
+      "catalyst": {
+        "category": "Anomalía: Longshot Bias",
+        "headline": "The market is overestimating BLG's win probability at 18.5%. Historically, even top-tier LPL teams face a highly competitive field in Worlds, with a base rate of winning the tourna",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-10-14T17:58:53.910088+00:00",
+      "exit_price": 0.6425,
+      "final_value": 1576.6871165644172,
+      "realized_pnl": -423.31288343558276,
+      "realized_pnl_pct": -21.165644171779142,
+      "close_reason": "🛑 STOP LOSS (-21.2%)",
+      "closed_at": "2026-11-09T01:22:30.314785+00:00"
     }
   ],
-  "total_realized_pnl": -251.61121277928123,
+  "total_realized_pnl": -674.924096214864,
   "win_count": 29,
-  "loss_count": 28,
+  "loss_count": 29,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
