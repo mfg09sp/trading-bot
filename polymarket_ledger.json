@@ -309,8 +309,8 @@
       "current_price": 0.84,
       "shares": 2380.952380952381,
       "invested_usd": 2000.0,
-      "current_value": 2000.0,
-      "unrealized_pnl": 0.0,
+      "current_value": 2000.0000000000002,
+      "unrealized_pnl": 2.2737367544323206e-13,
       "unrealized_pnl_pct": 0.0,
       "catalyst": {
         "category": "Anomalía: Longshot Bias",
