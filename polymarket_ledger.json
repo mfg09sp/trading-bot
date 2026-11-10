@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 638.2140360725462,
+  "cash_usdc": 0.0,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -322,6 +322,31 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-11-09T08:06:19.789457+00:00"
+    },
+    "6895255": {
+      "market_id": "6895255",
+      "question": "Cooper Flagg: Points O/U 24.5",
+      "event_title": "Pacers vs. Mavericks",
+      "slug": "nba-ind-dal-2026-11-09-points-cooper-flagg-24pt5",
+      "url": "https://polymarket.com/market/nba-ind-dal-2026-11-09-points-cooper-flagg-24pt5",
+      "outcome": "No",
+      "entry_price": 0.345,
+      "current_price": 0.345,
+      "shares": 1849.895756732018,
+      "invested_usd": 638.2140360725462,
+      "current_value": 638.2140360725462,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: Base Rate Mispricing",
+        "headline": "The market is overestimating the probability of Cooper Flagg exceeding 24.5 points. While he had a high-scoring game recently, NBA player prop distributions for elite scorers follo",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-10T01:39:42.166775+00:00"
     }
   },
   "closed_trades": [
