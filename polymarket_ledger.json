@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 1017.44266620261,
+  "cash_usdc": 0.0,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -322,6 +322,31 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-11-09T08:06:19.789457+00:00"
+    },
+    "6896232": {
+      "market_id": "6896232",
+      "question": "Exact Score: Any Other Score?",
+      "event_title": "CA Osasuna vs. Málaga CF - Exact Score",
+      "slug": "lal-osa-mala-2026-11-22-exact-score-any-other",
+      "url": "https://polymarket.com/market/lal-osa-mala-2026-11-22-exact-score-any-other",
+      "outcome": "No",
+      "entry_price": 0.85,
+      "current_price": 0.85,
+      "shares": 1196.9913720030706,
+      "invested_usd": 1017.44266620261,
+      "current_value": 1017.44266620261,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: Longshot Bias",
+        "headline": "En partidos de perfil defensivo y bajo promedio de goles esperados (xG) como Osasuna vs Málaga, la probabilidad histórica de que el marcador final contemple 4 o más goles por parte",
+        "source": "Google gemini-3.5-flash",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-10T07:19:03.823879+00:00"
     }
   },
   "closed_trades": [
