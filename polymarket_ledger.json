@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 0.0,
+  "cash_usdc": 3380.952380952381,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -322,31 +322,6 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-11-10T07:19:03.823879+00:00"
-    },
-    "7033140": {
-      "market_id": "7033140",
-      "question": "Cameron Johnson: 3-Pointers Made O/U 2.5",
-      "event_title": "Nuggets vs. Pelicans",
-      "slug": "nba-den-nop-2026-11-14-threes-cameron-johnson-2pt5",
-      "url": "https://polymarket.com/market/nba-den-nop-2026-11-14-threes-cameron-johnson-2pt5",
-      "outcome": "Yes",
-      "entry_price": 0.21,
-      "current_price": 0.21,
-      "shares": 9523.809523809525,
-      "invested_usd": 2000.0,
-      "current_value": 2000.0000000000002,
-      "unrealized_pnl": 2.2737367544323206e-13,
-      "unrealized_pnl_pct": 0.0,
-      "catalyst": {
-        "category": "Anomalía: Base Rate Mispricing",
-        "headline": "Cameron Johnson es un especialista de alto volumen en triples que promedia históricamente más de 2.5 triples convertidos en cerca del 42-45% de sus partidos jugados con minutos de ",
-        "source": "Google gemini-3.5-flash",
-        "score": 8
-      },
-      "no_stop_loss": false,
-      "hold_until_resolution": false,
-      "target_exit_date": null,
-      "opened_at": "2026-11-14T20:17:07.318365+00:00"
     },
     "6496390": {
       "market_id": "6496390",
@@ -2247,10 +2222,41 @@
       "realized_pnl_pct": 42.02898550724639,
       "close_reason": "🎯 TAKE PROFIT (+42.0%)",
       "closed_at": "2026-11-14T20:14:29.187263+00:00"
+    },
+    {
+      "market_id": "7033140",
+      "question": "Cameron Johnson: 3-Pointers Made O/U 2.5",
+      "event_title": "Nuggets vs. Pelicans",
+      "slug": "nba-den-nop-2026-11-14-threes-cameron-johnson-2pt5",
+      "url": "https://polymarket.com/market/nba-den-nop-2026-11-14-threes-cameron-johnson-2pt5",
+      "outcome": "Yes",
+      "entry_price": 0.21,
+      "current_price": 0.355,
+      "shares": 9523.809523809525,
+      "invested_usd": 2000.0,
+      "current_value": 3380.952380952381,
+      "unrealized_pnl": 1380.9523809523812,
+      "unrealized_pnl_pct": 69.04761904761905,
+      "catalyst": {
+        "category": "Anomalía: Base Rate Mispricing",
+        "headline": "Cameron Johnson es un especialista de alto volumen en triples que promedia históricamente más de 2.5 triples convertidos en cerca del 42-45% de sus partidos jugados con minutos de ",
+        "source": "Google gemini-3.5-flash",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-14T20:17:07.318365+00:00",
+      "exit_price": 0.355,
+      "final_value": 3380.952380952381,
+      "realized_pnl": 1380.9523809523812,
+      "realized_pnl_pct": 69.04761904761905,
+      "close_reason": "🎯 TAKE PROFIT (+69.0%)",
+      "closed_at": "2026-11-14T21:36:19.315909+00:00"
     }
   ],
-  "total_realized_pnl": 273.67291892016055,
-  "win_count": 32,
+  "total_realized_pnl": 1654.6252998725417,
+  "win_count": 33,
   "loss_count": 30,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
