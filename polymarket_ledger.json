@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 734.230365492891,
+  "cash_usdc": 1311.8066080464614,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -181,12 +181,12 @@
       "url": "https://polymarket.com/market/will-minnesota-timberwolves-win-the-2027-nba-finals",
       "outcome": "No",
       "entry_price": 0.9295,
-      "current_price": 0.9335,
+      "current_price": 0.934,
       "shares": 2151.694459386767,
       "invested_usd": 2000.0,
-      "current_value": 2008.606777837547,
-      "unrealized_pnl": 8.606777837547043,
-      "unrealized_pnl_pct": 0.4303388918773538,
+      "current_value": 2009.6826250672405,
+      "unrealized_pnl": 9.682625067240451,
+      "unrealized_pnl_pct": 0.484131253362029,
       "catalyst": {
         "category": "Anomalía: Longshot Bias",
         "headline": "The market is pricing the Timberwolves at a 7.05% probability to win the 2027 NBA Finals. Historically, even elite NBA contenders rarely exceed a 5-6% true win probability in the p",
@@ -322,31 +322,6 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-11-10T07:19:03.823879+00:00"
-    },
-    "6496390": {
-      "market_id": "6496390",
-      "question": "Will Josh Hokit win by KO or TKO?",
-      "event_title": "UFC 334: Josh Hokit vs. Ciryl Gane (Heavyweight, Main Card)",
-      "slug": "ufc-jos52-cir-2026-11-14-hokit-win-by-ko-tko",
-      "url": "https://polymarket.com/market/ufc-jos52-cir-2026-11-14-hokit-win-by-ko-tko",
-      "outcome": "No",
-      "entry_price": 0.815,
-      "current_price": 0.835,
-      "shares": 1031.3861474170897,
-      "invested_usd": 840.579710144928,
-      "current_value": 861.2074330932699,
-      "unrealized_pnl": 20.627722948341898,
-      "unrealized_pnl_pct": 2.4539877300613524,
-      "catalyst": {
-        "category": "Anomalía: Longshot Bias",
-        "headline": "The market currently prices a KO/TKO victory for Josh Hokit at 18.5%. Historically, in high-level UFC heavyweight/contender bouts involving technical strikers like Ciryl Gane, the ",
-        "source": "Google gemini-3.1-flash-lite",
-        "score": 8
-      },
-      "no_stop_loss": false,
-      "hold_until_resolution": false,
-      "target_exit_date": null,
-      "opened_at": "2026-11-14T20:17:14.031881+00:00"
     },
     "2243324": {
       "market_id": "2243324",
@@ -2340,10 +2315,41 @@
       "realized_pnl_pct": 97.99599198396794,
       "close_reason": "🎯 TAKE PROFIT (+98.0%)",
       "closed_at": "2026-11-15T05:14:59.248968+00:00"
+    },
+    {
+      "market_id": "6496390",
+      "question": "Will Josh Hokit win by KO or TKO?",
+      "event_title": "UFC 334: Josh Hokit vs. Ciryl Gane (Heavyweight, Main Card)",
+      "slug": "ufc-jos52-cir-2026-11-14-hokit-win-by-ko-tko",
+      "url": "https://polymarket.com/market/ufc-jos52-cir-2026-11-14-hokit-win-by-ko-tko",
+      "outcome": "No",
+      "entry_price": 0.815,
+      "current_price": 0.56,
+      "shares": 1031.3861474170897,
+      "invested_usd": 840.579710144928,
+      "current_value": 577.5762425535703,
+      "unrealized_pnl": -263.00346759135766,
+      "unrealized_pnl_pct": -31.2883435582822,
+      "catalyst": {
+        "category": "Anomalía: Longshot Bias",
+        "headline": "The market currently prices a KO/TKO victory for Josh Hokit at 18.5%. Historically, in high-level UFC heavyweight/contender bouts involving technical strikers like Ciryl Gane, the ",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-14T20:17:14.031881+00:00",
+      "exit_price": 0.56,
+      "final_value": 577.5762425535703,
+      "realized_pnl": -263.00346759135766,
+      "realized_pnl_pct": -31.2883435582822,
+      "close_reason": "🛑 STOP LOSS (-31.3%)",
+      "closed_at": "2026-11-15T05:26:05.311428+00:00"
     }
   ],
-  "total_realized_pnl": 1007.9032844130516,
+  "total_realized_pnl": 744.8998168216939,
   "win_count": 34,
-  "loss_count": 31,
+  "loss_count": 32,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
