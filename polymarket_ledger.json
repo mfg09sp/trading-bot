@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 0.0,
+  "cash_usdc": 734.230365492891,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -181,12 +181,12 @@
       "url": "https://polymarket.com/market/will-minnesota-timberwolves-win-the-2027-nba-finals",
       "outcome": "No",
       "entry_price": 0.9295,
-      "current_price": 0.9325,
+      "current_price": 0.9335,
       "shares": 2151.694459386767,
       "invested_usd": 2000.0,
-      "current_value": 2006.4550833781602,
-      "unrealized_pnl": 6.455083378160225,
-      "unrealized_pnl_pct": 0.32275416890801534,
+      "current_value": 2008.606777837547,
+      "unrealized_pnl": 8.606777837547043,
+      "unrealized_pnl_pct": 0.4303388918773538,
       "catalyst": {
         "category": "Anomalía: Longshot Bias",
         "headline": "The market is pricing the Timberwolves at a 7.05% probability to win the 2027 NBA Finals. Historically, even elite NBA contenders rarely exceed a 5-6% true win probability in the p",
@@ -331,12 +331,12 @@
       "url": "https://polymarket.com/market/ufc-jos52-cir-2026-11-14-hokit-win-by-ko-tko",
       "outcome": "No",
       "entry_price": 0.815,
-      "current_price": 0.85,
+      "current_price": 0.835,
       "shares": 1031.3861474170897,
       "invested_usd": 840.579710144928,
-      "current_value": 876.6782253045262,
-      "unrealized_pnl": 36.098515159598264,
-      "unrealized_pnl_pct": 4.2944785276073665,
+      "current_value": 861.2074330932699,
+      "unrealized_pnl": 20.627722948341898,
+      "unrealized_pnl_pct": 2.4539877300613524,
       "catalyst": {
         "category": "Anomalía: Longshot Bias",
         "headline": "The market currently prices a KO/TKO victory for Josh Hokit at 18.5%. Historically, in high-level UFC heavyweight/contender bouts involving technical strikers like Ciryl Gane, the ",
@@ -348,30 +348,30 @@
       "target_exit_date": null,
       "opened_at": "2026-11-14T20:17:14.031881+00:00"
     },
-    "7051359": {
-      "market_id": "7051359",
-      "question": "Mario Hezonja: Rebounds O/U 5.5",
-      "event_title": "Mavericks vs. Cavaliers",
-      "slug": "nba-dal-cle-2026-11-14-rebounds-mario-hezonja-5pt5",
-      "url": "https://polymarket.com/market/nba-dal-cle-2026-11-14-rebounds-mario-hezonja-5pt5",
+    "2243324": {
+      "market_id": "2243324",
+      "question": "Will San Antonio Spurs win the 2027 NBA Finals?",
+      "event_title": "NBA: 2027 Champion",
+      "slug": "will-san-antonio-spurs-win-the-2027-nba-finals",
+      "url": "https://polymarket.com/market/will-san-antonio-spurs-win-the-2027-nba-finals",
       "outcome": "No",
-      "entry_price": 0.2495,
-      "current_price": 0.25,
-      "shares": 5534.879282374273,
-      "invested_usd": 1380.9523809523812,
-      "current_value": 1383.7198205935683,
-      "unrealized_pnl": 2.7674396411871385,
-      "unrealized_pnl_pct": 0.20040080160320656,
+      "entry_price": 0.775,
+      "current_price": 0.775,
+      "shares": 2580.6451612903224,
+      "invested_usd": 2000.0,
+      "current_value": 2000.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
       "catalyst": {
-        "category": "Anomalía: Base Rate Mispricing",
-        "headline": "Mario Hezonja is a perimeter-oriented player currently playing a bench role for the Cavaliers. Historically, his career rebound average is significantly below 5.5 per game. The mar",
-        "source": "Google gemini-3.1-flash-lite",
-        "score": 8
+        "category": "Anomalía: Longshot Bias",
+        "headline": "El mercado asigna un 22.5% de probabilidad a que San Antonio Spurs gane el campeonato de la NBA en 2027, lo cual representa una sobrevaloración masiva impulsada por el sesgo minori",
+        "source": "Google gemini-3.5-flash",
+        "score": 9
       },
       "no_stop_loss": false,
       "hold_until_resolution": false,
       "target_exit_date": null,
-      "opened_at": "2026-11-15T03:17:33.069048+00:00"
+      "opened_at": "2026-11-15T05:15:25.922736+00:00"
     }
   },
   "closed_trades": [
@@ -2309,10 +2309,41 @@
       "realized_pnl_pct": -100.0,
       "close_reason": "❌ RESOLUCIÓN PERDIDA ($0.00)",
       "closed_at": "2026-11-15T02:54:53.037578+00:00"
+    },
+    {
+      "market_id": "7051359",
+      "question": "Mario Hezonja: Rebounds O/U 5.5",
+      "event_title": "Mavericks vs. Cavaliers",
+      "slug": "nba-dal-cle-2026-11-14-rebounds-mario-hezonja-5pt5",
+      "url": "https://polymarket.com/market/nba-dal-cle-2026-11-14-rebounds-mario-hezonja-5pt5",
+      "outcome": "No",
+      "entry_price": 0.2495,
+      "current_price": 0.494,
+      "shares": 5534.879282374273,
+      "invested_usd": 1380.9523809523812,
+      "current_value": 2734.230365492891,
+      "unrealized_pnl": 1353.2779845405098,
+      "unrealized_pnl_pct": 97.99599198396794,
+      "catalyst": {
+        "category": "Anomalía: Base Rate Mispricing",
+        "headline": "Mario Hezonja is a perimeter-oriented player currently playing a bench role for the Cavaliers. Historically, his career rebound average is significantly below 5.5 per game. The mar",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-15T03:17:33.069048+00:00",
+      "exit_price": 0.494,
+      "final_value": 2734.230365492891,
+      "realized_pnl": 1353.2779845405098,
+      "realized_pnl_pct": 97.99599198396794,
+      "close_reason": "🎯 TAKE PROFIT (+98.0%)",
+      "closed_at": "2026-11-15T05:14:59.248968+00:00"
     }
   ],
-  "total_realized_pnl": -345.37470012745825,
-  "win_count": 33,
+  "total_realized_pnl": 1007.9032844130516,
+  "win_count": 34,
   "loss_count": 31,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
