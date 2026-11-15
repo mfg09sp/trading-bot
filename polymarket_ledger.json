@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 1311.8066080464614,
+  "cash_usdc": 0.0,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -347,6 +347,31 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-11-15T05:15:25.922736+00:00"
+    },
+    "6496388": {
+      "market_id": "6496388",
+      "question": "Fight to Go the Distance?",
+      "event_title": "UFC 334: Josh Hokit vs. Ciryl Gane (Heavyweight, Main Card)",
+      "slug": "ufc-jos52-cir-2026-11-14-go-the-distance",
+      "url": "https://polymarket.com/market/ufc-jos52-cir-2026-11-14-go-the-distance",
+      "outcome": "No",
+      "entry_price": 0.39,
+      "current_price": 0.39,
+      "shares": 3363.606687298619,
+      "invested_usd": 1311.8066080464614,
+      "current_value": 1311.8066080464614,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: Base Rate Mispricing",
+        "headline": "El mercado de Polymarket está sobrevalorando la probabilidad de que la pelea llegue a la decisión de los jueces (YES = 61%). La tasa base histórica de finalizaciones (KO/TKO/Someti",
+        "source": "Google gemini-3.5-flash",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-15T05:37:28.620891+00:00"
     }
   },
   "closed_trades": [
