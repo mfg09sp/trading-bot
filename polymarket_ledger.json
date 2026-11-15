@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 3380.952380952381,
+  "cash_usdc": 1380.9523809523812,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -9,12 +9,12 @@
       "url": "https://polymarket.com/market/will-david-lisnard-win-the-2027-french-presidential-election",
       "outcome": "No",
       "entry_price": 0.895,
-      "current_price": 0.835,
+      "current_price": 0.8385,
       "shares": 2234.63687150838,
       "invested_usd": 2000.0,
-      "current_value": 1865.9217877094973,
-      "unrealized_pnl": -134.07821229050273,
-      "unrealized_pnl_pct": -6.703910614525145,
+      "current_value": 1873.7430167597765,
+      "unrealized_pnl": -126.25698324022346,
+      "unrealized_pnl_pct": -6.312849162011172,
       "catalyst": {
         "category": "Análisis Gemini",
         "headline": "David Lisnard, aunque es una figura respetada dentro de la derecha tradicional francesa (LR/Nouvelle Énergie), carece de la proyección nacional y el apoyo masivo necesario para sup",
@@ -331,12 +331,12 @@
       "url": "https://polymarket.com/market/ufc-jos52-cir-2026-11-14-hokit-win-by-ko-tko",
       "outcome": "No",
       "entry_price": 0.815,
-      "current_price": 0.815,
+      "current_price": 0.84,
       "shares": 1031.3861474170897,
       "invested_usd": 840.579710144928,
-      "current_value": 840.5797101449281,
-      "unrealized_pnl": 1.1368683772161603e-13,
-      "unrealized_pnl_pct": 0.0,
+      "current_value": 866.3643638303553,
+      "unrealized_pnl": 25.784653685427315,
+      "unrealized_pnl_pct": 3.06748466257669,
       "catalyst": {
         "category": "Anomalía: Longshot Bias",
         "headline": "The market currently prices a KO/TKO victory for Josh Hokit at 18.5%. Historically, in high-level UFC heavyweight/contender bouts involving technical strikers like Ciryl Gane, the ",
@@ -347,6 +347,31 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-11-14T20:17:14.031881+00:00"
+    },
+    "7032279": {
+      "market_id": "7032279",
+      "question": "Cameron Johnson: Points O/U 12.5",
+      "event_title": "Nuggets vs. Pelicans",
+      "slug": "nba-den-nop-2026-11-14-points-cameron-johnson-12pt5",
+      "url": "https://polymarket.com/market/nba-den-nop-2026-11-14-points-cameron-johnson-12pt5",
+      "outcome": "Yes",
+      "entry_price": 0.1,
+      "current_price": 0.1,
+      "shares": 20000.0,
+      "invested_usd": 2000.0,
+      "current_value": 2000.0,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: Information Lag",
+        "headline": "El mercado está ofreciendo una cuota absurdamente desajustada para el 'YES' (0.10 USD / 10% probabilidad implícita). Los datos recientes muestran que Cameron Johnson anotó 23 punto",
+        "source": "Google gemini-3.5-flash",
+        "score": 9
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-15T02:44:14.512030+00:00"
     }
   },
   "closed_trades": [
