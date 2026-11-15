@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 0.0,
+  "cash_usdc": 1.4839441267493905,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -347,31 +347,6 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-11-15T05:15:25.922736+00:00"
-    },
-    "6496389": {
-      "market_id": "6496389",
-      "question": "Will the fight be won by KO or TKO?",
-      "event_title": "UFC 334: Josh Hokit vs. Ciryl Gane (Heavyweight, Main Card)",
-      "slug": "ufc-jos52-cir-2026-11-14-win-by-ko-tko",
-      "url": "https://polymarket.com/market/ufc-jos52-cir-2026-11-14-win-by-ko-tko",
-      "outcome": "Yes",
-      "entry_price": 0.17,
-      "current_price": 0.17,
-      "shares": 2967.888253498781,
-      "invested_usd": 504.5410030947928,
-      "current_value": 504.5410030947928,
-      "unrealized_pnl": 0.0,
-      "unrealized_pnl_pct": 0.0,
-      "catalyst": {
-        "category": "Anomalía: Base Rate Mispricing",
-        "headline": "Las peleas de categoría Peso Pesado en la UFC tienen una tasa base histórica de finalización por KO/TKO cercana al 48-52%. Ciryl Gane posee múltiples victorias por nocaut/TKO (Spiv",
-        "source": "Google gemini-3.5-flash",
-        "score": 8
-      },
-      "no_stop_loss": false,
-      "hold_until_resolution": false,
-      "target_exit_date": null,
-      "opened_at": "2026-11-15T05:48:32.134114+00:00"
     }
   },
   "closed_trades": [
@@ -2402,10 +2377,41 @@
       "realized_pnl_pct": -61.53846153846154,
       "close_reason": "🛑 STOP LOSS (-61.5%)",
       "closed_at": "2026-11-15T05:47:54.288386+00:00"
+    },
+    {
+      "market_id": "6496389",
+      "question": "Will the fight be won by KO or TKO?",
+      "event_title": "UFC 334: Josh Hokit vs. Ciryl Gane (Heavyweight, Main Card)",
+      "slug": "ufc-jos52-cir-2026-11-14-win-by-ko-tko",
+      "url": "https://polymarket.com/market/ufc-jos52-cir-2026-11-14-win-by-ko-tko",
+      "outcome": "Yes",
+      "entry_price": 0.17,
+      "current_price": 0.0005,
+      "shares": 2967.888253498781,
+      "invested_usd": 504.5410030947928,
+      "current_value": 1.4839441267493905,
+      "unrealized_pnl": -503.0570589680434,
+      "unrealized_pnl_pct": -99.70588235294117,
+      "catalyst": {
+        "category": "Anomalía: Base Rate Mispricing",
+        "headline": "Las peleas de categoría Peso Pesado en la UFC tienen una tasa base histórica de finalización por KO/TKO cercana al 48-52%. Ciryl Gane posee múltiples victorias por nocaut/TKO (Spiv",
+        "source": "Google gemini-3.5-flash",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-15T05:48:32.134114+00:00",
+      "exit_price": 0.0005,
+      "final_value": 1.4839441267493905,
+      "realized_pnl": -503.0570589680434,
+      "realized_pnl_pct": -99.70588235294117,
+      "close_reason": "❌ RESOLUCIÓN PERDIDA ($0.00)",
+      "closed_at": "2026-11-15T05:59:04.660996+00:00"
     }
   ],
-  "total_realized_pnl": -62.3657881299747,
+  "total_realized_pnl": -565.4228470980181,
   "win_count": 34,
-  "loss_count": 33,
+  "loss_count": 34,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
