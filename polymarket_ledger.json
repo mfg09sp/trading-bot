@@ -248,31 +248,6 @@
       "target_exit_date": null,
       "opened_at": "2026-11-01T02:57:41.283671+00:00"
     },
-    "6841360": {
-      "market_id": "6841360",
-      "question": "Exact Score: Any Other Score?",
-      "event_title": "CD Tenerife vs. RCD Mallorca - Exact Score",
-      "slug": "es2-cdt-rm-2026-11-21-exact-score-any-other",
-      "url": "https://polymarket.com/market/es2-cdt-rm-2026-11-21-exact-score-any-other",
-      "outcome": "No",
-      "entry_price": 0.84,
-      "current_price": 0.8355,
-      "shares": 2380.952380952381,
-      "invested_usd": 2000.0,
-      "current_value": 1989.2857142857144,
-      "unrealized_pnl": -10.714285714285552,
-      "unrealized_pnl_pct": -0.5357142857142796,
-      "catalyst": {
-        "category": "Anomalía: Longshot Bias",
-        "headline": "En la Liga 2 española (Segunda División), la tasa base histórica de partidos que finalizan con marcadores atípicos o no estándar ('Any Other Score', habitualmente marcadores con 4+",
-        "source": "Google gemini-3.5-flash",
-        "score": 8
-      },
-      "no_stop_loss": false,
-      "hold_until_resolution": false,
-      "target_exit_date": null,
-      "opened_at": "2026-11-09T08:06:19.789457+00:00"
-    },
     "6896232": {
       "market_id": "6896232",
       "question": "Exact Score: Any Other Score?",
@@ -347,6 +322,31 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-11-21T19:59:22.061791+00:00"
+    },
+    "6684987": {
+      "market_id": "6684987",
+      "question": "Will MOUZ Win the PGL Major Singapore 2026?",
+      "event_title": "PGL Major Singapore 2026: Winner",
+      "slug": "will-mouz-win-the-pgl-major-singapore-2026-1793811600000",
+      "url": "https://polymarket.com/market/will-mouz-win-the-pgl-major-singapore-2026-1793811600000",
+      "outcome": "Yes",
+      "entry_price": 0.165,
+      "current_price": 0.165,
+      "shares": 7359.30735930736,
+      "invested_usd": 1214.2857142857144,
+      "current_value": 1214.2857142857144,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: Information Lag",
+        "headline": "MOUZ is currently exhibiting peak performance metrics, evidenced by a dominant sweep at IEM Beijing and a high-profile victory over Vitality. The market's 16.5% implied probability",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 7
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-21T20:11:48.100693+00:00"
     }
   },
   "closed_trades": [
@@ -2439,10 +2439,41 @@
       "realized_pnl_pct": -36.25000000000001,
       "close_reason": "🛑 STOP LOSS (-36.3%)",
       "closed_at": "2026-11-21T19:58:42.531671+00:00"
+    },
+    {
+      "market_id": "6841360",
+      "question": "Exact Score: Any Other Score?",
+      "event_title": "CD Tenerife vs. RCD Mallorca - Exact Score",
+      "slug": "es2-cdt-rm-2026-11-21-exact-score-any-other",
+      "url": "https://polymarket.com/market/es2-cdt-rm-2026-11-21-exact-score-any-other",
+      "outcome": "No",
+      "entry_price": 0.84,
+      "current_price": 0.51,
+      "shares": 2380.952380952381,
+      "invested_usd": 2000.0,
+      "current_value": 1214.2857142857144,
+      "unrealized_pnl": -785.7142857142856,
+      "unrealized_pnl_pct": -39.285714285714285,
+      "catalyst": {
+        "category": "Anomalía: Longshot Bias",
+        "headline": "En la Liga 2 española (Segunda División), la tasa base histórica de partidos que finalizan con marcadores atípicos o no estándar ('Any Other Score', habitualmente marcadores con 4+",
+        "source": "Google gemini-3.5-flash",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-09T08:06:19.789457+00:00",
+      "exit_price": 0.51,
+      "final_value": 1214.2857142857144,
+      "realized_pnl": -785.7142857142856,
+      "realized_pnl_pct": -39.285714285714285,
+      "close_reason": "🛑 STOP LOSS (-39.3%)",
+      "closed_at": "2026-11-21T20:09:56.010018+00:00"
     }
   ],
-  "total_realized_pnl": -1290.422847098018,
+  "total_realized_pnl": -2076.1371328123037,
   "win_count": 34,
-  "loss_count": 35,
+  "loss_count": 36,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
