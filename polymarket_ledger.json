@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 1.4839441267493905,
+  "cash_usdc": 0.0,
   "active_positions": {
     "679022": {
       "market_id": "679022",
@@ -248,31 +248,6 @@
       "target_exit_date": null,
       "opened_at": "2026-11-01T02:57:41.283671+00:00"
     },
-    "6834597": {
-      "market_id": "6834597",
-      "question": "Exact Score: Any Other Score?",
-      "event_title": "AS Monaco FC vs. AJ Auxerre - Exact Score",
-      "slug": "fl1-asm-aja-2026-11-21-exact-score-any-other",
-      "url": "https://polymarket.com/market/fl1-asm-aja-2026-11-21-exact-score-any-other",
-      "outcome": "No",
-      "entry_price": 0.8,
-      "current_price": 0.96,
-      "shares": 2500.0,
-      "invested_usd": 2000.0,
-      "current_value": 2400.0,
-      "unrealized_pnl": 400.0,
-      "unrealized_pnl_pct": 19.99999999999999,
-      "catalyst": {
-        "category": "Anomalía: Longshot Bias",
-        "headline": "En las apuestas de marcador exacto en la Ligue 1, los 15 resultados estándar (desde 0-0 hasta 3-2 y empates habituales) representan históricamente entre el 88% y el 90% de todos lo",
-        "source": "Google gemini-3.5-flash",
-        "score": 8
-      },
-      "no_stop_loss": false,
-      "hold_until_resolution": false,
-      "target_exit_date": null,
-      "opened_at": "2026-11-09T08:06:08.905818+00:00"
-    },
     "6841360": {
       "market_id": "6841360",
       "question": "Exact Score: Any Other Score?",
@@ -281,12 +256,12 @@
       "url": "https://polymarket.com/market/es2-cdt-rm-2026-11-21-exact-score-any-other",
       "outcome": "No",
       "entry_price": 0.84,
-      "current_price": 0.973,
+      "current_price": 0.8355,
       "shares": 2380.952380952381,
       "invested_usd": 2000.0,
-      "current_value": 2316.666666666667,
-      "unrealized_pnl": 316.66666666666697,
-      "unrealized_pnl_pct": 15.833333333333336,
+      "current_value": 1989.2857142857144,
+      "unrealized_pnl": -10.714285714285552,
+      "unrealized_pnl_pct": -0.5357142857142796,
       "catalyst": {
         "category": "Anomalía: Longshot Bias",
         "headline": "En la Liga 2 española (Segunda División), la tasa base histórica de partidos que finalizan con marcadores atípicos o no estándar ('Any Other Score', habitualmente marcadores con 4+",
@@ -347,6 +322,31 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-11-15T05:15:25.922736+00:00"
+    },
+    "6684984": {
+      "market_id": "6684984",
+      "question": "Will FURIA Win the PGL Major Singapore 2026?",
+      "event_title": "PGL Major Singapore 2026: Winner",
+      "slug": "will-furia-win-the-pgl-major-singapore-2026-1793811600000",
+      "url": "https://polymarket.com/market/will-furia-win-the-pgl-major-singapore-2026-1793811600000",
+      "outcome": "No",
+      "entry_price": 0.835,
+      "current_price": 0.835,
+      "shares": 1528.7232863793406,
+      "invested_usd": 1276.4839441267493,
+      "current_value": 1276.4839441267493,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: Longshot Bias",
+        "headline": "FURIA is currently overvalued at 16.5% probability. While they won the BLAST Rivals tournament, historical data for CS2 Majors shows that even top-tier teams face a high variance f",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-21T19:59:22.061791+00:00"
     }
   },
   "closed_trades": [
@@ -2408,10 +2408,41 @@
       "realized_pnl_pct": -99.70588235294117,
       "close_reason": "❌ RESOLUCIÓN PERDIDA ($0.00)",
       "closed_at": "2026-11-15T05:59:04.660996+00:00"
+    },
+    {
+      "market_id": "6834597",
+      "question": "Exact Score: Any Other Score?",
+      "event_title": "AS Monaco FC vs. AJ Auxerre - Exact Score",
+      "slug": "fl1-asm-aja-2026-11-21-exact-score-any-other",
+      "url": "https://polymarket.com/market/fl1-asm-aja-2026-11-21-exact-score-any-other",
+      "outcome": "No",
+      "entry_price": 0.8,
+      "current_price": 0.51,
+      "shares": 2500.0,
+      "invested_usd": 2000.0,
+      "current_value": 1275.0,
+      "unrealized_pnl": -725.0,
+      "unrealized_pnl_pct": -36.25000000000001,
+      "catalyst": {
+        "category": "Anomalía: Longshot Bias",
+        "headline": "En las apuestas de marcador exacto en la Ligue 1, los 15 resultados estándar (desde 0-0 hasta 3-2 y empates habituales) representan históricamente entre el 88% y el 90% de todos lo",
+        "source": "Google gemini-3.5-flash",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-09T08:06:08.905818+00:00",
+      "exit_price": 0.51,
+      "final_value": 1275.0,
+      "realized_pnl": -725.0,
+      "realized_pnl_pct": -36.25000000000001,
+      "close_reason": "🛑 STOP LOSS (-36.3%)",
+      "closed_at": "2026-11-21T19:58:42.531671+00:00"
     }
   ],
-  "total_realized_pnl": -565.4228470980181,
+  "total_realized_pnl": -1290.422847098018,
   "win_count": 34,
-  "loss_count": 34,
+  "loss_count": 35,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
