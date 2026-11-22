@@ -156,12 +156,12 @@
       "url": "https://polymarket.com/market/will-philadelphia-76ers-win-the-2027-nba-finals",
       "outcome": "No",
       "entry_price": 0.8895,
-      "current_price": 0.8975,
+      "current_price": 0.8985,
       "shares": 599.5877833989134,
       "invested_usd": 533.3333333333335,
-      "current_value": 538.1300356005248,
-      "unrealized_pnl": 4.7967022671913355,
-      "unrealized_pnl_pct": 0.8993816750983707,
+      "current_value": 538.7296233839237,
+      "unrealized_pnl": 5.39629005059021,
+      "unrealized_pnl_pct": 1.011804384485667,
       "catalyst": {
         "category": "Anomalía: Longshot Bias",
         "headline": "The market is overvaluing the Philadelphia 76ers due to the 'LeBron effect' news cycle. Historically, NBA championship odds for teams with new high-profile acquisitions often suffe",
@@ -248,31 +248,6 @@
       "target_exit_date": null,
       "opened_at": "2026-11-01T02:57:41.283671+00:00"
     },
-    "6896232": {
-      "market_id": "6896232",
-      "question": "Exact Score: Any Other Score?",
-      "event_title": "CA Osasuna vs. Málaga CF - Exact Score",
-      "slug": "lal-osa-mala-2026-11-22-exact-score-any-other",
-      "url": "https://polymarket.com/market/lal-osa-mala-2026-11-22-exact-score-any-other",
-      "outcome": "No",
-      "entry_price": 0.85,
-      "current_price": 0.924,
-      "shares": 1196.9913720030706,
-      "invested_usd": 1017.44266620261,
-      "current_value": 1106.0200277308372,
-      "unrealized_pnl": 88.57736152822724,
-      "unrealized_pnl_pct": 8.705882352941185,
-      "catalyst": {
-        "category": "Anomalía: Longshot Bias",
-        "headline": "En partidos de perfil defensivo y bajo promedio de goles esperados (xG) como Osasuna vs Málaga, la probabilidad histórica de que el marcador final contemple 4 o más goles por parte",
-        "source": "Google gemini-3.5-flash",
-        "score": 8
-      },
-      "no_stop_loss": false,
-      "hold_until_resolution": false,
-      "target_exit_date": null,
-      "opened_at": "2026-11-10T07:19:03.823879+00:00"
-    },
     "2243324": {
       "market_id": "2243324",
       "question": "Will San Antonio Spurs win the 2027 NBA Finals?",
@@ -347,6 +322,31 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-11-21T20:11:48.100693+00:00"
+    },
+    "7219253": {
+      "market_id": "7219253",
+      "question": "Cam Spencer: Assists O/U 5.5",
+      "event_title": "Grizzlies vs. Timberwolves",
+      "slug": "nba-mem-min-2026-11-21-assists-cam-spencer-5pt5",
+      "url": "https://polymarket.com/market/nba-mem-min-2026-11-21-assists-cam-spencer-5pt5",
+      "outcome": "No",
+      "entry_price": 0.2195,
+      "current_price": 0.2195,
+      "shares": 3083.8205962083666,
+      "invested_usd": 676.8986208677364,
+      "current_value": 676.8986208677364,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: Base Rate Mispricing",
+        "headline": "The market has heavily overreacted to a short 3-game burst of assists (6, 7, 11 assists), pricing Over 5.5 assists at an unsustainable 78.05% implied probability (-355 odds equival",
+        "source": "Google gemini-3.5-flash",
+        "score": 7
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-22T17:43:29.387854+00:00"
     }
   },
   "closed_trades": [
@@ -2470,10 +2470,41 @@
       "realized_pnl_pct": -39.285714285714285,
       "close_reason": "🛑 STOP LOSS (-39.3%)",
       "closed_at": "2026-11-21T20:09:56.010018+00:00"
+    },
+    {
+      "market_id": "6896232",
+      "question": "Exact Score: Any Other Score?",
+      "event_title": "CA Osasuna vs. Málaga CF - Exact Score",
+      "slug": "lal-osa-mala-2026-11-22-exact-score-any-other",
+      "url": "https://polymarket.com/market/lal-osa-mala-2026-11-22-exact-score-any-other",
+      "outcome": "No",
+      "entry_price": 0.85,
+      "current_price": 0.5655,
+      "shares": 1196.9913720030706,
+      "invested_usd": 1017.44266620261,
+      "current_value": 676.8986208677364,
+      "unrealized_pnl": -340.54404533487354,
+      "unrealized_pnl_pct": -33.470588235294116,
+      "catalyst": {
+        "category": "Anomalía: Longshot Bias",
+        "headline": "En partidos de perfil defensivo y bajo promedio de goles esperados (xG) como Osasuna vs Málaga, la probabilidad histórica de que el marcador final contemple 4 o más goles por parte",
+        "source": "Google gemini-3.5-flash",
+        "score": 8
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-10T07:19:03.823879+00:00",
+      "exit_price": 0.5655,
+      "final_value": 676.8986208677364,
+      "realized_pnl": -340.54404533487354,
+      "realized_pnl_pct": -33.470588235294116,
+      "close_reason": "🛑 STOP LOSS (-33.5%)",
+      "closed_at": "2026-11-22T17:41:24.927372+00:00"
     }
   ],
-  "total_realized_pnl": -2076.1371328123037,
+  "total_realized_pnl": -2416.681178147177,
   "win_count": 34,
-  "loss_count": 36,
+  "loss_count": 37,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
