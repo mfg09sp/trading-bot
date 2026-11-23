@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 1690.5027932960893,
+  "cash_usdc": 0.0,
   "active_positions": {
     "802374": {
       "market_id": "802374",
@@ -309,12 +309,12 @@
       "url": "https://polymarket.com/market/lal-cel-vil-2026-11-29-exact-score-any-other",
       "outcome": "No",
       "entry_price": 0.755,
-      "current_price": 0.76,
+      "current_price": 0.75,
       "shares": 612.6795886506688,
       "invested_usd": 462.57308943125497,
-      "current_value": 465.6364873745083,
-      "unrealized_pnl": 3.063397943253335,
-      "unrealized_pnl_pct": 0.6622516556291397,
+      "current_value": 459.50969148800164,
+      "unrealized_pnl": -3.063397943253335,
+      "unrealized_pnl_pct": -0.6622516556291397,
       "catalyst": {
         "category": "Anomalía: Longshot Bias",
         "headline": "Historical base rates in La Liga for balanced fixtures (expected total goals ~2.5-2.75) show that standard exact score outcomes (0-0 through 3-2/2-3) occur in ~84-86% of matches, l",
@@ -325,6 +325,31 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-11-23T03:21:19.463888+00:00"
+    },
+    "6684986": {
+      "market_id": "6684986",
+      "question": "Will Spirit Win the PGL Major Singapore 2026?",
+      "event_title": "PGL Major Singapore 2026: Winner",
+      "slug": "will-spirit-win-the-pgl-major-singapore-2026-1793811600000",
+      "url": "https://polymarket.com/market/will-spirit-win-the-pgl-major-singapore-2026-1793811600000",
+      "outcome": "No",
+      "entry_price": 0.855,
+      "current_price": 0.855,
+      "shares": 1977.1962494691104,
+      "invested_usd": 1690.5027932960893,
+      "current_value": 1690.5027932960893,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "catalyst": {
+        "category": "Anomalía: Longshot Bias",
+        "headline": "The market is pricing Spirit at 14.5% probability. In a high-variance, 24-team CS2 Major format, the historical win rate for any single top-tier team rarely exceeds 8-10% due to th",
+        "source": "Google gemini-3.1-flash-lite",
+        "score": 9
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-23T19:10:11.697463+00:00"
     }
   },
   "closed_trades": [
