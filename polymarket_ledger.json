@@ -323,30 +323,30 @@
       "target_exit_date": null,
       "opened_at": "2026-11-21T20:11:48.100693+00:00"
     },
-    "7219253": {
-      "market_id": "7219253",
-      "question": "Cam Spencer: Assists O/U 5.5",
-      "event_title": "Grizzlies vs. Timberwolves",
-      "slug": "nba-mem-min-2026-11-21-assists-cam-spencer-5pt5",
-      "url": "https://polymarket.com/market/nba-mem-min-2026-11-21-assists-cam-spencer-5pt5",
+    "7236575": {
+      "market_id": "7236575",
+      "question": "Exact Score: Any Other Score?",
+      "event_title": "RC Celta de Vigo vs. Villarreal CF - Exact Score",
+      "slug": "lal-cel-vil-2026-11-29-exact-score-any-other",
+      "url": "https://polymarket.com/market/lal-cel-vil-2026-11-29-exact-score-any-other",
       "outcome": "No",
-      "entry_price": 0.2195,
-      "current_price": 0.2145,
-      "shares": 3083.8205962083666,
-      "invested_usd": 676.8986208677364,
-      "current_value": 661.4795178866947,
-      "unrealized_pnl": -15.41910298104176,
-      "unrealized_pnl_pct": -2.277904328018225,
+      "entry_price": 0.755,
+      "current_price": 0.755,
+      "shares": 612.6795886506688,
+      "invested_usd": 462.57308943125497,
+      "current_value": 462.57308943125497,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
       "catalyst": {
-        "category": "Anomalía: Base Rate Mispricing",
-        "headline": "The market has heavily overreacted to a short 3-game burst of assists (6, 7, 11 assists), pricing Over 5.5 assists at an unsustainable 78.05% implied probability (-355 odds equival",
+        "category": "Anomalía: Longshot Bias",
+        "headline": "Historical base rates in La Liga for balanced fixtures (expected total goals ~2.5-2.75) show that standard exact score outcomes (0-0 through 3-2/2-3) occur in ~84-86% of matches, l",
         "source": "Google gemini-3.5-flash",
         "score": 7
       },
       "no_stop_loss": false,
       "hold_until_resolution": false,
       "target_exit_date": null,
-      "opened_at": "2026-11-22T17:43:29.387854+00:00"
+      "opened_at": "2026-11-23T03:21:19.463888+00:00"
     }
   },
   "closed_trades": [
@@ -2501,10 +2501,41 @@
       "realized_pnl_pct": -33.470588235294116,
       "close_reason": "🛑 STOP LOSS (-33.5%)",
       "closed_at": "2026-11-22T17:41:24.927372+00:00"
+    },
+    {
+      "market_id": "7219253",
+      "question": "Cam Spencer: Assists O/U 5.5",
+      "event_title": "Grizzlies vs. Timberwolves",
+      "slug": "nba-mem-min-2026-11-21-assists-cam-spencer-5pt5",
+      "url": "https://polymarket.com/market/nba-mem-min-2026-11-21-assists-cam-spencer-5pt5",
+      "outcome": "No",
+      "entry_price": 0.2195,
+      "current_price": 0.15,
+      "shares": 3083.8205962083666,
+      "invested_usd": 676.8986208677364,
+      "current_value": 462.57308943125497,
+      "unrealized_pnl": -214.32553143648147,
+      "unrealized_pnl_pct": -31.662870159453306,
+      "catalyst": {
+        "category": "Anomalía: Base Rate Mispricing",
+        "headline": "The market has heavily overreacted to a short 3-game burst of assists (6, 7, 11 assists), pricing Over 5.5 assists at an unsustainable 78.05% implied probability (-355 odds equival",
+        "source": "Google gemini-3.5-flash",
+        "score": 7
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-22T17:43:29.387854+00:00",
+      "exit_price": 0.15,
+      "final_value": 462.57308943125497,
+      "realized_pnl": -214.32553143648147,
+      "realized_pnl_pct": -31.662870159453306,
+      "close_reason": "🛑 STOP LOSS (-31.7%)",
+      "closed_at": "2026-11-23T03:20:56.745671+00:00"
     }
   ],
-  "total_realized_pnl": -2416.681178147177,
+  "total_realized_pnl": -2631.0067095836584,
   "win_count": 34,
-  "loss_count": 37,
+  "loss_count": 38,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
