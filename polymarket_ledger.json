@@ -1,5 +1,5 @@
 {
-  "cash_usdc": 0.0,
+  "cash_usdc": 557.5384256721087,
   "active_positions": {
     "802374": {
       "market_id": "802374",
@@ -300,31 +300,6 @@
       "hold_until_resolution": false,
       "target_exit_date": null,
       "opened_at": "2026-11-21T20:11:48.100693+00:00"
-    },
-    "7236575": {
-      "market_id": "7236575",
-      "question": "Exact Score: Any Other Score?",
-      "event_title": "RC Celta de Vigo vs. Villarreal CF - Exact Score",
-      "slug": "lal-cel-vil-2026-11-29-exact-score-any-other",
-      "url": "https://polymarket.com/market/lal-cel-vil-2026-11-29-exact-score-any-other",
-      "outcome": "No",
-      "entry_price": 0.755,
-      "current_price": 0.89,
-      "shares": 612.6795886506688,
-      "invested_usd": 462.57308943125497,
-      "current_value": 545.2848338990952,
-      "unrealized_pnl": 82.71174446784028,
-      "unrealized_pnl_pct": 17.880794701986755,
-      "catalyst": {
-        "category": "Anomalía: Longshot Bias",
-        "headline": "Historical base rates in La Liga for balanced fixtures (expected total goals ~2.5-2.75) show that standard exact score outcomes (0-0 through 3-2/2-3) occur in ~84-86% of matches, l",
-        "source": "Google gemini-3.5-flash",
-        "score": 7
-      },
-      "no_stop_loss": false,
-      "hold_until_resolution": false,
-      "target_exit_date": null,
-      "opened_at": "2026-11-23T03:21:19.463888+00:00"
     },
     "6684986": {
       "market_id": "6684986",
@@ -2563,10 +2538,41 @@
       "realized_pnl_pct": -15.474860335195537,
       "close_reason": "🛑 STOP LOSS (-15.5%)",
       "closed_at": "2026-11-23T15:06:18.034032+00:00"
+    },
+    {
+      "market_id": "7236575",
+      "question": "Exact Score: Any Other Score?",
+      "event_title": "RC Celta de Vigo vs. Villarreal CF - Exact Score",
+      "slug": "lal-cel-vil-2026-11-29-exact-score-any-other",
+      "url": "https://polymarket.com/market/lal-cel-vil-2026-11-29-exact-score-any-other",
+      "outcome": "No",
+      "entry_price": 0.755,
+      "current_price": 0.91,
+      "shares": 612.6795886506688,
+      "invested_usd": 462.57308943125497,
+      "current_value": 557.5384256721087,
+      "unrealized_pnl": 94.96533624085373,
+      "unrealized_pnl_pct": 20.529801324503314,
+      "catalyst": {
+        "category": "Anomalía: Longshot Bias",
+        "headline": "Historical base rates in La Liga for balanced fixtures (expected total goals ~2.5-2.75) show that standard exact score outcomes (0-0 through 3-2/2-3) occur in ~84-86% of matches, l",
+        "source": "Google gemini-3.5-flash",
+        "score": 7
+      },
+      "no_stop_loss": false,
+      "hold_until_resolution": false,
+      "target_exit_date": null,
+      "opened_at": "2026-11-23T03:21:19.463888+00:00",
+      "exit_price": 0.91,
+      "final_value": 557.5384256721087,
+      "realized_pnl": 94.96533624085373,
+      "realized_pnl_pct": 20.529801324503314,
+      "close_reason": "🎯 TAKE PROFIT (+20.5%)",
+      "closed_at": "2026-11-25T09:16:51.383115+00:00"
     }
   ],
-  "total_realized_pnl": -2940.503916287569,
-  "win_count": 34,
+  "total_realized_pnl": -2845.5385800467157,
+  "win_count": 35,
   "loss_count": 39,
   "created_at": "2026-10-04T17:36:00.000000+00:00"
 }
